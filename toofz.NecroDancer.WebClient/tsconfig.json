@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "target": "es2017"
+  },
+  "exclude": [
+    "node_modules",
+    "gulpfile.ts"
+  ]
+}
