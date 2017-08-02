@@ -1,0 +1,33 @@
+version: 2.0.{build}
+image: Visual Studio 2017
+
+configuration:
+  - Release
+build:
+  project: toofz.NecroDancer.WebClient.sln
+  publish_wap: true
+  verbosity: minimal
+cache:
+  - packages -> **\packages.config
+  - '%APPDATA%\npm-cache'
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: c7l1UmXHWpIDLL1awU4r0QYVPToYM/XjV8trFyD1oHArKxs/vBTYiKYScr1EhCUgmEX6sAFBTvkUHF/k5B+cGjzqRBR2XkAO+lzk8cHQ1FI=
+
+install:
+  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 8)
+  - npm install --global npm
+  - node --version
+  - npm --version
+before_build:
+  - appveyor-retry nuget restore -DisableParallelProcessing
+  - cd toofz.NecroDancer.WebClient
+  - npm install
+  - npm run build
+  - cd ..
+
+test_script:
+  - cd toofz.NecroDancer.WebClient
+  - npm run test-appveyor
+  - cd ..
