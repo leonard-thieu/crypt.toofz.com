@@ -3,8 +3,14 @@ image: Visual Studio 2017
 
 configuration:
   - Release
+environment:
+  PROJECT: toofz.NecroDancer.WebClient
+  COVERALLS_REPO_TOKEN:
+    secure: RgfMtQ0AdNtC/Jr6cnC/8OZJBfj8VrRXa7yxcHdRrm0Gkch+6q2lUVXDUbz0BxTH
+  COVERALLS_SERVICE_NAME: appveyor
+  COVERALLS_SERVICE_JOB_ID: '%APPVEYOR_JOB_ID%'
 build:
-  project: toofz.NecroDancer.WebClient.sln
+  project: $(PROJECT).sln
   publish_wap: true
   verbosity: minimal
 cache:
@@ -20,14 +26,41 @@ install:
   - npm install --global npm
   - node --version
   - npm --version
+
 before_build:
   - appveyor-retry nuget restore -DisableParallelProcessing
-  - cd toofz.NecroDancer.WebClient
+  - cd %PROJECT%
   - npm install
   - npm run build
   - cd ..
 
 test_script:
-  - cd toofz.NecroDancer.WebClient
-  - npm run test-appveyor
-  - cd ..
+  - ps: |
+      cd $env:PROJECT
+
+      if (Test-Path Env:\APPVEYOR_PULL_REQUEST_NUMBER) {
+        $msg = 'The environment variable "COVERALLS_REPO_TOKEN" is a secure environment variable. ' + `
+               'Secure environment variables are not available during pull request builds. ' + `
+               'Code coverage results have not been uploaded.'
+        Write-Output $msg
+      } elseif (!(Test-Path Env:\COVERALLS_REPO_TOKEN)) {
+        $msg = 'The environment variable "COVERALLS_REPO_TOKEN" is not set. ' + `
+               'Code coverage results have not been uploaded.'
+        Write-Warning $msg
+      } else {
+          $env:PATH = $env:PATH + ';' + (Resolve-Path ./node_modules/.bin).Path
+          npm run build
+          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+          electron-mocha --opts tests/mocha-appveyor.opts
+          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+          remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json
+          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+          istanbul report --report lcovonly
+          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+          Get-Content ./coverage/lcov.info | coveralls
+          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+
+          Write-Output 'Code coverage results have been uploaded.'
+      }
+
+      cd..

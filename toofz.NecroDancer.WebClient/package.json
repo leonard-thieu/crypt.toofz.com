@@ -8,7 +8,6 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "test": "npm run build && electron-mocha --opts tests/mocha.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json",
-    "test-appveyor": "npm run build && electron-mocha --opts tests/mocha-appveyor.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json",
     "report": "istanbul report && node tests/open-coverage.js"
   },
   "browserify-shim": {
@@ -73,6 +72,7 @@
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
     "chai-interface": "2.0.3",
+    "coveralls": "2.13.1",
     "del": "^2.2.2",
     "electron": "1.6.7",
     "electron-mocha": "^4.0.0",
