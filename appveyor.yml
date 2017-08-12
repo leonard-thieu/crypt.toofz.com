@@ -35,6 +35,19 @@ before_build:
   - cd ..
 
 test_script:
-  - cd %PROJECT%
-  - npm run test-appveyor
-  - cd ..
+  - ps: |
+      cd $env:PROJECT
+
+      $env:PATH = $env:PATH + ';' + (Resolve-Path ./node_modules/.bin).Path
+      npm run build
+      if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+      electron-mocha --opts tests/mocha-appveyor.opts
+      if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+      remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json
+      if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+      istanbul report --report lcovonly
+      if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+      Get-Content ./coverage/lcov.info | coveralls
+      if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
+
+      cd..
