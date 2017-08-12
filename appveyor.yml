@@ -3,8 +3,14 @@ image: Visual Studio 2017
 
 configuration:
   - Release
+environment:
+  PROJECT: toofz.NecroDancer.WebClient
+  COVERALLS_REPO_TOKEN:
+    secure: RgfMtQ0AdNtC/Jr6cnC/8OZJBfj8VrRXa7yxcHdRrm0Gkch+6q2lUVXDUbz0BxTH
+  COVERALLS_SERVICE_NAME: appveyor
+  COVERALLS_SERVICE_JOB_ID: %APPVEYOR_JOB_ID%
 build:
-  project: toofz.NecroDancer.WebClient.sln
+  project: $(PROJECT).sln
   publish_wap: true
   verbosity: minimal
 cache:
@@ -20,14 +26,15 @@ install:
   - npm install --global npm
   - node --version
   - npm --version
+
 before_build:
   - appveyor-retry nuget restore -DisableParallelProcessing
-  - cd toofz.NecroDancer.WebClient
+  - cd %PROJECT%
   - npm install
   - npm run build
   - cd ..
 
 test_script:
-  - cd toofz.NecroDancer.WebClient
+  - cd %PROJECT%
   - npm run test-appveyor
   - cd ..
