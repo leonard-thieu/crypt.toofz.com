@@ -1,25 +1,14 @@
 {
-  "name": "toofz-necrodancer-webclient",
-  "description": "description",
-  "repository": "repository",
-  "license": "UNLICENSED",
-  "version": "1.0.0",
+  "name": "@toofz/necrodancer-webclient",
+  "version": "2.0.0",
+  "description": "toofz web site content.",
+  "license": "MIT",
+  "repository": "https://github.com/leonard-thieu/toofz-necrodancer-webclient",
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
     "test": "npm run build && electron-mocha --opts tests/mocha.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json",
     "report": "istanbul report && node tests/open-coverage.js"
-  },
-  "browserify-shim": {
-    "angular": "global:angular",
-    "lodash": "global:_",
-    "moment": "global:moment",
-    "urijs": "global:URI"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
   },
   "dependencies": {
     "tslib": "1.7.1"
@@ -107,5 +96,17 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
+  },
+  "private": true,
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "angular": "global:angular",
+    "lodash": "global:_",
+    "moment": "global:moment",
+    "urijs": "global:URI"
   }
 }
