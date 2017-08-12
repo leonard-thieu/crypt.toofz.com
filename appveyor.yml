@@ -9,13 +9,9 @@ environment:
     secure: RgfMtQ0AdNtC/Jr6cnC/8OZJBfj8VrRXa7yxcHdRrm0Gkch+6q2lUVXDUbz0BxTH
   COVERALLS_SERVICE_NAME: appveyor
   COVERALLS_SERVICE_JOB_ID: '%APPVEYOR_JOB_ID%'
-build:
-  project: $(PROJECT).sln
-  publish_wap: true
-  verbosity: minimal
 cache:
   - packages -> **\packages.config
-  - '%APPDATA%\npm-cache'
+  - $(PROJECT)\node_modules -> $(PROJECT)\package.json
 notifications:
   - provider: Slack
     incoming_webhook:
@@ -33,6 +29,10 @@ before_build:
   - npm install
   - npm run build
   - cd ..
+build:
+  project: $(PROJECT).sln
+  publish_wap: true
+  verbosity: minimal
 
 test_script:
   - ps: |
@@ -49,8 +49,6 @@ test_script:
         Write-Warning $msg
       } else {
           $env:PATH = $env:PATH + ';' + (Resolve-Path ./node_modules/.bin).Path
-          npm run build
-          if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
           electron-mocha --opts tests/mocha-appveyor.opts
           if ($LASTEXITCODE -ne 0) { throw "Execution failed with exit code $LASTEXITCODE" }
           remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json
