@@ -64,3 +64,9 @@ test_script:
       }
 
       cd..
+
+deploy:
+  - provider: Environment
+    name: production
+    on:
+      appveyor_repo_tag: true

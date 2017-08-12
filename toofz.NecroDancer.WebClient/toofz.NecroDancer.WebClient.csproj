@@ -76,21 +76,20 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\areas.json" />
+    <None Include="data\areas.json" />
     <Content Include="data\areas.min.json">
       <DependentUpon>areas.json</DependentUpon>
     </Content>
-    <Content Include="data\leaderboard-categories.json" />
+    <None Include="data\leaderboard-categories.json" />
     <Content Include="data\leaderboard-categories.min.json">
       <DependentUpon>leaderboard-categories.json</DependentUpon>
     </Content>
-    <Content Include="data\leaderboard-headers.json" />
+    <None Include="data\leaderboard-headers.json" />
     <Content Include="data\leaderboard-headers.min.json">
       <DependentUpon>leaderboard-headers.json</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\crypt.toofz.com - Web Deploy.pubxml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -100,6 +99,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -198,7 +198,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\bootstrap\bootstrap.js" />
+    <None Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
@@ -230,36 +230,30 @@
     <Content Include="images\cadence.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\site.css">
-      <DependentUpon>site.scss</DependentUpon>
-    </Content>
-    <Content Include="css\site.css.map">
-      <DependentUpon>site.scss</DependentUpon>
-    </Content>
+    <None Include="css\_bootstrap-custom.scss" />
+    <None Include="css\_variables.scss" />
+    <None Include="css\currency.scss" />
+    <None Include="css\navmenu.scss" />
+    <None Include="css\player.scss" />
+    <None Include="css\site.scss" />
     <Content Include="css\site.min.css">
       <DependentUpon>site.scss</DependentUpon>
     </Content>
-    <Content Include="css\currency.scss" />
-    <Content Include="css\navmenu.scss" />
-    <Content Include="css\player.scss" />
-    <Content Include="css\site.scss" />
-    <Content Include="css\_bootstrap-custom.scss" />
-    <Content Include="css\_variables.scss" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="gulpfile.ts" />
-    <Content Include="tests\mocha.opts" />
-    <Content Include="tests\**\*.json" />
     <TypeScriptCompile Include="tests\**\*.ts" />
+    <None Include="tests\**\*.json" />
     <TypeScriptCompile Include="typings\**\*.d.ts" />
+    <None Include="tests\mocha.opts" />
+    <None Include="gulpfile.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\**\*.html" />
     <TypeScriptCompile Include="src\**\*.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tsconfig.json" />
-    <Content Include="package.json" />
+    <None Include="tsconfig.json" />
+    <None Include="package.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
