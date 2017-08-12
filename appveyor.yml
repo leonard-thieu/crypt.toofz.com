@@ -9,10 +9,6 @@ environment:
     secure: RgfMtQ0AdNtC/Jr6cnC/8OZJBfj8VrRXa7yxcHdRrm0Gkch+6q2lUVXDUbz0BxTH
   COVERALLS_SERVICE_NAME: appveyor
   COVERALLS_SERVICE_JOB_ID: '%APPVEYOR_JOB_ID%'
-build:
-  project: $(PROJECT).sln
-  publish_wap: true
-  verbosity: minimal
 cache:
   - packages -> **\packages.config
 notifications:
@@ -28,6 +24,11 @@ install:
 
 before_build:
   - appveyor-retry nuget restore -DisableParallelProcessing
+build:
+  project: $(PROJECT).sln
+  publish_wap: true
+  verbosity: minimal
+after_build:
   - cd %PROJECT%
   - npm install
   - npm run build
