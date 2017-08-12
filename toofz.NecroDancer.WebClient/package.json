@@ -8,7 +8,7 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "test": "npm run build && electron-mocha --opts tests/mocha.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json",
-    "test-appveyor": "npm run build && electron-mocha --opts tests/mocha-appveyor.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json && istanbul report --report lcovonly",
+    "test-appveyor": "npm run build && electron-mocha --opts tests/mocha-appveyor.opts && remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/coverage-final.json && istanbul report --report lcovonly | coveralls",
     "report": "istanbul report && node tests/open-coverage.js"
   },
   "browserify-shim": {
