@@ -25,15 +25,14 @@ install:
 
 before_build:
   - appveyor-retry nuget restore -DisableParallelProcessing
-build:
-  project: $(PROJECT).sln
-  publish_wap: true
-  verbosity: minimal
-after_build:
   - cd %PROJECT%
   - npm install
   - npm run build
   - cd ..
+build:
+  project: $(PROJECT).sln
+  publish_wap: true
+  verbosity: minimal
 
 test_script:
   - ps: |
