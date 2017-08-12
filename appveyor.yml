@@ -11,6 +11,7 @@ environment:
   COVERALLS_SERVICE_JOB_ID: '%APPVEYOR_JOB_ID%'
 cache:
   - packages -> **\packages.config
+  - $(PROJECT)\node_modules -> $(PROJECT)\package.json
 notifications:
   - provider: Slack
     incoming_webhook:
