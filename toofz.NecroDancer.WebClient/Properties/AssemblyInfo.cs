@@ -5,4 +5,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("toofz.NecroDancer.WebClient")]
 [assembly: ComVisible(false)]
 [assembly: Guid("9445f4fa-18d2-4daf-93f8-8e9967f90a51")]
-[assembly: AssemblyVersion("2.1.1.0")]
+[assembly: AssemblyVersion("2.1.2.0")]
