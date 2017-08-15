@@ -1,7 +1,11 @@
 import * as angular from 'angular';
 
+declare const apiBaseUrl: string;
+declare const isDevelopment: boolean;
+
 angular
     .module('necrodancer.app')
+    .constant('apiBaseUrl', apiBaseUrl)
     .config((cfpLoadingBarProvider: angular.loadingBar.ILoadingBarProvider) => {
         'ngInject';
         cfpLoadingBarProvider.latencyThreshold = 0;
@@ -20,3 +24,14 @@ angular
             });
         });
     });
+
+if (!isDevelopment) {
+    angular
+        .module('necrodancer.app')
+        .config(($compileProvider: angular.ICompileProvider) => {
+            'ngInject';
+            $compileProvider.debugInfoEnabled(false);
+            $compileProvider.commentDirectivesEnabled(false);
+            $compileProvider.cssClassDirectivesEnabled(false);
+        });
+}

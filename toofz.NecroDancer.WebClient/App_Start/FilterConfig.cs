@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using toofz.NecroDancer.WebClient.ErrorHandler;
 
 namespace toofz.NecroDancer.WebClient
 {
@@ -6,7 +7,7 @@ namespace toofz.NecroDancer.WebClient
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new AiHandleErrorAttribute());
         }
     }
 }

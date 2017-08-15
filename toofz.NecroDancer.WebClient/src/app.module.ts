@@ -64,4 +64,3 @@ angular
 
 import './app.routes';
 import './app.config';
-import './app.config.production';
