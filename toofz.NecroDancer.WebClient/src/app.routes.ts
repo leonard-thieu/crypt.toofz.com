@@ -28,6 +28,10 @@ angular
                 areas: (toofzSiteApi: ToofzSiteApi) => {
                     'ngInject';
                     return toofzSiteApi.getAreas();
+                },
+                version: (version: string) => {
+                    'ngInject';
+                    return version;
                 }
             }
         };

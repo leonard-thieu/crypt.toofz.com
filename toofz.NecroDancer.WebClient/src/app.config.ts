@@ -3,11 +3,13 @@ import * as angular from 'angular';
 declare const options: {
     apiBaseUrl: string;
     isDevelopment: boolean;
+    version: string;
 };
 
-const opts = {
+const opts: typeof options = {
     apiBaseUrl: 'http://localhost/',
     isDevelopment: true,
+    version: '0.0.0.0'
 };
 if (typeof options !== 'undefined') {
     $.extend(opts, options);
@@ -20,6 +22,7 @@ if (opts.apiBaseUrl.endsWith('/')) {
 angular
     .module('necrodancer.app')
     .constant('apiBaseUrl', opts.apiBaseUrl)
+    .constant('version', opts.version)
     .config((cfpLoadingBarProvider: angular.loadingBar.ILoadingBarProvider) => {
         'ngInject';
         cfpLoadingBarProvider.latencyThreshold = 0;
