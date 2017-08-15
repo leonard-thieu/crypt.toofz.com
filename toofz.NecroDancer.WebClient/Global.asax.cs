@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -30,6 +31,8 @@ namespace toofz.NecroDancer.WebClient
                 }
             }
         }
+
+        public static string Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         protected void Application_Start()
         {
