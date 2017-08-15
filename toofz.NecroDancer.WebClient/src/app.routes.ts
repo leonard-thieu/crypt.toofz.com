@@ -23,7 +23,7 @@ angular
             abstract: true,
             name: 'root',
             url: '',
-            templateUrl: '../root.html',
+            templateUrl: '../root.html?v=1',
             resolve: {
                 areas: (toofzSiteApi: ToofzSiteApi) => {
                     'ngInject';
