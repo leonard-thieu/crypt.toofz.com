@@ -2,6 +2,6 @@
 --require-main tests/crash
 --require tests/coverage
 --require tests/preload
---reporter mocha-multi-reporters
---reporter-options configFile=tests/config.json
+--reporter mocha-multi
+--reporter-options spec=-,mocha-appveyor-reporter=-
 tests/src/**/*.js
