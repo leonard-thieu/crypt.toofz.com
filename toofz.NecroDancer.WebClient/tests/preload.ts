@@ -14,6 +14,3 @@ g.should = chai.should();
 chai.use(chaiAsPromised);
 chai.use(chaiInterface);
 chai.use(sinonChai);
-
-g.apiBaseUrl = process.env.toofzApiBaseAddress;
-g.isDevelopment = true;
