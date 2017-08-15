@@ -19,7 +19,7 @@ if (opts.apiBaseUrl.endsWith('/')) {
 
 angular
     .module('necrodancer.app')
-    .constant('apiBaseUrl', opts.apiBaseUrl)
+    .constant('apiBaseUrl', undefined)
     .config((cfpLoadingBarProvider: angular.loadingBar.ILoadingBarProvider) => {
         'ngInject';
         cfpLoadingBarProvider.latencyThreshold = 0;
