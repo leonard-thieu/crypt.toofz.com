@@ -1,4 +1,4 @@
-cd $env:PROJECT
+Push-Location $env:PROJECT
 
 if (Test-Path Env:\APPVEYOR_PULL_REQUEST_NUMBER) {
     $msg = 'The environment variable "COVERALLS_REPO_TOKEN" is a secure environment variable. ' + `
@@ -17,4 +17,4 @@ if (Test-Path Env:\APPVEYOR_PULL_REQUEST_NUMBER) {
     Write-Output 'Code coverage results have been submitted.'
 }
 
-cd ..
+Pop-Location
