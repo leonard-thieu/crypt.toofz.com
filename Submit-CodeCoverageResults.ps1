@@ -10,8 +10,8 @@ if (Test-Path Env:\APPVEYOR_PULL_REQUEST_NUMBER) {
            'Code coverage results have not been submitted.'
     Write-Warning $msg
 } else {
-    $env:PATH = $env:PATH + ';' + (Resolve-Path ./node_modules/.bin).Path
-    Get-Content ./coverage/lcov.info | coveralls
+    $env:PATH += $env:PATH + ';' + (Resolve-Path .\node_modules\.bin).Path
+    Get-Content .\coverage\lcov.info | coveralls
     if ($LASTEXITCODE -ne 0) { $Host.SetShouldExit($LASTEXITCODE) }
 
     Write-Output 'Code coverage results have been submitted.'
