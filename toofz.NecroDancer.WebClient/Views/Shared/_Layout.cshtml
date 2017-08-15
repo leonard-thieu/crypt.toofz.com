@@ -38,8 +38,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" integrity="sha256-8E6QUcFg1KTnpEU8TFGhpTGHw5fJqB9vCms3OhAYLqw=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.10/URI.min.js" integrity="sha256-OSWfaJ3kpLQv6ZzoiITKLVJczKgsDH2Z56uPkAvSQZY=" crossorigin="anonymous"></script>
     <script>
-        const apiBaseUrl = '@MvcApplication.ApiBaseUrl';
-        const isDevelopment = @Request.IsLocal.ToString().ToLower();
+        const options = {
+            apiBaseUrl: '@MvcApplication.ApiBaseUrl',
+            isDevelopment: @Request.IsLocal.ToString().ToLower(),
+        };
     </script>
     <script src="site.min.js?v=16"></script>
 </body>

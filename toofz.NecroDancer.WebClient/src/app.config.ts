@@ -1,11 +1,25 @@
 import * as angular from 'angular';
 
-declare const apiBaseUrl: string;
-declare const isDevelopment: boolean;
+declare const options: {
+    apiBaseUrl: string;
+    isDevelopment: boolean;
+};
+
+const opts = {
+    apiBaseUrl: 'http://localhost/',
+    isDevelopment: true,
+};
+if (typeof options !== 'undefined') {
+    $.extend(opts, options);
+}
+
+if (opts.apiBaseUrl.endsWith('/')) {
+    opts.apiBaseUrl = opts.apiBaseUrl.slice(0, -1);
+}
 
 angular
     .module('necrodancer.app')
-    .constant('apiBaseUrl', apiBaseUrl)
+    .constant('apiBaseUrl', opts.apiBaseUrl)
     .config((cfpLoadingBarProvider: angular.loadingBar.ILoadingBarProvider) => {
         'ngInject';
         cfpLoadingBarProvider.latencyThreshold = 0;
@@ -25,7 +39,7 @@ angular
         });
     });
 
-if (!isDevelopment) {
+if (!opts.isDevelopment) {
     angular
         .module('necrodancer.app')
         .config(($compileProvider: angular.ICompileProvider) => {
