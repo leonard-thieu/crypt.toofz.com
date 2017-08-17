@@ -64,16 +64,26 @@ td {
     margin-top: -4px;
 }
 
-.fa-twitter {
+.fa-twitter,
+.fa-github {
+    margin-right: 0.5em;
+
     &:hover,
     &:focus {
         text-decoration: none !important;
+    }
+
+    &:before {
+        font-size: 22px;
     }
 }
 
 .fa-twitter:before {
     color: #41c8f5;
-    font-size: 22px;
+}
+
+.fa-github:before {
+    color: #dbd6d1;
 }
 
 .well .well {
