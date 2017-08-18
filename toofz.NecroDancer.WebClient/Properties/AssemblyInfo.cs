@@ -1,8 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("toofz.NecroDancer.WebClient")]
-[assembly: AssemblyProduct("toofz.NecroDancer.WebClient")]
-[assembly: ComVisible(false)]
-[assembly: Guid("9445f4fa-18d2-4daf-93f8-8e9967f90a51")]
 [assembly: AssemblyVersion("2.1.4.0")]
+
+[assembly: AssemblyCopyright("Copyright © Leonard Thieu 2017")]
+[assembly: AssemblyProduct("toofz")]
+
+[assembly: AssemblyTitle("toofz")]
+
+[assembly: ComVisible(false)]
