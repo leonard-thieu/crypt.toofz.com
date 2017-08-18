@@ -5,10 +5,6 @@ configuration:
   - Release
 environment:
   PROJECT: toofz.NecroDancer.WebClient
-  COVERALLS_REPO_TOKEN:
-    secure: RgfMtQ0AdNtC/Jr6cnC/8OZJBfj8VrRXa7yxcHdRrm0Gkch+6q2lUVXDUbz0BxTH
-  COVERALLS_SERVICE_NAME: appveyor
-  COVERALLS_SERVICE_JOB_ID: '%APPVEYOR_JOB_ID%'
 cache:
   - packages -> **\packages.config
   - $(PROJECT)\node_modules -> $(PROJECT)\package.json
@@ -23,7 +19,7 @@ assembly_info:
 
 install:
   - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 8)
-  - npm install --global npm
+  - npm install --global npm codecov
   - node --version
   - npm --version
 
@@ -41,7 +37,7 @@ build:
 test_script:
   - ps: .\Test-Project.ps1
 after_test:
-  - ps: .\Submit-CodeCoverageResults.ps1
+  - codecov --file "%PROJECT%\coverage\lcov.info"
 
 deploy:
   - provider: Environment
