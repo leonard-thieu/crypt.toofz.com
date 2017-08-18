@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "toofz.NecroDancer.WebClient", "toofz.NecroDancer.WebClient\toofz.NecroDancer.WebClient.csproj", "{7DFA54E9-2CE4-43E7-9646-E2B89FB13DE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{012EDF12-7873-4118-8D6C-E6C5BFF07DAB}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		codecov.yml = codecov.yml
 		NuGet.Config = NuGet.Config
 		README.md = README.md
 		Test-Project.ps1 = Test-Project.ps1
@@ -26,5 +27,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DDBF60B-6C58-4A5A-BC53-432032B44D99}
 	EndGlobalSection
 EndGlobal
