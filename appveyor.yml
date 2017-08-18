@@ -37,7 +37,7 @@ build:
 test_script:
   - ps: .\Test-Project.ps1
 after_test:
-  - codecov --file "%PROJECT%\coverage\lcov.info"
+  - codecov --file="%PROJECT%\coverage\lcov.info"
 
 deploy:
   - provider: Environment
