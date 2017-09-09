@@ -20,7 +20,7 @@ assembly_info:
 
 install:
   - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 8)
-  - npm install --global npm codecov
+  - npm install --global npm@5.3.0 codecov
   - node --version
   - npm --version
 
