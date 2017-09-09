@@ -1,0 +1,10 @@
+coverage:
+  notify:
+    slack:
+      default:
+        url: secret:1gpdrIvVhPxYsS96jNcNB8C/0hDKbclm+O6NZQfcDTceNA18D7XaOYl8sq5zA4gdT/hiiSRiK1+jLV6GsOS/9mIrHm1bCA4yqo3wx5vs69IY6UYd983klmP28ZG4MHAjzX0zYm2hz4zzhMkZzKlGLL5J0QZ9hKbPUFSvADPZJOA=
+        threshold: 1%
+        only_pulls: false
+        branches: null
+        flags: null
+        paths: null
