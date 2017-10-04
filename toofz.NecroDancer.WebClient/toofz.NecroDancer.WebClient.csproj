@@ -31,6 +31,7 @@
     <TargetFrameworkProfile />
     <ApplicationInsightsResourceId>/subscriptions/c9ac3656-5d47-43ae-89ce-777d29f47fe4/resourcegroups/toofz-development/providers/microsoft.insights/components/toofz-development</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/c9ac3656-5d47-43ae-89ce-777d29f47fe4/resourcegroups/toofz-development/providers/microsoft.insights/components/toofz-development</ApplicationInsightsAnnotationResourceId>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -169,10 +170,6 @@
     <None Include="data\leaderboard-categories.json" />
     <Content Include="data\leaderboard-categories.min.json">
       <DependentUpon>leaderboard-categories.json</DependentUpon>
-    </Content>
-    <None Include="data\leaderboard-headers.json" />
-    <Content Include="data\leaderboard-headers.min.json">
-      <DependentUpon>leaderboard-headers.json</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
