@@ -24,31 +24,31 @@ export class ToofzRestApi {
     getItems(params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items`, {
             params: params
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getItemsByCategory(category: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items/${category}`, {
             params: params
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getItemsBySubcategory(category: string, subcategory: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items/${category}/${subcategory}`, {
             params: params
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getEnemies(params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Enemies>(`${this.apiBaseUrl}/enemies`, {
             params: params
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getEnemiesByAttribute(attribute: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Enemies>(`${this.apiBaseUrl}/enemies/${attribute}`, {
             params: params
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getLeaderboards(params?: toofz.GetLeaderboardsParams) {
@@ -56,16 +56,16 @@ export class ToofzRestApi {
             params: params
         }).then(response => {
             const { headers, data } = response;
-            const diff = ToofzRestApi.getTimeDifference(headers!('Date'));
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
-            for (const leaderboard of data!.leaderboards) {
+            for (const leaderboard of data.leaderboards) {
                 const updated_at = moment(leaderboard.updated_at);
                 updated_at.add(diff);
                 leaderboard.updated_at = updated_at.toISOString();
             }
 
             return response;
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getLeaderboardEntries(id: number, params?: toofz.PaginationParams) {
@@ -73,16 +73,16 @@ export class ToofzRestApi {
             params: params
         }).then(response => {
             const { headers, data } = response;
-            const diff = ToofzRestApi.getTimeDifference(headers!('Date'));
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
-            const leaderboard = data!.leaderboard;
+            const leaderboard = data.leaderboard;
             const updated_at = moment(leaderboard.updated_at);
             updated_at.add(diff);
             leaderboard.updated_at = updated_at.toISOString();
 
             return response;
         }).then(response => {
-            const data = response.data!;
+            const data = response.data;
             const leaderboard = data.leaderboard;
 
             if (leaderboard.product === 'amplified' &&
@@ -111,7 +111,7 @@ export class ToofzRestApi {
             }
 
             return response;
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getDailyLeaderboards(params?: toofz.GetDailyLeaderboardsParams) {
@@ -119,16 +119,16 @@ export class ToofzRestApi {
             params: params
         }).then(response => {
             const { headers, data } = response;
-            const diff = ToofzRestApi.getTimeDifference(headers!('Date'));
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
-            for (const leaderboard of data!.leaderboards) {
+            for (const leaderboard of data.leaderboards) {
                 const updated_at = moment(leaderboard.updated_at);
                 updated_at.add(diff);
                 leaderboard.updated_at = updated_at.toISOString();
             }
 
             return response;
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getDailyLeaderboardEntries(id: number, params?: toofz.PaginationParams) {
@@ -136,15 +136,15 @@ export class ToofzRestApi {
             params: params
         }).then(response => {
             const { headers, data } = response;
-            const diff = ToofzRestApi.getTimeDifference(headers!('Date'));
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
-            const leaderboard = data!.leaderboard;
+            const leaderboard = data.leaderboard;
             const updated_at = moment(leaderboard.updated_at);
             updated_at.add(diff);
             leaderboard.updated_at = updated_at.toISOString();
 
             return response;
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getPlayers(query: string, params?: toofz.PaginationParams) {
@@ -153,20 +153,20 @@ export class ToofzRestApi {
                 q: query,
                 ...params
             }
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getPlayerEntries(id: string) {
         return this.$http.get<toofz.PlayerEntries>(`${this.apiBaseUrl}/players/${id}/entries`).then(response => {
             const { headers, data } = response;
-            const diff = ToofzRestApi.getTimeDifference(headers!('Date'));
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
-            const player = data!.player;
+            const player = data.player;
             const updated_at = moment(player.updated_at!);
             updated_at.add(diff);
             player.updated_at = updated_at.toISOString();
 
-            for (const entry of data!.entries) {
+            for (const entry of data.entries) {
                 const updated_at = moment(entry.leaderboard!.updated_at);
                 updated_at.add(diff);
                 entry.leaderboard!.updated_at = updated_at.toISOString();
@@ -174,7 +174,7 @@ export class ToofzRestApi {
 
             return response;
         }).then(response => {
-            const data = response.data!;
+            const data = response.data;
 
             for (const entry of data.entries) {
                 const leaderboard = entry.leaderboard!;
@@ -203,11 +203,11 @@ export class ToofzRestApi {
             }
 
             return response;
-        }).then(response => response.data!);
+        }).then(response => response.data);
     }
 
     getPlayerLeaderboardEntry(steamId: string, lbid: number) {
         return this.$http.get<toofz.Entry>(`${this.apiBaseUrl}/players/${steamId}/entries/${lbid}`)
-            .then(response => response.data!);
+            .then(response => response.data);
     }
 }

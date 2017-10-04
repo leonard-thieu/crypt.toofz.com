@@ -50,16 +50,17 @@ angular
     ])
     .config(($httpProvider: angular.IHttpProvider) => {
         'ngInject';
-        $httpProvider.interceptors.push(($log: angular.ILogService): angular.IHttpInterceptor => {
+        const loggingInterceptor = ($log: angular.ILogService) => {
             'ngInject';
             return {
                 // TODO: Should display error to user
                 // TODO: Consider retry logic
-                requestError: (rejection) => {
+                requestError: (rejection: any) => {
                     $log.error(rejection);
                 }
             };
-        });
+        };
+        $httpProvider.interceptors.push(loggingInterceptor as any);
     });
 
 import './app.routes';

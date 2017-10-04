@@ -8,18 +8,18 @@ export class ToofzSiteApi {
     getAreas() {
         return this.$http.get<toofzSite.Areas>('/data/areas.min.json?v=4', {
             cache: true
-        }).then(response => response.data!.areas);
+        }).then(response => response.data.areas);
     }
 
     getLeaderboardCategories() {
         return this.$http.get<toofzSite.Leaderboard.CategoriesResponse>('/data/leaderboard-categories.min.json?v=3', {
             cache: true
-        }).then(response => response.data!.categories);
+        }).then(response => response.data.categories);
     }
 
     getLeaderboardHeaders() {
         return this.$http.get<toofzSite.Leaderboard.Headers>('/data/leaderboard-headers.min.json?v=3', {
             cache: true
-        }).then(response => response.data!.leaderboards);
+        }).then(response => response.data.leaderboards);
     }
 }

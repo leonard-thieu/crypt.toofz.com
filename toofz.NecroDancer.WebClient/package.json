@@ -14,7 +14,7 @@
     "tslib": "1.7.1"
   },
   "devDependencies": {
-    "@types/angular": "1.6.28",
+    "@types/angular": "1.6.32",
     "@types/angular-loading-bar": "0.0.32",
     "@types/angular-mocks": "1.5.10",
     "@types/angular-ui-router": "1.1.37",
