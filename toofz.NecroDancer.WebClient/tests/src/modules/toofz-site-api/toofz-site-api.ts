@@ -50,13 +50,4 @@ describe('ToofzSiteApi', function () {
             $httpBackend.flush();
         });
     });
-
-    describe('getLeaderboardHeaders', function () {
-        it(`should return successfully`, function () {
-            toofzSiteApi.getLeaderboardHeaders().then(leaderboards => {
-                leaderboards.should.exist;
-            });
-            $httpBackend.flush();
-        });
-    });
 });

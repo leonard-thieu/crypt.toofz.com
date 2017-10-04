@@ -41,19 +41,15 @@ declare namespace toofz {
         version: number | null;
     }
 
-    interface End {
-        zone: number;
-        level: number;
-    }
-
     interface Leaderboard {
         id: number;
+        updated_at: string;
+        display_name: string;
+        production: boolean;
         product: Products;
         mode: Modes;
         run: Runs;
         character: Characters;
-        display_name: string;
-        updated_at: string;
         total: number;
     }
 
@@ -68,12 +64,24 @@ declare namespace toofz {
         entries: Entry[];
     }
 
+    interface DailyEntry {
+        leaderboard?: DailyLeaderboard;
+        player?: Player;
+        rank: number;
+        score: number;
+        end: End;
+        killed_by: string | null;
+        version: number | null;
+    }
+
     interface DailyLeaderboard {
         id: number;
-        date: string;
         updated_at: string;
-        product: Products;
+        display_name: string;
         production: boolean;
+        product: Products;
+        date: string;
+        total: number;
     }
 
     interface DailyLeaderboards {
@@ -84,7 +92,12 @@ declare namespace toofz {
     interface DailyLeaderboardEntries {
         leaderboard: DailyLeaderboard;
         total: number;
-        entries: Entry[];
+        entries: DailyEntry[];
+    }
+
+    interface End {
+        zone: number;
+        level: number;
     }
 
     interface Player {

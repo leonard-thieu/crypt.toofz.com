@@ -308,52 +308,32 @@ describe('necrodancer (Routes)', function () {
         });
 
         describe('resolve', function () {
-            describe('headers', function () {
-                let toofzSiteApi_getLeaderboardHeaders: sinon.SinonStub;
+            const leaderboard = {
+                id: 1,
+                product: 'amplified',
+                mode: 'standard',
+                run: 'speed',
+                character: 'cadence',
+            };
+
+            describe('leaderboard', function () {
+                let toofzRestApi_getLeaderboards: sinon.SinonStub;
 
                 beforeEach(function () {
-                    toofzSiteApi_getLeaderboardHeaders = sinon.stub(toofzSiteApi, 'getLeaderboardHeaders');
-                });
-
-                it(`should resolve data`, function () {
-                    toofzSiteApi_getLeaderboardHeaders.returns(Promise.resolve({
-                        data: {}
-                    }));
-
-                    return resolve('headers').forState(state).should.be.fulfilled;
-                });
-            });
-
-            describe('categories', function () {
-                let toofzSiteApi_getLeaderboardCategories: sinon.SinonStub;
-
-                beforeEach(function () {
-                    toofzSiteApi_getLeaderboardCategories = sinon.stub(toofzSiteApi, 'getLeaderboardCategories');
-                });
-
-                it(`should resolve data`, function () {
-                    toofzSiteApi_getLeaderboardCategories.returns(Promise.resolve({
-                        data: {}
-                    }));
-
-                    return resolve('categories').forState(state).should.be.fulfilled;
-                });
-            });
-
-            describe('header', function () {
-                it(`should resolve data`, function () {
+                    toofzRestApi_getLeaderboards = sinon.stub(toofzRestApi, 'getLeaderboards');
                     $stateParams.product = 'amplified';
-                    $stateParams.character = 'cadence';
                     $stateParams.mode = 'standard';
                     $stateParams.run = 'speed';
+                    $stateParams.character = 'cadence';
+                });
 
-                    const headers = toofzSite_definitions.find((value: BackendDefinition) => value.description === 'getLeaderboardHeaders');
-                    const categories = toofzSite_definitions.find((value: BackendDefinition) => value.description === 'getLeaderboardCategories');
+                it(`should resolve data`, function () {
+                    toofzRestApi_getLeaderboards.returns(Promise.resolve({
+                        total: 1,
+                        leaderboards: [leaderboard]
+                    }));
 
-                    resolve('header').forState(state, {
-                        headers: headers.response.data.leaderboards,
-                        categories: categories.response.data.categories
-                    }).should.be.an('object');
+                    return resolve('leaderboard').forState(state).should.be.fulfilled;
                 });
             });
 
@@ -365,35 +345,31 @@ describe('necrodancer (Routes)', function () {
                 });
 
                 it(`should return undefined if 'id' doesn't exist`, function () {
-                    const header = {};
-
-                    const player = resolve('player').forState(state, { header: header });
+                    const player = resolve('player').forState(state, { leaderboard: leaderboard });
 
                     should.not.exist(player);
                 });
 
                 it(`should return an 'Entry' object if 'id' exists`, function () {
                     $stateParams.id = '76561197960481221';
-                    const header = { id: 1694062 };
                     toofzRestApi_getPlayerLeaderboardEntry.returns(Promise.resolve({}));
 
-                    const player = resolve('player').forState(state, { header: header });
+                    const player = resolve('player').forState(state, { leaderboard: leaderboard });
 
                     return player.should.be.fulfilled;
                 });
 
                 it(`should return undefined if an entry for the player could not be found`, function () {
                     $stateParams.id = '76561197960481221';
-                    const header = { id: 1694062 };
                     toofzRestApi_getPlayerLeaderboardEntry.returns(Promise.reject({}));
 
-                    const player = resolve('player').forState(state, { header: header });
+                    const player = resolve('player').forState(state, { leaderboard: leaderboard });
 
                     return player.should.eventually.not.exist;
                 });
             });
 
-            describe('leaderboard', function () {
+            describe('entries', function () {
                 let toofzRestApi_getLeaderboardEntries: sinon.SinonStub;
 
                 beforeEach(function () {
@@ -401,12 +377,11 @@ describe('necrodancer (Routes)', function () {
                 });
 
                 it(`should resolve data`, function () {
-                    const header = {};
                     const player = undefined;
                     toofzRestApi_getLeaderboardEntries.returns(Promise.resolve({}));
 
-                    return resolve('leaderboard').forState(state, {
-                        header: header,
+                    return resolve('entries').forState(state, {
+                        leaderboard: leaderboard,
                         player: player
                     }).should.eventually.be.fulfilled;
                 });

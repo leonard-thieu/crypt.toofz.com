@@ -2,9 +2,11 @@ import * as _ from 'lodash';
 import * as util from './util';
 
 import * as angular from 'angular';
-import * as moment from 'moment';
 
-import { IState, IStateParamsService } from 'angular-ui-router';
+import {
+    IState,
+    IStateParamsService
+} from 'angular-ui-router';
 import { ToofzRestApi } from './modules/toofz-rest-api/toofz-rest-api';
 import { ToofzSiteApi } from './modules/toofz-site-api/toofz-site-api';
 
@@ -94,8 +96,6 @@ angular
                         case 'phasing':
                             attribute = 'ignore-walls';
                             break;
-                        default:
-                            break;
                     }
 
                     const params = {
@@ -167,47 +167,25 @@ angular
         const leaderboardState: IState = {
             name: 'root.leaderboard',
             url: `/leaderboards/{product:${products}}/{character:${characters}}/{run:${runs}}/{mode:${modes}}?{page:int}&{id}`,
-            template: '<nd-leaderboard data="::$resolve.leaderboard" player-entry="::$resolve.player"></nd-leaderboard>',
+            template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
             params: {
                 product: 'classic',
                 mode: 'standard'
             },
             resolve: {
-                headers: (toofzSiteApi: ToofzSiteApi) => {
+                leaderboard: ($stateParams: IStateParamsService,
+                              toofzRestApi: ToofzRestApi) => {
                     'ngInject';
-                    return toofzSiteApi.getLeaderboardHeaders();
-                },
-                categories: (toofzSiteApi: ToofzSiteApi) => {
-                    'ngInject';
-                    return toofzSiteApi.getLeaderboardCategories();
-                },
-                header: ($stateParams: IStateParamsService,
-                         headers: toofzSite.Leaderboard.Header[],
-                         categories: toofzSite.Leaderboard.Categories) => {
-                    'ngInject';
-                    let { product, character, mode, run } = $stateParams;
+                    let { product, mode, run, character } = $stateParams;
 
                     product = product.toLowerCase();
-                    character = character.toLowerCase();
                     mode = mode.toLowerCase();
                     run = run.toLowerCase();
-
-                    switch (character) {
-                        case 'all':
-                            character = 'all-characters';
-                            break;
-                        case 'story':
-                            character = 'story-mode';
-                            break;
-                        default:
-                            break;
-                    }
+                    character = character.toLowerCase();
 
                     switch (mode) {
                         case 'hard-mode':
                             mode = 'hard';
-                            break;
-                        default:
                             break;
                     }
 
@@ -218,27 +196,35 @@ angular
                         case 'seededspeed':
                             run = 'seeded-speed';
                             break;
-                        default:
+                    }
+
+                    switch (character) {
+                        case 'all':
+                            character = 'all-characters';
+                            break;
+                        case 'story':
+                            character = 'story-mode';
                             break;
                     }
 
-                    const leaderboard = _.find(headers, (value) => {
-                        return product === value.product &&
-                            mode === value.mode &&
-                            character === value.character &&
-                            run === value.run;
+                    return toofzRestApi.getLeaderboards({
+                        products: [product],
+                        modes: [mode],
+                        runs: [run],
+                        characters: [character],
+                    }).then(leaderboardsEnvelope => {
+                        const leaderboard = leaderboardsEnvelope.leaderboards[0];
+                        if (!leaderboard) {
+                            // TODO: Can this redirect instead?
+                            throw new Error(`Leaderboard could not be found for parameters: ${JSON.stringify($stateParams)}.`);
+                        }
+
+                        return leaderboard;
                     });
-
-                    if (!leaderboard) {
-                        // TODO: Can this redirect instead?
-                        throw new Error(`Leaderboard could not be found for parameters: ${JSON.stringify($stateParams)}.`);
-                    }
-
-                    return leaderboard;
                 },
                 // This resolve is optional. If an entry can't be found, just display leaderboard entries without highlighting a player.
                 player: ($stateParams: IStateParamsService,
-                         header: toofzSite.Leaderboard.Header,
+                         leaderboard: toofz.Leaderboard,
                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -247,13 +233,13 @@ angular
                         return undefined;
                     }
 
-                    return toofzRestApi.getPlayerLeaderboardEntry(id, header.id)
+                    return toofzRestApi.getPlayerLeaderboardEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
-                leaderboard: ($stateParams: IStateParamsService,
-                              header: toofzSite.Leaderboard.Header,
-                              player: toofz.Entry,
-                              toofzRestApi: ToofzRestApi) => {
+                entries: ($stateParams: IStateParamsService,
+                          leaderboard: toofz.Leaderboard,
+                          player: toofz.Entry,
+                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { page } = $stateParams;
 
@@ -267,7 +253,7 @@ angular
                         offset: offset !== 0 ? offset : undefined
                     };
 
-                    return toofzRestApi.getLeaderboardEntries(header.id, params);
+                    return toofzRestApi.getLeaderboardEntries(leaderboard.id, params);
                 }
             }
         };
@@ -276,33 +262,23 @@ angular
         const dailyLeaderboardState: IState = {
             name: 'root.daily-leaderboard',
             url: `/leaderboards/{product:${products}}/daily?{page:int}&{id}`,
-            template: '<nd-leaderboard data="::$resolve.leaderboard" player-entry="::$resolve.player"></nd-leaderboard>',
+            template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
             params: {
                 product: 'classic'
             },
             resolve: {
-                categories: (toofzSiteApi: ToofzSiteApi) => {
-                    'ngInject';
-                    return toofzSiteApi.getLeaderboardCategories();
-                },
-                header: ($stateParams: IStateParamsService,
-                         toofzRestApi: ToofzRestApi) => {
+                leaderboard: ($stateParams: IStateParamsService,
+                              toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { product } = $stateParams;
 
                     return toofzRestApi.getDailyLeaderboards({
                         products: [product]
-                    }).then(data => {
-                        const today = data.leaderboards[0];
-
-                        return {
-                            id: today.id
-                        };
-                    });
+                    }).then(data => data.leaderboards[0]);
                 },
                 // This resolve is optional. If an entry can't be found, just display leaderboard entries without highlighting a player.
                 player: ($stateParams: IStateParamsService,
-                         header: toofzSite.Leaderboard.Header,
+                         leaderboard: toofz.DailyLeaderboard,
                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -311,14 +287,13 @@ angular
                         return undefined;
                     }
 
-                    return toofzRestApi.getPlayerLeaderboardEntry(id, header.id)
+                    return toofzRestApi.getPlayerLeaderboardEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
-                leaderboard: ($stateParams: IStateParamsService,
-                              categories: toofzSite.Leaderboard.Categories,
-                              header: toofzSite.Leaderboard.Header,
-                              player: toofz.Entry,
-                              toofzRestApi: ToofzRestApi) => {
+                entries: ($stateParams: IStateParamsService,
+                          leaderboard: toofz.DailyLeaderboard,
+                          player: toofz.Entry,
+                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { page } = $stateParams;
 
@@ -332,17 +307,7 @@ angular
                         offset: offset !== 0 ? offset : undefined
                     };
 
-                    return toofzRestApi.getDailyLeaderboardEntries(header.id, params)
-                        .then(data => {
-                            const leaderboard: toofz.Leaderboard = data.leaderboard as any;
-
-                            leaderboard.run = 'seeded-score';
-                            const product = categories['products'][data.leaderboard.product];
-                            const date = moment.utc(data.leaderboard.date);
-                            leaderboard.display_name = `${product.display_name} Daily (${date.format('YYYY-MM-DD')})`;
-
-                            return data;
-                        });
+                    return toofzRestApi.getDailyLeaderboardEntries(leaderboard.id, params);
                 }
             }
         };
