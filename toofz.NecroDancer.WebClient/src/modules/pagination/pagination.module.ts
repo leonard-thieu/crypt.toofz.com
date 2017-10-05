@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 
 import { PaginationController } from './pagination-controller';
 

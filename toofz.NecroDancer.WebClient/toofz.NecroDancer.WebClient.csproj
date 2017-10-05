@@ -152,6 +152,10 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="site.js" />
+    <Content Include="site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -268,7 +272,6 @@
     <Content Include="landing.html" />
     <Content Include="robots.txt" />
     <Content Include="root.html" />
-    <Content Include="site.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\characters\all-characters-amplified.png" />

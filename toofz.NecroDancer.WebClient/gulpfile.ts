@@ -26,7 +26,7 @@ gulp.task('build:js', ['build:js:test'], () => {
     };
     const bundle = browserify(opts)
         .ignore('angular-loading-bar')
-        .ignore('angular-ui-router')
+        .ignore('@uirouter/angularjs')
         .ignore('moment-duration-format')
         .plugin('tsify')
         .bundle()

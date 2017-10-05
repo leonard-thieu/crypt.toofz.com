@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import '../page-title/page-title.module';
 import '..//toofz-rest-api/toofz-rest-api.module';
 

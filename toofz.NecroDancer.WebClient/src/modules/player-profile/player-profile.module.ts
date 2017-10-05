@@ -3,15 +3,37 @@ import '../entry-filters/entry-filters.module';
 import '../ordinal/ordinal.module';
 import '../page-title/page-title.module';
 
-import { PlayerProfileController } from './player-profile-controller';
+import { PlayerEntriesController } from './player-entries-controller';
+import { PlayerDailyEntriesController } from './player-daily-entries-controller';
 
 /**
  * @ngdoc directive
- * @name ndPlayerProfile
+ * @name ndPlayerProfileHeader
+ * @restrict E
+ *
+ * @param {expression} player
+ */
+/**
+ * @ngdoc directive
+ * @name ndPlayerProfileFooter
+ * @restrict E
+ *
+ * @param {expression} leaderboardsUpdatedAt
+ * @param {expression} playerUpdatedAt
+ */
+/**
+ * @ngdoc directive
+ * @name ndPlayerEntries
  * @restrict E
  *
  * @param {expression} data
- * @param {expression} categories
+ */
+/**
+ * @ngdoc directive
+ * @name ndPlayerDailyEntries
+ * @restrict E
+ *
+ * @param {expression} data
  */
 
 angular
@@ -22,9 +44,31 @@ angular
     ])
     .component('ndPlayerProfile', {
         templateUrl: __dirname + '/player-profile.html',
-        controller: PlayerProfileController,
+    })
+    .component('ndPlayerProfileHeader', {
+        templateUrl: __dirname + '/player-profile-header.html',
+        bindings: {
+            player: '<',
+        }
+    })
+    .component('ndPlayerProfileFooter', {
+        templateUrl: __dirname + '/player-profile-footer.html',
+        bindings: {
+            leaderboardsUpdatedAt: '<',
+            playerUpdatedAt: '<',
+        }
+    })
+    .component('ndPlayerEntries', {
+        templateUrl: __dirname + '/player-entries.html',
+        controller: PlayerEntriesController,
         bindings: {
             data: '<',
-            categories: '<'
+        }
+    })
+    .component('ndPlayerDailyEntries', {
+        templateUrl: __dirname + '/player-daily-entries.html',
+        controller: PlayerDailyEntriesController,
+        bindings: {
+            data: '<',
         }
     });

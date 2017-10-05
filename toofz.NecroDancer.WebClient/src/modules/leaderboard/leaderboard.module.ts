@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import '../entry-filters/entry-filters.module';
 import '../slug/slug.module';
 import '../titlecase/titlecase.module';

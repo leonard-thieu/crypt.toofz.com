@@ -1,0 +1,19 @@
+<footer class="last-update">
+  <div ng-if="::$ctrl.leaderboardsUpdatedAt">
+    Leaderboards Updated:
+    <time class="timeago"
+          datetime="{{::$ctrl.leaderboardsUpdatedAt}}"
+          title="{{::$ctrl.leaderboardsUpdatedAt}}"
+          data-livestamp="{{::$ctrl.leaderboardsUpdatedAt}}"></time>
+  </div>
+  <div ng-if="::$ctrl.playerUpdatedAt">
+    Player Updated:
+    <time class="timeago"
+          datetime="{{::$ctrl.playerUpdatedAt}}"
+          title="{{::$ctrl.playerUpdatedAt}}"
+          data-livestamp="{{::$ctrl.playerUpdatedAt}}"></time>
+  </div>
+  <div>
+    <a href="http://steampowered.com">Powered by Steam</a>
+  </div>
+</footer>
