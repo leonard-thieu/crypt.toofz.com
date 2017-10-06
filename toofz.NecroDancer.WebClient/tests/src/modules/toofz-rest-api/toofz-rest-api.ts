@@ -6,13 +6,13 @@ import { ToofzRestApi } from '../../../../src/modules/toofz-rest-api/toofz-rest-
 
 const toofz_definitions = require('./toofz-rest-api.definitions.json').definitions;
 
-describe('ToofzRestApi', function () {
+describe('ToofzRestApi', function() {
     let $httpBackend: angular.IHttpBackendService;
     let toofzRestApi: ToofzRestApi;
 
-    beforeEach(function () {
+    beforeEach(function() {
         angular.mock.module('toofz.rest-api', {
-            apiBaseUrl: ''
+            apiBaseUrl: '',
         });
 
         inject((_$httpBackend_: any) => {
@@ -30,49 +30,49 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    afterEach(function () {
+    afterEach(function() {
         $httpBackend.verifyNoOutstandingExpectation();
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    describe('getItems', function () {
-        it(`should return successfully`, function () {
+    describe('getItems', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getItems().then(data => {
                 data.should.have.interface({
                     total: Number,
-                    items: Array
+                    items: Array,
                 });
             });
             $httpBackend.flush();
         });
     });
 
-    describe('getItemsByCategory', function () {
-        it(`should return successfully`, function () {
+    describe('getItemsByCategory', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getItemsByCategory('weapons').then(data => {
                 data.should.have.interface({
                     total: Number,
-                    items: Array
+                    items: Array,
                 });
             });
             $httpBackend.flush();
         });
     });
 
-    describe('getItemsBySubcategory', function () {
-        it(`should return successfully`, function () {
+    describe('getItemsBySubcategory', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getItemsBySubcategory('weapons', 'bows').then(data => {
                 data.should.have.interface({
                     total: Number,
-                    items: Array
+                    items: Array,
                 });
             });
             $httpBackend.flush();
         });
     });
 
-    describe('getEnemies', function () {
-        it(`should return successfully`, function () {
+    describe('getEnemies', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getEnemies().then(data => {
                 data.should.exist;
             });
@@ -80,8 +80,8 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getEnemiesByAttribute', function () {
-        it(`should return successfully`, function () {
+    describe('getEnemiesByAttribute', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getEnemiesByAttribute('floating').then(data => {
                 data.should.exist;
             });
@@ -89,13 +89,13 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getLeaderboards', function () {
-        it(`should return successfully`, function () {
+    describe('getLeaderboards', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getLeaderboards({
                 products: ['amplified'],
                 modes: ['standard'],
                 runs: ['speed'],
-                characters: ['cadence']
+                characters: ['cadence'],
             }).then(data => {
                 data.should.exist;
             });
@@ -103,8 +103,8 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getDailyLeaderboards', function () {
-        it(`should return successfully`, function () {
+    describe('getDailyLeaderboards', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getDailyLeaderboards().then(data => {
                 data.should.exist;
             });
@@ -112,8 +112,8 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getLeaderboardEntries', function () {
-        it(`should return successfully`, function () {
+    describe('getLeaderboardEntries', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getLeaderboardEntries(739999).then(data => {
                 data.should.exist;
             });
@@ -121,8 +121,8 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getPlayers', function () {
-        it(`should return successfully`, function () {
+    describe('getPlayers', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getPlayers('Mendayen').then(data => {
                 data.should.exist;
             });
@@ -130,8 +130,8 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getPlayerEntries', function () {
-        it(`should return successfully`, function () {
+    describe('getPlayerEntries', function() {
+        it(`should return successfully`, function() {
             toofzRestApi.getPlayerEntries('76561197960481221').then(data => {
                 data.should.exist;
             });
@@ -139,9 +139,27 @@ describe('ToofzRestApi', function () {
         });
     });
 
-    describe('getPlayerLeaderboardEntry', function () {
-        it(`should return successfully`, function () {
-            toofzRestApi.getPlayerLeaderboardEntry('76561197960481221', 739999).then(data => {
+    describe('getPlayerEntry', function() {
+        it(`should return successfully`, function() {
+            toofzRestApi.getPlayerEntry('76561197960481221', 739999).then(data => {
+                data.should.exist;
+            });
+            $httpBackend.flush();
+        });
+    });
+
+    describe('getPlayerDailyEntries', function() {
+        it(`should return successfully`, function() {
+            toofzRestApi.getPlayerDailyEntries('76561197960481221').then(data => {
+                data.should.exist;
+            });
+            $httpBackend.flush();
+        });
+    });
+
+    describe('getPlayerDailyEntry', function() {
+        it(`should return successfully`, function() {
+            toofzRestApi.getPlayerDailyEntry('76561197960481221', 802967).then(data => {
                 data.should.exist;
             });
             $httpBackend.flush();

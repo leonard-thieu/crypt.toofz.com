@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import 'angular-loading-bar';
 import './modules/enemies/enemies.module';
 import './modules/items/items.module';

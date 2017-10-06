@@ -6403,6 +6403,939 @@
           "version": 75
         }
       }
+    },
+    {
+      "description": "getPlayerDailyEntries",
+      "request": {
+        "method": "GET",
+        "url": "/players/76561197960481221/entries/dailies"
+      },
+      "response": {
+        "data": {
+          "player": {
+            "id": "76561197960481221",
+            "updated_at": "2017-10-04T09:09:39.753Z",
+            "display_name": "Mendayen",
+            "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/be/be8232c6572aa99106a5646149f422b0df6b3112.jpg"
+          },
+          "total": 37,
+          "entries": [
+            {
+              "leaderboard": {
+                "id": 802967,
+                "updated_at": "2017-10-02T23:04:46.113Z",
+                "display_name": "Daily (2015-08-17)",
+                "production": true,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2015-08-17T00:00:00Z",
+                "total": 1116
+              },
+              "rank": 126,
+              "score": 1720,
+              "end": {
+                "zone": 2,
+                "level": 2
+              },
+              "killed_by": "WHITE ARMORED SKELETON",
+              "version": 75
+            },
+            {
+              "leaderboard": {
+                "id": 533932,
+                "updated_at": "2017-10-02T23:20:31.697Z",
+                "display_name": "Daily (2014-11-27) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-11-27T00:00:00Z",
+                "total": 3121
+              },
+              "rank": 375,
+              "score": 395,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "ZOMBIE",
+              "version": 32
+            },
+            {
+              "leaderboard": {
+                "id": 510436,
+                "updated_at": "2017-10-02T23:23:46.377Z",
+                "display_name": "Daily (2014-11-14) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-11-14T00:00:00Z",
+                "total": 1519
+              },
+              "rank": 1,
+              "score": 5032,
+              "end": {
+                "zone": 3,
+                "level": 4
+              },
+              "killed_by": "KING CONGA",
+              "version": 30
+            },
+            {
+              "leaderboard": {
+                "id": 504371,
+                "updated_at": "2017-10-02T23:23:46.377Z",
+                "display_name": "Daily (2014-11-11) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-11-11T00:00:00Z",
+                "total": 1694
+              },
+              "rank": 102,
+              "score": 1120,
+              "end": {
+                "zone": 1,
+                "level": 4
+              },
+              "killed_by": "RED PAWN",
+              "version": 30
+            },
+            {
+              "leaderboard": {
+                "id": 466450,
+                "updated_at": "2017-10-04T11:44:38.727Z",
+                "display_name": "Daily (2014-11-01) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-11-01T00:00:00Z",
+                "total": 3427
+              },
+              "rank": 480,
+              "score": 171,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLUE DRAGON",
+              "version": 29
+            },
+            {
+              "leaderboard": {
+                "id": 500387,
+                "updated_at": "2017-10-02T23:30:33.903Z",
+                "display_name": "Daily (2014-10-22) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-22T00:00:00Z",
+                "total": 1342
+              },
+              "rank": 415,
+              "score": 252,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "BLUE SLIME",
+              "version": 26
+            },
+            {
+              "leaderboard": {
+                "id": 493887,
+                "updated_at": "2017-10-02T23:23:46.363Z",
+                "display_name": "Daily (2014-10-21) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-21T00:00:00Z",
+                "total": 1331
+              },
+              "rank": 793,
+              "score": 169,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "GREEN DRAGON",
+              "version": 26
+            },
+            {
+              "leaderboard": {
+                "id": 500386,
+                "updated_at": "2017-10-02T23:30:33.903Z",
+                "display_name": "Daily (2014-10-19) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-19T00:00:00Z",
+                "total": 1663
+              },
+              "rank": 6,
+              "score": 6439,
+              "end": {
+                "zone": 3,
+                "level": 5
+              },
+              "killed_by": null,
+              "version": 26
+            },
+            {
+              "leaderboard": {
+                "id": 464650,
+                "updated_at": "2017-10-02T23:10:09.243Z",
+                "display_name": "Daily (2014-10-07) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-07T00:00:00Z",
+                "total": 1188
+              },
+              "rank": 25,
+              "score": 2670,
+              "end": {
+                "zone": 2,
+                "level": 2
+              },
+              "killed_by": "YELLOW ARMORED SKELETON",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483300,
+                "updated_at": "2017-10-02T23:20:31.68Z",
+                "display_name": "Daily (2014-10-02) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-02T00:00:00Z",
+                "total": 1591
+              },
+              "rank": 199,
+              "score": 515,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "FIREBALL",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483299,
+                "updated_at": "2017-10-02T23:20:31.68Z",
+                "display_name": "Daily (2014-10-01) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-10-01T00:00:00Z",
+                "total": 1729
+              },
+              "rank": 171,
+              "score": 805,
+              "end": {
+                "zone": 1,
+                "level": 3
+              },
+              "killed_by": "BLACK SKELETON",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483298,
+                "updated_at": "2017-10-02T23:20:31.68Z",
+                "display_name": "Daily (2014-09-30) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-30T00:00:00Z",
+                "total": 2031
+              },
+              "rank": 60,
+              "score": 1806,
+              "end": {
+                "zone": 2,
+                "level": 2
+              },
+              "killed_by": "SHOPKEEPER",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483297,
+                "updated_at": "2017-10-02T23:20:31.68Z",
+                "display_name": "Daily (2014-09-29) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-29T00:00:00Z",
+                "total": 2549
+              },
+              "rank": 224,
+              "score": 419,
+              "end": {
+                "zone": 1,
+                "level": 3
+              },
+              "killed_by": "GHOST",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483296,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-28) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-28T00:00:00Z",
+                "total": 3242
+              },
+              "rank": 316,
+              "score": 214,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "SHOPKEEPER",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483295,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-27) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-27T00:00:00Z",
+                "total": 1899
+              },
+              "rank": 680,
+              "score": 126,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "WHITE SKELETON",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 483294,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-26) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-26T00:00:00Z",
+                "total": 1114
+              },
+              "rank": 639,
+              "score": 71,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLUE SLIME",
+              "version": 25
+            },
+            {
+              "leaderboard": {
+                "id": 480891,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-25) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-25T00:00:00Z",
+                "total": 1178
+              },
+              "rank": 412,
+              "score": 283,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "BLUE BAT",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 480890,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-24) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-24T00:00:00Z",
+                "total": 1014
+              },
+              "rank": 33,
+              "score": 2983,
+              "end": {
+                "zone": 2,
+                "level": 3
+              },
+              "killed_by": "DARK GOLEM",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 480889,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-23) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-23T00:00:00Z",
+                "total": 997
+              },
+              "rank": 206,
+              "score": 573,
+              "end": {
+                "zone": 1,
+                "level": 3
+              },
+              "killed_by": "BLACK SKELETON",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 480435,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-22) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-22T00:00:00Z",
+                "total": 972
+              },
+              "rank": 972,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLACK SKELETON",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 474750,
+                "updated_at": "2017-10-02T23:18:09.057Z",
+                "display_name": "Daily (2014-09-21) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-21T00:00:00Z",
+                "total": 1106
+              },
+              "rank": 202,
+              "score": 440,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "YELLOW SKELETON",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 474749,
+                "updated_at": "2017-10-04T11:44:38.743Z",
+                "display_name": "Daily (2014-09-20) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-20T00:00:00Z",
+                "total": 1208
+              },
+              "rank": 668,
+              "score": 50,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "LIGHT MINOTAUR",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 474748,
+                "updated_at": "2017-10-04T11:44:38.743Z",
+                "display_name": "Daily (2014-09-19) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-19T00:00:00Z",
+                "total": 1054
+              },
+              "rank": 330,
+              "score": 444,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "DARK MINOTAUR",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 474747,
+                "updated_at": "2017-10-04T11:44:38.743Z",
+                "display_name": "Daily (2014-09-18) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-18T00:00:00Z",
+                "total": 1064
+              },
+              "rank": 133,
+              "score": 792,
+              "end": {
+                "zone": 1,
+                "level": 4
+              },
+              "killed_by": "RED QUEEN",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 461023,
+                "updated_at": "2017-10-02T23:10:09.243Z",
+                "display_name": "Daily (2014-09-17) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-17T00:00:00Z",
+                "total": 1098
+              },
+              "rank": 73,
+              "score": 1529,
+              "end": {
+                "zone": 2,
+                "level": 3
+              },
+              "killed_by": "YELLOW ARMADILLO",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 461022,
+                "updated_at": "2017-10-02T23:10:09.243Z",
+                "display_name": "Daily (2014-09-16) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-16T00:00:00Z",
+                "total": 1130
+              },
+              "rank": 15,
+              "score": 1947,
+              "end": {
+                "zone": 2,
+                "level": 4
+              },
+              "killed_by": "KING",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 461021,
+                "updated_at": "2017-10-02T23:10:09.243Z",
+                "display_name": "Daily (2014-09-15) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-15T00:00:00Z",
+                "total": 1117
+              },
+              "rank": 618,
+              "score": 88,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "FIREBALL",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 461020,
+                "updated_at": "2017-10-02T23:10:09.243Z",
+                "display_name": "Daily (2014-09-14) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-14T00:00:00Z",
+                "total": 1279
+              },
+              "rank": 140,
+              "score": 864,
+              "end": {
+                "zone": 1,
+                "level": 3
+              },
+              "killed_by": "FIREBALL",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 461019,
+                "updated_at": "2017-10-02T23:07:28.897Z",
+                "display_name": "Daily (2014-09-13) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-13T00:00:00Z",
+                "total": 1316
+              },
+              "rank": 829,
+              "score": 99,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLUE SLIME",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437706,
+                "updated_at": "2017-10-02T23:07:28.897Z",
+                "display_name": "Daily (2014-09-11) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-11T00:00:00Z",
+                "total": 1151
+              },
+              "rank": 336,
+              "score": 318,
+              "end": {
+                "zone": 1,
+                "level": 3
+              },
+              "killed_by": "RED BAT",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437705,
+                "updated_at": "2017-10-02T23:04:46.1Z",
+                "display_name": "Daily (2014-09-10) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-10T00:00:00Z",
+                "total": 1141
+              },
+              "rank": 484,
+              "score": 263,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "ORANGE SLIME",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437704,
+                "updated_at": "2017-10-02T23:04:46.1Z",
+                "display_name": "Daily (2014-09-09) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-09T00:00:00Z",
+                "total": 1161
+              },
+              "rank": 922,
+              "score": 36,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "LIGHT MINOTAUR",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437703,
+                "updated_at": "2017-10-02T23:04:46.1Z",
+                "display_name": "Daily (2014-09-08) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-08T00:00:00Z",
+                "total": 1232
+              },
+              "rank": 124,
+              "score": 522,
+              "end": {
+                "zone": 1,
+                "level": 4
+              },
+              "killed_by": "KNIGHT",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437696,
+                "updated_at": "2017-10-02T23:35:11.887Z",
+                "display_name": "Daily (2014-09-01) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-09-01T00:00:00Z",
+                "total": 1500
+              },
+              "rank": 1424,
+              "score": 8,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLUE SLIME",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437695,
+                "updated_at": "2017-10-02T23:35:11.887Z",
+                "display_name": "Daily (2014-08-31) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-08-31T00:00:00Z",
+                "total": 1563
+              },
+              "rank": 492,
+              "score": 196,
+              "end": {
+                "zone": 1,
+                "level": 2
+              },
+              "killed_by": "YELLOW SKELETON",
+              "version": 24
+            },
+            {
+              "leaderboard": {
+                "id": 437691,
+                "updated_at": "2017-10-02T23:35:11.887Z",
+                "display_name": "Daily (2014-08-27) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-08-27T00:00:00Z",
+                "total": 1619
+              },
+              "rank": 282,
+              "score": 646,
+              "end": {
+                "zone": 1,
+                "level": 4
+              },
+              "killed_by": "CONGA LINE",
+              "version": 23
+            },
+            {
+              "leaderboard": {
+                "id": 432501,
+                "updated_at": "2017-10-02T23:32:43.443Z",
+                "display_name": "Daily (2014-08-23) (Early Access)",
+                "production": false,
+                "product": "classic",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
+                "date": "2014-08-23T00:00:00Z",
+                "total": 1909
+              },
+              "rank": 1465,
+              "score": 36,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "YELLOW DIREBAT",
+              "version": 23
+            }
+          ]
+        }
+      }
+    },
+    {
+      "description": "getPlayerDailyLeaderboardEntry",
+      "request": {
+        "method": "GET",
+        "url": "/players/76561197960481221/entries/dailies/802967"
+      },
+      "response": {
+        "data": {
+          "player": {
+            "id": "76561197960481221",
+            "updated_at": "2017-10-04T09:09:39.753Z",
+            "display_name": "Mendayen",
+            "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/be/be8232c6572aa99106a5646149f422b0df6b3112.jpg"
+          },
+          "rank": 126,
+          "score": 1720,
+          "end": {
+            "zone": 2,
+            "level": 2
+          },
+          "killed_by": "WHITE ARMORED SKELETON",
+          "version": 75
+        }
+      }
     }
   ]
 }

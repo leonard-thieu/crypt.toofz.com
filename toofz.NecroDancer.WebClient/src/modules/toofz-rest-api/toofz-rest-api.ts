@@ -156,8 +156,10 @@ export class ToofzRestApi {
         }).then(response => response.data);
     }
 
-    getPlayerEntries(id: string) {
-        return this.$http.get<toofz.PlayerEntries>(`${this.apiBaseUrl}/players/${id}/entries`).then(response => {
+    getPlayerEntries(id: string, params?: toofz.GetPlayerEntriesParams) {
+        return this.$http.get<toofz.PlayerEntries>(`${this.apiBaseUrl}/players/${id}/entries`, {
+            params: params,
+        }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
 
@@ -206,8 +208,35 @@ export class ToofzRestApi {
         }).then(response => response.data);
     }
 
-    getPlayerLeaderboardEntry(steamId: string, lbid: number) {
+    getPlayerEntry(steamId: string, lbid: number) {
         return this.$http.get<toofz.Entry>(`${this.apiBaseUrl}/players/${steamId}/entries/${lbid}`)
+            .then(response => response.data);
+    }
+
+    getPlayerDailyEntries(id: string, params?: toofz.GetPlayerDailyEntriesParams) {
+        return this.$http.get<toofz.PlayerDailyEntries>(`${this.apiBaseUrl}/players/${id}/entries/dailies`, {
+            params: params
+        }).then(response => {
+            const { headers, data } = response;
+            const diff = ToofzRestApi.getTimeDifference(headers('Date'));
+
+            const player = data.player;
+            const updated_at = moment(player.updated_at!);
+            updated_at.add(diff);
+            player.updated_at = updated_at.toISOString();
+
+            for (const entry of data.entries) {
+                const updated_at = moment(entry.leaderboard!.updated_at);
+                updated_at.add(diff);
+                entry.leaderboard!.updated_at = updated_at.toISOString();
+            }
+
+            return response;
+        }).then(response => response.data);
+    }
+
+    getPlayerDailyEntry(steamId: string, lbid: number) {
+        return this.$http.get<toofz.DailyEntry>(`${this.apiBaseUrl}/players/${steamId}/entries/dailies/${lbid}`)
             .then(response => response.data);
     }
 }

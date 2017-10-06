@@ -31,26 +31,15 @@ declare namespace toofz {
         enemies: Enemy[];
     }
 
-    interface Entry {
-        leaderboard?: Leaderboard;
-        player?: Player;
-        rank: number;
-        score: number;
-        end: End;
-        killed_by: string | null;
-        version: number | null;
-    }
+    interface Entry extends EntryBase<Leaderboard> {}
 
-    interface Leaderboard {
-        id: number;
-        updated_at: string;
-        display_name: string;
-        production: boolean;
-        product: Products;
+    interface Leaderboard extends LeaderboardBase {
         mode: Modes;
+        _mode: Mode;
         run: Runs;
+        _run: Run;
         character: Characters;
-        total: number;
+        _character: Character;
     }
 
     interface Leaderboards {
@@ -64,24 +53,10 @@ declare namespace toofz {
         entries: Entry[];
     }
 
-    interface DailyEntry {
-        leaderboard?: DailyLeaderboard;
-        player?: Player;
-        rank: number;
-        score: number;
-        end: End;
-        killed_by: string | null;
-        version: number | null;
-    }
+    interface DailyEntry extends EntryBase<DailyLeaderboard> {}
 
-    interface DailyLeaderboard {
-        id: number;
-        updated_at: string;
-        display_name: string;
-        production: boolean;
-        product: Products;
+    interface DailyLeaderboard extends LeaderboardBase {
         date: string;
-        total: number;
     }
 
     interface DailyLeaderboards {
@@ -93,6 +68,50 @@ declare namespace toofz {
         leaderboard: DailyLeaderboard;
         total: number;
         entries: DailyEntry[];
+    }
+
+    interface EntryBase<TLeaderboard extends LeaderboardBase> {
+        leaderboard?: TLeaderboard;
+        player?: Player;
+        rank: number;
+        score: number;
+        end: End;
+        killed_by: string | null;
+        version: number | null;
+    }
+
+    interface LeaderboardBase {
+        id: number;
+        updated_at: string;
+        display_name: string;
+        production: boolean;
+        product: Products;
+        _product: Product;
+        total: number;
+    }
+
+    interface Product {
+        id: number;
+        name: Products;
+        display_name: string;
+    }
+
+    interface Mode {
+        id: number;
+        name: Modes;
+        display_name: string;
+    }
+
+    interface Run {
+        id: number;
+        name: Runs;
+        display_name: string;
+    }
+
+    interface Character {
+        id: number;
+        name: Characters;
+        display_name: string;
     }
 
     interface End {
@@ -112,10 +131,14 @@ declare namespace toofz {
         players: Player[];
     }
 
-    interface PlayerEntries {
+    interface PlayerEntries extends PlayerEntriesBase<Entry> {}
+
+    interface PlayerDailyEntries extends PlayerEntriesBase<DailyEntry> {}
+
+    interface PlayerEntriesBase<TEntry extends EntryBase<LeaderboardBase>> {
         player: Player;
         total: number;
-        entries: Entry[];
+        entries: TEntry[];
     }
 
     interface PaginationParams {
@@ -132,6 +155,18 @@ declare namespace toofz {
 
     interface GetDailyLeaderboardsParams extends PaginationParams {
         products?: Products[];
+        date?: string;
+        production?: boolean;
+    }
+
+    interface GetPlayerEntriesParams {
+        products?: Products[];
+        production?: boolean;
+    }
+
+    interface GetPlayerDailyEntriesParams {
+        products?: Products[];
+        production?: boolean;
     }
 
     type Products = 'classic' | 'amplified';

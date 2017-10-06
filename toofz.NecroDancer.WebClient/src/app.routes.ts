@@ -5,7 +5,7 @@ import * as angular from 'angular';
 
 import {
     IState,
-    IStateParamsService
+    IStateParamsService,
 } from 'angular-ui-router';
 import { ToofzRestApi } from './modules/toofz-rest-api/toofz-rest-api';
 import { ToofzSiteApi } from './modules/toofz-site-api/toofz-site-api';
@@ -34,15 +34,15 @@ angular
                 version: (version: string) => {
                     'ngInject';
                     return version;
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(rootState);
 
         const landingState: IState = {
             name: 'root.landing',
             url: '',
-            templateUrl: '../landing.html'
+            templateUrl: '../landing.html',
         };
         $stateProvider.state(landingState);
 
@@ -52,7 +52,7 @@ angular
             params: {
                 category: null,
                 subcategory: null,
-                page: 1
+                page: 1,
             },
             template: '<nd-items data="::$resolve.items"></nd-items>',
             resolve: {
@@ -61,7 +61,7 @@ angular
                     'ngInject';
                     const { category, subcategory, page } = $stateParams;
                     const params = {
-                        offset: util.pageToOffset(page, 10)
+                        offset: util.pageToOffset(page, 10),
                     };
 
                     if (!category) {
@@ -71,8 +71,8 @@ angular
                         return toofzRestApi.getItemsByCategory(category, params);
                     }
                     return toofzRestApi.getItemsBySubcategory(category, subcategory, params);
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(itemsState);
 
@@ -81,7 +81,7 @@ angular
             url: '/enemies/{attribute}?{page:int}',
             params: {
                 attribute: null,
-                page: 1
+                page: 1,
             },
             template: '<nd-enemies data="::$resolve.enemies"></nd-enemies>',
             resolve: {
@@ -99,15 +99,15 @@ angular
                     }
 
                     const params = {
-                        offset: util.pageToOffset(page, 10)
+                        offset: util.pageToOffset(page, 10),
                     };
 
                     if (!attribute) {
                         return toofzRestApi.getEnemies(params);
                     }
                     return toofzRestApi.getEnemiesByAttribute(attribute, params);
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(enemiesState);
 
@@ -116,7 +116,7 @@ angular
             url: '/leaderboards',
             template: '<nd-leaderboards categories="::$resolve.categories" leaderboards="::$resolve.leaderboards"></nd-leaderboards>',
             params: {
-                categories: null
+                categories: null,
             },
             resolve: {
                 categories: (toofzSiteApi: ToofzSiteApi,
@@ -153,8 +153,8 @@ angular
                     } else {
                         return Promise.resolve([]);
                     }
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(leaderboardsState);
 
@@ -170,7 +170,7 @@ angular
             template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
             params: {
                 product: 'classic',
-                mode: 'standard'
+                mode: 'standard',
             },
             resolve: {
                 leaderboard: ($stateParams: IStateParamsService,
@@ -233,7 +233,7 @@ angular
                         return undefined;
                     }
 
-                    return toofzRestApi.getPlayerLeaderboardEntry(id, leaderboard.id)
+                    return toofzRestApi.getPlayerEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
                 entries: ($stateParams: IStateParamsService,
@@ -250,31 +250,40 @@ angular
                         offset = util.pageToOffset(page, 20)!;
                     }
                     const params = {
-                        offset: offset !== 0 ? offset : undefined
+                        offset: offset !== 0 ? offset : undefined,
                     };
 
                     return toofzRestApi.getLeaderboardEntries(leaderboard.id, params);
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(leaderboardState);
 
         const dailyLeaderboardState: IState = {
             name: 'root.daily-leaderboard',
-            url: `/leaderboards/{product:${products}}/daily?{page:int}&{id}`,
+            url: `/leaderboards/{product:${products}}/daily?{date}&{production:bool}&{page:int}&{id}`,
             template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
             params: {
-                product: 'classic'
+                product: 'classic',
+                production: true,
             },
             resolve: {
                 leaderboard: ($stateParams: IStateParamsService,
                               toofzRestApi: ToofzRestApi) => {
                     'ngInject';
-                    const { product } = $stateParams;
+                    const { product, date, production } = $stateParams;
 
                     return toofzRestApi.getDailyLeaderboards({
-                        products: [product]
-                    }).then(data => data.leaderboards[0]);
+                        products: [product],
+                        date: date,
+                        production: production,
+                    }).then(data => {
+                        if (data.leaderboards.length < 1) {
+                            throw new Error('No daily leaderboards were returned from toofz API.');
+                        }
+
+                        return data.leaderboards[0];
+                    });
                 },
                 // This resolve is optional. If an entry can't be found, just display leaderboard entries without highlighting a player.
                 player: ($stateParams: IStateParamsService,
@@ -287,7 +296,7 @@ angular
                         return undefined;
                     }
 
-                    return toofzRestApi.getPlayerLeaderboardEntry(id, leaderboard.id)
+                    return toofzRestApi.getPlayerDailyEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
                 entries: ($stateParams: IStateParamsService,
@@ -304,12 +313,12 @@ angular
                         offset = util.pageToOffset(page, 20)!;
                     }
                     const params = {
-                        offset: offset !== 0 ? offset : undefined
+                        offset: offset !== 0 ? offset : undefined,
                     };
 
                     return toofzRestApi.getDailyLeaderboardEntries(leaderboard.id, params);
-                }
-            }
+                },
+            },
         };
         $stateProvider.state(dailyLeaderboardState);
 
@@ -317,29 +326,93 @@ angular
             name: 'root.player',
             url: '/p/{id}/{slug}',
             params: {
-                slug: null
+                slug: '-',
             },
-            template: '<nd-player-profile data="::$resolve.player" categories="::$resolve.categories"></nd-player-profile>',
+            template: '<nd-player-profile></nd-player-profile>',
+            redirectTo: 'root.player.amplified',
+        };
+        $stateProvider.state(playerState);
+
+        const playerClassicState: IState = {
+            name: 'root.player.classic',
+            url: '/classic',
+            template: '<nd-player-entries data="::$resolve.classic"></nd-player-entries>',
             resolve: {
-                player: ($stateParams: IStateParamsService,
-                         toofzRestApi: ToofzRestApi) => {
+                classic: ($stateParams: IStateParamsService,
+                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
 
-                    return toofzRestApi.getPlayerEntries(id);
+                    return toofzRestApi.getPlayerEntries(id, {
+                        products: ['classic'],
+                        production: true,
+                    });
                 },
-                categories: (toofzSiteApi: ToofzSiteApi) => {
-                    'ngInject';
-                    return toofzSiteApi.getLeaderboardCategories();
-                }
-            }
+            },
         };
-        $stateProvider.state(playerState);
+        $stateProvider.state(playerClassicState);
+
+        const playerAmplifiedState: IState = {
+            name: 'root.player.amplified',
+            url: '/amplified',
+            template: '<nd-player-entries data="::$resolve.amplified"></nd-player-entries>',
+            resolve: {
+                amplified: ($stateParams: IStateParamsService,
+                            toofzRestApi: ToofzRestApi) => {
+                    'ngInject';
+                    const { id } = $stateParams;
+
+                    return toofzRestApi.getPlayerEntries(id, {
+                        products: ['amplified'],
+                        production: true,
+                    });
+                },
+            },
+        };
+        $stateProvider.state(playerAmplifiedState);
+
+        const playerClassicDailiesState: IState = {
+            name: 'root.player.classic-dailies',
+            url: '/classic-dailies',
+            template: '<nd-player-daily-entries data="::$resolve.classic"></nd-player-daily-entries>',
+            resolve: {
+                classic: ($stateParams: IStateParamsService,
+                          toofzRestApi: ToofzRestApi) => {
+                    'ngInject';
+                    const { id } = $stateParams;
+
+                    return toofzRestApi.getPlayerDailyEntries(id, {
+                        products: ['classic'],
+                        production: true,
+                    });
+                },
+            },
+        };
+        $stateProvider.state(playerClassicDailiesState);
+
+        const playerAmplifiedDailiesState: IState = {
+            name: 'root.player.amplified-dailies',
+            url: '/amplified-dailies',
+            template: '<nd-player-daily-entries data="::$resolve.amplified"></nd-player-daily-entries>',
+            resolve: {
+                amplified: ($stateParams: IStateParamsService,
+                            toofzRestApi: ToofzRestApi) => {
+                    'ngInject';
+                    const { id } = $stateParams;
+
+                    return toofzRestApi.getPlayerDailyEntries(id, {
+                        products: ['amplified'],
+                        production: true,
+                    });
+                },
+            },
+        };
+        $stateProvider.state(playerAmplifiedDailiesState);
 
         const otherwiseState: IState = {
             name: 'root.otherwise',
             url: '*path',
-            templateUrl: '../404.html'
+            templateUrl: '../404.html',
         };
         $stateProvider.state(otherwiseState);
 
