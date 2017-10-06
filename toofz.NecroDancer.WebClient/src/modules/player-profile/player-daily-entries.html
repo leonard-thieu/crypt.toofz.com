@@ -8,7 +8,7 @@
           <div class="entries">
             <a class="list-group-item row"
                ng-repeat="entry in ::$ctrl.data.entries"
-               ui-sref="root.daily-leaderboard({ product: entry.leaderboard.product, date: entry.leaderboard.date.substring(0, 10), production: entry.leaderboard.production, id: $ctrl.player.id })">
+               ui-sref="root.daily-leaderboard({ product: entry.leaderboard.product, date: entry.leaderboard.date.substring(0, 10), production: entry.leaderboard.production, id: $ctrl.data.player.id })">
               <div class="rank col-xs-4">{{::entry.rank | ordinal}}</div>
 
               <div class="character col-xs-5">
