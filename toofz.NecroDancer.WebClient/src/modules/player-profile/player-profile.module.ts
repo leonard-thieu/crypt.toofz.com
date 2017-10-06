@@ -59,14 +59,14 @@ angular
         }
     })
     .component('ndPlayerEntries', {
-        templateUrl: __dirname + '/player-entries.html',
+        templateUrl: __dirname + '/player-entries.html?v=2',
         controller: PlayerEntriesController,
         bindings: {
             data: '<',
         }
     })
     .component('ndPlayerDailyEntries', {
-        templateUrl: __dirname + '/player-daily-entries.html',
+        templateUrl: __dirname + '/player-daily-entries.html?v=2',
         controller: PlayerDailyEntriesController,
         bindings: {
             data: '<',
