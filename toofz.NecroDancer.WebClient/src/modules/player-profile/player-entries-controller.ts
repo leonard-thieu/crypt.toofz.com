@@ -22,7 +22,7 @@ export class PlayerEntriesController extends PlayerEntriesControllerBase<toofz.P
         return tokens.join(' ');
     }
 
-    private static mapLeaderboardGroup(entries: toofz.Entry[], key: string | undefined): LeaderboardGroup {
+    private static mapEntriesGroup(entries: toofz.Entry[], key: string | undefined): EntriesGroup {
         return {
             display_name: key!,
             entries: entries,
@@ -34,21 +34,21 @@ export class PlayerEntriesController extends PlayerEntriesControllerBase<toofz.P
         super(pageTitle);
     }
 
-    groups: LeaderboardGroup[];
+    groups: EntriesGroup[];
 
     $onInit() {
         super.$onInit();
 
         const grouped = _.groupBy(this.data.entries, PlayerEntriesController.getGroupKey);
-        const leaderboardGroups = _.map(grouped, PlayerEntriesController.mapLeaderboardGroup);
-        this.groups = _.sortBy(leaderboardGroups, [
+        const entriesGroups = _.map(grouped, PlayerEntriesController.mapEntriesGroup);
+        this.groups = _.sortBy(entriesGroups, [
             'leaderboard.mode.id',
             'leaderboard.run.id',
         ]);
     }
 }
 
-interface LeaderboardGroup {
+interface EntriesGroup {
     display_name: string;
     entries: toofz.Entry[];
 }

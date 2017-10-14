@@ -4689,1324 +4689,455 @@
         "data": {
           "player": {
             "id": "76561197960481221",
+            "updated_at": "2017-10-14T11:27:56.02Z",
             "display_name": "Mendayen",
-            "updated_at": "2017-07-17T13:17:42.993Z",
             "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/be/be8232c6572aa99106a5646149f422b0df6b3112.jpg"
           },
           "total": 84,
           "entries": [
             {
               "leaderboard": {
-                "id": 2047498,
-                "product": "amplified",
-                "character": "bolt",
-                "mode": "no-return",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
-              },
-              "rank": 10,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
                 "id": 2047569,
+                "updated_at": "2017-10-14T17:37:31.73Z",
+                "display_name": "Cadence Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "cadence",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 10116
               },
-              "rank": 756,
-              "score": 2869,
+              "rank": 481,
+              "score": 6976,
               "end": {
                 "zone": 5,
                 "level": 6
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047422,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "phasing",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.077Z",
-                "total": 0
-              },
-              "rank": 14,
-              "score": 6,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "SPIKETRAP",
+              "version": 94
             },
             {
               "leaderboard": {
                 "id": 2047587,
+                "updated_at": "2017-10-14T17:37:34.613Z",
+                "display_name": "Dorian Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "dorian",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 1127
               },
-              "rank": 216,
+              "rank": 1056,
               "score": 17,
               "end": {
                 "zone": 1,
                 "level": 3
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048576,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "hard",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.07Z",
-                "total": 0
-              },
-              "rank": 8,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "RED DRAGON",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2047642,
+                "updated_at": "2017-10-14T17:37:35.877Z",
+                "display_name": "Monk Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "monk",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07Z",
-                "total": 0
-              },
-              "rank": 461,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048136,
-                "product": "amplified",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
                 "character": "monk",
-                "mode": "no-return",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 2059
               },
-              "rank": 14,
+              "rank": 2059,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052467,
-                "product": "amplified",
-                "character": "monk",
-                "mode": "hard",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.07Z",
-                "total": 0
-              },
-              "rank": 7,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2047718,
+                "updated_at": "2017-10-14T17:37:46.63Z",
+                "display_name": "Tempo Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "tempo",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 4725
               },
-              "rank": 2476,
+              "rank": 4725,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047722,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "phasing",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.077Z",
-                "total": 0
-              },
-              "rank": 102,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047732,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "randomizer",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.083Z",
-                "total": 0
-              },
-              "rank": 78,
-              "score": 3,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047746,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "hard",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.07Z",
-                "total": 0
-              },
-              "rank": 80,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047799,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "mystery",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.097Z",
-                "total": 0
-              },
-              "rank": 77,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048085,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "no-return",
-                "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
-              },
-              "rank": 22,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "TEMPO'S CURSE",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2047626,
+                "updated_at": "2017-10-14T17:37:36.763Z",
+                "display_name": "Cadence Speed (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "cadence",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "speed",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.003Z",
-                "total": 0
+                "_run": {
+                  "id": 1,
+                  "name": "speed",
+                  "display_name": "Speed"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 2970
               },
-              "rank": 206,
-              "score": 98714359,
+              "rank": 99,
+              "score": 99499100,
               "end": {
                 "zone": 5,
                 "level": 6
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047970,
-                "product": "amplified",
-                "character": "aria",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 6,
-              "score": 0,
-              "end": {
-                "zone": 0,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2050814,
-                "product": "amplified",
-                "character": "bard",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 14,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052440,
-                "product": "amplified",
-                "character": "bolt",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047416,
-                "product": "amplified",
-                "character": "cadence",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 37,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047466,
-                "product": "amplified",
-                "character": "cadence",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 51,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047490,
-                "product": "amplified",
-                "character": "cadence",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 55,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048018,
-                "product": "amplified",
-                "character": "cadence",
-                "mode": "no-return",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.017Z",
-                "total": 0
-              },
-              "rank": 18,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048832,
-                "product": "amplified",
-                "character": "coda",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 3,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048835,
-                "product": "amplified",
-                "character": "coda",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051086,
-                "product": "amplified",
-                "character": "coda",
-                "mode": "no-return",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.017Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052442,
-                "product": "amplified",
-                "character": "coda",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048135,
-                "product": "amplified",
-                "character": "diamond",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 9,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048902,
-                "product": "amplified",
-                "character": "diamond",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 11,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2049889,
-                "product": "amplified",
-                "character": "diamond",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 4,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052445,
-                "product": "amplified",
-                "character": "diamond",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047449,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 3,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051019,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051024,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052447,
-                "product": "amplified",
-                "character": "dorian",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BLACK SKELETON KNIGHT",
+              "version": 94
             },
             {
               "leaderboard": {
                 "id": 2052991,
+                "updated_at": "2017-10-14T17:37:34.35Z",
+                "display_name": "Dorian Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "dorian",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.003Z",
-                "total": 0
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 24
               },
-              "rank": 3,
+              "rank": 24,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2048598,
+                "updated_at": "2017-10-14T17:37:33.71Z",
+                "display_name": "Dove Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "dove",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.007Z",
-                "total": 0
-              },
-              "rank": 15,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051027,
-                "product": "amplified",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
                 "character": "dove",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 95
               },
-              "rank": 6,
+              "rank": 95,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051029,
-                "product": "amplified",
-                "character": "dove",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 3,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051033,
-                "product": "amplified",
-                "character": "dove",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 2,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052451,
-                "product": "amplified",
-                "character": "dove",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047950,
-                "product": "amplified",
-                "character": "eli",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 5,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048149,
-                "product": "amplified",
-                "character": "eli",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 5,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051035,
-                "product": "amplified",
-                "character": "eli",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052453,
-                "product": "amplified",
-                "character": "eli",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "WHITE SKELETON",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2047662,
+                "updated_at": "2017-10-14T17:37:31.777Z",
+                "display_name": "Mary Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "mary",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.007Z",
-                "total": 0
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "mary",
+                "_character": {
+                  "id": 12,
+                  "name": "mary",
+                  "display_name": "Mary"
+                },
+                "total": 60
               },
-              "rank": 17,
+              "rank": 58,
               "score": 10,
               "end": {
                 "zone": 1,
                 "level": 2
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047959,
-                "product": "amplified",
-                "character": "mary",
-                "mode": "no-return",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.017Z",
-                "total": 0
-              },
-              "rank": 8,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2050966,
-                "product": "amplified",
-                "character": "mary",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.073Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2050602,
-                "product": "amplified",
-                "character": "melody",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 7,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2050603,
-                "product": "amplified",
-                "character": "melody",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 5,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2050606,
-                "product": "amplified",
-                "character": "melody",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 5,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051899,
-                "product": "amplified",
-                "character": "melody",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.077Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "MARY'S CURSE",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2048191,
+                "updated_at": "2017-10-14T17:37:34.07Z",
+                "display_name": "Monk Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "monk",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.007Z",
-                "total": 0
-              },
-              "rank": 11,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2049389,
-                "product": "amplified",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
                 "character": "monk",
-                "mode": "no-return",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.02Z",
-                "total": 0
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 65
               },
-              "rank": 3,
+              "rank": 65,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2049390,
-                "product": "amplified",
-                "character": "monk",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 4,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2051047,
-                "product": "amplified",
-                "character": "monk",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 3,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2052460,
-                "product": "amplified",
-                "character": "monk",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.077Z",
-                "total": 0
-              },
-              "rank": 2,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047421,
-                "product": "amplified",
-                "character": "nocturna",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 25,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047836,
-                "product": "amplified",
-                "character": "nocturna",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 22,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047845,
-                "product": "amplified",
-                "character": "nocturna",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 26,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2047792,
+                "updated_at": "2017-10-14T17:37:32.057Z",
+                "display_name": "Tempo Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "tempo",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.007Z",
-                "total": 0
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 84
               },
-              "rank": 29,
+              "rank": 84,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048070,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "mystery",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.103Z",
-                "total": 0
-              },
-              "rank": 4,
-              "score": 10,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048203,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "hard",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.077Z",
-                "total": 0
-              },
-              "rank": 4,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048583,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "phasing",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.08Z",
-                "total": 0
-              },
-              "rank": 11,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048741,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "randomizer",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.087Z",
-                "total": 0
-              },
-              "rank": 8,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048754,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "no-return",
-                "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.063Z",
-                "total": 0
-              },
-              "rank": 7,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "SPIDER",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2049087,
+                "updated_at": "2017-10-14T17:37:33.663Z",
+                "display_name": "Aria Deathless (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "aria",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "aria",
+                "_character": {
+                  "id": 2,
+                  "name": "aria",
+                  "display_name": "Aria"
+                },
+                "total": 60
               },
-              "rank": 19,
+              "rank": 60,
               "score": -10,
               "end": {
                 "zone": 0,
@@ -6018,73 +5149,1182 @@
             {
               "leaderboard": {
                 "id": 2047527,
+                "updated_at": "2017-10-14T17:37:33.803Z",
+                "display_name": "Cadence Deathless (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "cadence",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 1001
               },
-              "rank": 200,
+              "rank": 1001,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BLACK SKELETON",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2049481,
+                "updated_at": "2017-10-14T17:37:33.71Z",
+                "display_name": "Coda Deathless (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "coda",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "coda",
+                "_character": {
+                  "id": 7,
+                  "name": "coda",
+                  "display_name": "Coda"
+                },
+                "total": 19
               },
-              "rank": 7,
+              "rank": 19,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "MISSEDBEAT",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2051069,
+                "updated_at": "2017-10-14T17:37:33.54Z",
+                "display_name": "Diamond Deathless (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "diamond",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "diamond",
+                "_character": {
+                  "id": 11,
+                  "name": "diamond",
+                  "display_name": "Diamond"
+                },
+                "total": 35
               },
-              "rank": 10,
+              "rank": 35,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BLUE SLIME",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 2049479,
+                "updated_at": "2017-10-14T17:37:33.71Z",
+                "display_name": "Dorian Deathless (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "dorian",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 23
+              },
+              "rank": 23,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2049476,
+                "updated_at": "2017-10-14T17:37:33.71Z",
+                "display_name": "Dove Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "dove",
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 30
+              },
+              "rank": 30,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "WHITE SKELETON",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2049478,
+                "updated_at": "2017-10-14T17:37:33.71Z",
+                "display_name": "Eli Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "eli",
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 29
+              },
+              "rank": 29,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048097,
+                "updated_at": "2017-10-14T17:37:32.12Z",
+                "display_name": "Melody Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 66
+              },
+              "rank": 66,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048193,
+                "updated_at": "2017-10-14T17:37:33.553Z",
+                "display_name": "Monk Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 32
+              },
+              "rank": 32,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047756,
+                "updated_at": "2017-10-14T17:37:33.21Z",
+                "display_name": "Nocturna Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "nocturna",
+                "_character": {
+                  "id": 10,
+                  "name": "nocturna",
+                  "display_name": "Nocturna"
+                },
+                "total": 218
+              },
+              "rank": 218,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "WRAITH",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048482,
+                "updated_at": "2017-10-14T17:37:34.613Z",
+                "display_name": "Tempo Deathless (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
+                "run": "deathless",
+                "_run": {
+                  "id": 4,
+                  "name": "deathless",
+                  "display_name": "Deathless"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 45
+              },
+              "rank": 45,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "YELLOW SKELETON KNIGHT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047498,
+                "updated_at": "2017-10-14T17:37:31.703Z",
+                "display_name": "Bolt No Return Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "bolt",
+                "_character": {
+                  "id": 8,
+                  "name": "bolt",
+                  "display_name": "Bolt"
+                },
+                "total": 32
+              },
+              "rank": 32,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048136,
+                "updated_at": "2017-10-14T17:37:32.12Z",
+                "display_name": "Monk No Return Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 37
+              },
+              "rank": 37,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048085,
+                "updated_at": "2017-10-14T17:37:32.12Z",
+                "display_name": "Tempo No Return Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 55
+              },
+              "rank": 55,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048018,
+                "updated_at": "2017-10-14T17:37:32.12Z",
+                "display_name": "Cadence No Return Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 76
+              },
+              "rank": 76,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051086,
+                "updated_at": "2017-10-14T17:37:33.54Z",
+                "display_name": "Coda No Return Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "coda",
+                "_character": {
+                  "id": 7,
+                  "name": "coda",
+                  "display_name": "Coda"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "MISSEDBEAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047959,
+                "updated_at": "2017-10-14T17:37:32.09Z",
+                "display_name": "Mary No Return Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "mary",
+                "_character": {
+                  "id": 12,
+                  "name": "mary",
+                  "display_name": "Mary"
+                },
+                "total": 9
+              },
+              "rank": 9,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2049389,
+                "updated_at": "2017-10-14T17:37:33.663Z",
+                "display_name": "Monk No Return Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "NO RETURN MODE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048754,
+                "updated_at": "2017-10-14T17:37:33.99Z",
+                "display_name": "Tempo No Return Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "no-return",
+                "_mode": {
+                  "id": 1,
+                  "name": "no-return",
+                  "display_name": "No Return"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 8
+              },
+              "rank": 8,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048576,
+                "updated_at": "2017-10-14T17:37:33.99Z",
+                "display_name": "Dorian Hard Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 28
+              },
+              "rank": 28,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052467,
+                "updated_at": "2017-10-14T17:37:34.317Z",
+                "display_name": "Monk Hard Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 39
+              },
+              "rank": 39,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047746,
+                "updated_at": "2017-10-14T17:37:33.243Z",
+                "display_name": "Tempo Hard Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 192
+              },
+              "rank": 192,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLACK SKELETON MAGE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047970,
+                "updated_at": "2017-10-14T17:37:32.09Z",
+                "display_name": "Aria Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "aria",
+                "_character": {
+                  "id": 2,
+                  "name": "aria",
+                  "display_name": "Aria"
+                },
+                "total": 14
+              },
+              "rank": 14,
+              "score": 0,
+              "end": {
+                "zone": 0,
+                "level": 1
+              },
+              "killed_by": "MISSEDBEAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2050814,
+                "updated_at": "2017-10-14T17:37:33.413Z",
+                "display_name": "Bard Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "bard",
+                "_character": {
+                  "id": 9,
+                  "name": "bard",
+                  "display_name": "Bard"
+                },
+                "total": 43
+              },
+              "rank": 43,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052440,
+                "updated_at": "2017-10-14T17:37:34.303Z",
+                "display_name": "Bolt Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "bolt",
+                "_character": {
+                  "id": 8,
+                  "name": "bolt",
+                  "display_name": "Bolt"
+                },
+                "total": 5
+              },
+              "rank": 5,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052442,
+                "updated_at": "2017-10-14T17:37:34.303Z",
+                "display_name": "Coda Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "coda",
+                "_character": {
+                  "id": 7,
+                  "name": "coda",
+                  "display_name": "Coda"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "MISSEDBEAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052445,
+                "updated_at": "2017-10-14T17:37:34.303Z",
+                "display_name": "Diamond Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "diamond",
+                "_character": {
+                  "id": 11,
+                  "name": "diamond",
+                  "display_name": "Diamond"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052447,
+                "updated_at": "2017-10-14T17:37:34.317Z",
+                "display_name": "Dorian Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 2
+              },
+              "rank": 2,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052451,
+                "updated_at": "2017-10-14T17:37:34.317Z",
+                "display_name": "Dove Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dove",
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 4
+              },
+              "rank": 4,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "RED BAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2052453,
+                "updated_at": "2017-10-14T17:37:34.317Z",
+                "display_name": "Eli Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "eli",
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 6
               },
               "rank": 6,
               "score": 0,
@@ -6092,19 +6332,81 @@
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
-                "id": 2049476,
+                "id": 2050966,
+                "updated_at": "2017-10-14T17:37:33.46Z",
+                "display_name": "Mary Hard Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "dove",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.01Z",
-                "total": 0
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "mary",
+                "_character": {
+                  "id": 12,
+                  "name": "mary",
+                  "display_name": "Mary"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "MARY'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051899,
+                "updated_at": "2017-10-14T17:37:34.29Z",
+                "display_name": "Melody Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 8
               },
               "rank": 8,
               "score": 0,
@@ -6112,19 +6414,1270 @@
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
-                "id": 2049478,
+                "id": 2052460,
+                "updated_at": "2017-10-14T17:37:34.317Z",
+                "display_name": "Monk Hard Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 7
+              },
+              "rank": 7,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048203,
+                "updated_at": "2017-10-14T17:37:34.007Z",
+                "display_name": "Tempo Hard Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "hard",
+                "_mode": {
+                  "id": 2,
+                  "name": "hard",
+                  "display_name": "Hard"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 7
+              },
+              "rank": 7,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047422,
+                "updated_at": "2017-10-14T17:37:32.633Z",
+                "display_name": "Dorian Phasing Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 49
+              },
+              "rank": 43,
+              "score": 6,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047722,
+                "updated_at": "2017-10-14T17:37:32.603Z",
+                "display_name": "Tempo Phasing Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 200
+              },
+              "rank": 200,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047490,
+                "updated_at": "2017-10-14T17:37:32.463Z",
+                "display_name": "Cadence Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 131
+              },
+              "rank": 131,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048832,
+                "updated_at": "2017-10-14T17:37:33.99Z",
+                "display_name": "Coda Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "coda",
+                "_character": {
+                  "id": 7,
+                  "name": "coda",
+                  "display_name": "Coda"
+                },
+                "total": 7
+              },
+              "rank": 7,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "MISSEDBEAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048902,
+                "updated_at": "2017-10-14T17:37:33.647Z",
+                "display_name": "Diamond Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "diamond",
+                "_character": {
+                  "id": 11,
+                  "name": "diamond",
+                  "display_name": "Diamond"
+                },
+                "total": 19
+              },
+              "rank": 19,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051019,
+                "updated_at": "2017-10-14T17:37:33.493Z",
+                "display_name": "Dorian Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 6
+              },
+              "rank": 6,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051027,
+                "updated_at": "2017-10-14T17:37:33.493Z",
+                "display_name": "Dove Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dove",
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 12
+              },
+              "rank": 12,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLACK SKELETON",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047950,
+                "updated_at": "2017-10-14T17:37:32.09Z",
+                "display_name": "Eli Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
                 "character": "eli",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 8
+              },
+              "rank": 8,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2050606,
+                "updated_at": "2017-10-14T17:37:33.413Z",
+                "display_name": "Melody Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 16
+              },
+              "rank": 16,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047836,
+                "updated_at": "2017-10-14T17:37:32.057Z",
+                "display_name": "Nocturna Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "nocturna",
+                "_character": {
+                  "id": 10,
+                  "name": "nocturna",
+                  "display_name": "Nocturna"
+                },
+                "total": 53
+              },
+              "rank": 53,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048583,
+                "updated_at": "2017-10-14T17:37:33.727Z",
+                "display_name": "Tempo Phasing Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "phasing",
+                "_mode": {
+                  "id": 3,
+                  "name": "phasing",
+                  "display_name": "Phasing"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 16
+              },
+              "rank": 16,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047732,
+                "updated_at": "2017-10-14T17:37:32.62Z",
+                "display_name": "Tempo Randomizer Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 185
+              },
+              "rank": 172,
+              "score": 3,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "WRAITH",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047466,
+                "updated_at": "2017-10-14T17:37:32.463Z",
+                "display_name": "Cadence Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 142
+              },
+              "rank": 142,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048135,
+                "updated_at": "2017-10-14T17:37:32.153Z",
+                "display_name": "Diamond Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "diamond",
+                "_character": {
+                  "id": 11,
+                  "name": "diamond",
+                  "display_name": "Diamond"
+                },
+                "total": 13
+              },
+              "rank": 13,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051024,
+                "updated_at": "2017-10-14T17:37:33.493Z",
+                "display_name": "Dorian Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 2
+              },
+              "rank": 2,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "DORIAN'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051029,
+                "updated_at": "2017-10-14T17:37:33.507Z",
+                "display_name": "Dove Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dove",
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 8
+              },
+              "rank": 8,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051035,
+                "updated_at": "2017-10-14T17:37:33.507Z",
+                "display_name": "Eli Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "eli",
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2050602,
+                "updated_at": "2017-10-14T17:37:33.413Z",
+                "display_name": "Melody Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 19
+              },
+              "rank": 19,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051047,
+                "updated_at": "2017-10-14T17:37:33.507Z",
+                "display_name": "Monk Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 4
+              },
+              "rank": 4,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047421,
+                "updated_at": "2017-10-14T17:37:31.653Z",
+                "display_name": "Nocturna Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "nocturna",
+                "_character": {
+                  "id": 10,
+                  "name": "nocturna",
+                  "display_name": "Nocturna"
+                },
+                "total": 60
+              },
+              "rank": 60,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048741,
+                "updated_at": "2017-10-14T17:37:33.99Z",
+                "display_name": "Tempo Randomizer Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "randomizer",
+                "_mode": {
+                  "id": 4,
+                  "name": "randomizer",
+                  "display_name": "Randomizer"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 10
+              },
+              "rank": 10,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047799,
+                "updated_at": "2017-10-14T17:37:33.227Z",
+                "display_name": "Tempo Mystery Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "score",
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 160
+              },
+              "rank": 160,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "TEMPO'S CURSE",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047416,
+                "updated_at": "2017-10-14T17:37:33.257Z",
+                "display_name": "Cadence Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 115
+              },
+              "rank": 115,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048835,
+                "updated_at": "2017-10-14T17:37:34.38Z",
+                "display_name": "Coda Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "coda",
+                "_character": {
+                  "id": 7,
+                  "name": "coda",
+                  "display_name": "Coda"
+                },
+                "total": 3
+              },
+              "rank": 3,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "MISSEDBEAT",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2049889,
+                "updated_at": "2017-10-14T17:37:33.4Z",
+                "display_name": "Diamond Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "diamond",
+                "_character": {
+                  "id": 11,
+                  "name": "diamond",
+                  "display_name": "Diamond"
+                },
+                "total": 9
+              },
+              "rank": 9,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2047449,
+                "updated_at": "2017-10-14T17:37:31.703Z",
+                "display_name": "Dorian Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 4
+              },
+              "rank": 4,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2051033,
+                "updated_at": "2017-10-14T17:37:33.507Z",
+                "display_name": "Dove Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "dove",
+                "_character": {
+                  "id": 6,
+                  "name": "dove",
+                  "display_name": "Dove"
+                },
+                "total": 11
+              },
+              "rank": 10,
+              "score": 2,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BLUE SLIME",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048149,
+                "updated_at": "2017-10-14T17:37:32.153Z",
+                "display_name": "Eli Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "eli",
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 7
+              },
+              "rank": 7,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2050603,
+                "updated_at": "2017-10-14T17:37:33.413Z",
+                "display_name": "Melody Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 11
               },
               "rank": 11,
               "score": 0,
@@ -6132,101 +7685,165 @@
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
-                "id": 2048097,
+                "id": 2049390,
+                "updated_at": "2017-10-14T17:37:33.663Z",
+                "display_name": "Monk Mystery Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "melody",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "monk",
+                "_character": {
+                  "id": 5,
+                  "name": "monk",
+                  "display_name": "Monk"
+                },
+                "total": 7
               },
-              "rank": 22,
+              "rank": 7,
               "score": 0,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
+              "killed_by": "BOMB",
+              "version": 93
             },
             {
               "leaderboard": {
-                "id": 2048193,
+                "id": 2047845,
+                "updated_at": "2017-10-14T17:37:32.073Z",
+                "display_name": "Nocturna Mystery Seeded Score (Amplified)",
+                "production": true,
                 "product": "amplified",
-                "character": "monk",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "nocturna",
+                "_character": {
+                  "id": 10,
+                  "name": "nocturna",
+                  "display_name": "Nocturna"
+                },
+                "total": 49
+              },
+              "rank": 49,
+              "score": 0,
+              "end": {
+                "zone": 1,
+                "level": 1
+              },
+              "killed_by": "BOMB",
+              "version": 93
+            },
+            {
+              "leaderboard": {
+                "id": 2048070,
+                "updated_at": "2017-10-14T17:37:32.12Z",
+                "display_name": "Tempo Mystery Seeded Score (Amplified)",
+                "production": true,
+                "product": "amplified",
+                "_product": {
+                  "id": 1,
+                  "name": "amplified",
+                  "display_name": "Amplified"
+                },
+                "mode": "mystery",
+                "_mode": {
+                  "id": 5,
+                  "name": "mystery",
+                  "display_name": "Mystery"
+                },
+                "run": "seeded-score",
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "tempo",
+                "_character": {
+                  "id": 13,
+                  "name": "tempo",
+                  "display_name": "Tempo"
+                },
+                "total": 10
               },
               "rank": 8,
-              "score": 0,
+              "score": 10,
               "end": {
                 "zone": 1,
                 "level": 1
               },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2047756,
-                "product": "amplified",
-                "character": "nocturna",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
-              },
-              "rank": 52,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
-            },
-            {
-              "leaderboard": {
-                "id": 2048482,
-                "product": "amplified",
-                "character": "tempo",
-                "mode": "standard",
-                "run": "deathless",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.013Z",
-                "total": 0
-              },
-              "rank": 18,
-              "score": 0,
-              "end": {
-                "zone": 1,
-                "level": 1
-              },
-              "killed_by": null,
-              "version": null
+              "killed_by": "GREEN DRAGON",
+              "version": 93
             },
             {
               "leaderboard": {
                 "id": 739795,
+                "updated_at": "2017-10-14T17:37:31.513Z",
+                "display_name": "Bard Score",
+                "production": true,
                 "product": "classic",
-                "character": "bard",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.107Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "bard",
+                "_character": {
+                  "id": 9,
+                  "name": "bard",
+                  "display_name": "Bard"
+                },
+                "total": 60691
               },
-              "rank": 19381,
+              "rank": 20432,
               "score": 1994,
               "end": {
                 "zone": 4,
@@ -6238,15 +7855,36 @@
             {
               "leaderboard": {
                 "id": 739999,
+                "updated_at": "2017-10-14T17:37:34.24Z",
+                "display_name": "Cadence Score",
+                "production": true,
                 "product": "classic",
-                "character": "cadence",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:17.583Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 141954
               },
-              "rank": 345,
+              "rank": 354,
               "score": 11116,
               "end": {
                 "zone": 4,
@@ -6258,15 +7896,36 @@
             {
               "leaderboard": {
                 "id": 741117,
+                "updated_at": "2017-10-14T17:37:35.3Z",
+                "display_name": "Dorian Score",
+                "production": true,
                 "product": "classic",
-                "character": "dorian",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.107Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "dorian",
+                "_character": {
+                  "id": 3,
+                  "name": "dorian",
+                  "display_name": "Dorian"
+                },
+                "total": 11600
               },
-              "rank": 8251,
+              "rank": 8643,
               "score": 70,
               "end": {
                 "zone": 2,
@@ -6278,15 +7937,36 @@
             {
               "leaderboard": {
                 "id": 739792,
+                "updated_at": "2017-10-14T17:37:32.353Z",
+                "display_name": "Eli Score",
+                "production": true,
                 "product": "classic",
-                "character": "eli",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.107Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "eli",
+                "_character": {
+                  "id": 4,
+                  "name": "eli",
+                  "display_name": "Eli"
+                },
+                "total": 21819
               },
-              "rank": 5731,
+              "rank": 6021,
               "score": 949,
               "end": {
                 "zone": 4,
@@ -6298,15 +7978,36 @@
             {
               "leaderboard": {
                 "id": 740390,
+                "updated_at": "2017-10-14T17:37:35.487Z",
+                "display_name": "Melody Score",
+                "production": true,
                 "product": "classic",
-                "character": "melody",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:17.577Z",
-                "total": 0
+                "_run": {
+                  "id": 0,
+                  "name": "score",
+                  "display_name": "Score"
+                },
+                "character": "melody",
+                "_character": {
+                  "id": 1,
+                  "name": "melody",
+                  "display_name": "Melody"
+                },
+                "total": 32290
               },
-              "rank": 16465,
+              "rank": 17284,
               "score": 1451,
               "end": {
                 "zone": 4,
@@ -6318,15 +8019,36 @@
             {
               "leaderboard": {
                 "id": 739796,
+                "updated_at": "2017-10-14T17:37:34.193Z",
+                "display_name": "Bard Speed",
+                "production": true,
                 "product": "classic",
-                "character": "bard",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "speed",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:07.11Z",
-                "total": 0
+                "_run": {
+                  "id": 1,
+                  "name": "speed",
+                  "display_name": "Speed"
+                },
+                "character": "bard",
+                "_character": {
+                  "id": 9,
+                  "name": "bard",
+                  "display_name": "Bard"
+                },
+                "total": 22278
               },
-              "rank": 320,
+              "rank": 324,
               "score": 99642937,
               "end": {
                 "zone": 4,
@@ -6338,13 +8060,34 @@
             {
               "leaderboard": {
                 "id": 740000,
+                "updated_at": "2017-10-14T17:37:44.557Z",
+                "display_name": "Cadence Speed",
+                "production": true,
                 "product": "classic",
-                "character": "cadence",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "speed",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:17.64Z",
-                "total": 0
+                "_run": {
+                  "id": 1,
+                  "name": "speed",
+                  "display_name": "Speed"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 24980
               },
               "rank": 247,
               "score": 99536106,
@@ -6358,15 +8101,36 @@
             {
               "leaderboard": {
                 "id": 740363,
+                "updated_at": "2017-10-14T17:37:35.783Z",
+                "display_name": "Cadence Seeded Score",
+                "production": true,
                 "product": "classic",
-                "character": "cadence",
+                "_product": {
+                  "id": 0,
+                  "name": "classic",
+                  "display_name": "Classic"
+                },
                 "mode": "standard",
+                "_mode": {
+                  "id": 0,
+                  "name": "standard",
+                  "display_name": "Standard"
+                },
                 "run": "seeded-score",
-                "display_name": null,
-                "updated_at": "2017-07-21T21:43:17.543Z",
-                "total": 0
+                "_run": {
+                  "id": 2,
+                  "name": "seeded-score",
+                  "display_name": "Seeded Score"
+                },
+                "character": "cadence",
+                "_character": {
+                  "id": 0,
+                  "name": "cadence",
+                  "display_name": "Cadence"
+                },
+                "total": 48109
               },
-              "rank": 44294,
+              "rank": 46889,
               "score": 1,
               "end": {
                 "zone": 1,

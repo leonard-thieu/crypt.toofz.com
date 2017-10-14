@@ -22,7 +22,7 @@ gulp.task('build', ['build:js', 'build:css']);
 gulp.task('build:js', ['build:js:test'], () => {
     const opts: browserify.Options = {
         entries: 'src/app.module.ts',
-        debug: true
+        debug: true,
     };
     const bundle = browserify(opts)
         .ignore('angular-loading-bar')
@@ -33,10 +33,10 @@ gulp.task('build:js', ['build:js:test'], () => {
         .pipe(source('site.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({
-            loadMaps: true
+            loadMaps: true,
         }))
         .pipe(babel({
-            plugins: ['angularjs-annotate']
+            plugins: ['angularjs-annotate'],
         }));
 
     const site = bundle
@@ -59,7 +59,12 @@ gulp.task('build:js:test', () => {
     return tsProject.src()
         .pipe(sourcemaps.init())
         .pipe(tsProject()).js
-        .pipe(sourcemaps.write())
+        .pipe(babel({
+            plugins: ['angularjs-annotate'],
+        }))
+        .pipe(sourcemaps.write({
+            sourceRoot: __dirname,
+        }))
         .pipe(gulp.dest('.'));
 });
 
@@ -68,7 +73,7 @@ gulp.task('build:css', () => {
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            browsers: ['last 2 versions']
+            browsers: ['last 2 versions'],
         }));
 
     const site = sassResult
@@ -92,7 +97,7 @@ gulp.task('clean:js', ['clean:js:test'], () => {
         'src/**/*.js',
         'src/**/*.js.map',
         '*.js',
-        '*.js.map'
+        '*.js.map',
     ]);
 });
 
@@ -100,13 +105,13 @@ gulp.task('clean:js:test', () => {
     return del([
         'tests/**/*.js',
         'tests/**/*.js.map',
-        'coverage/'
+        'coverage/',
     ]);
 });
 
 gulp.task('clean:css', () => {
     return del([
         'css/**/*.css',
-        'css/**/*.css.map'
+        'css/**/*.css.map',
     ]);
 });
