@@ -24,7 +24,18 @@
 
 <body>
     @RenderBody()
-    <ui-view class="container"></ui-view>
+    <div class="container">
+        <ui-view></ui-view>
+        
+        <footer>
+            <p>
+                <span id="copyright">&#169; 2017 Leonard Thieu</span>
+                <a href="https://twitter.com/Mendayen" class="fa fa-twitter"></a>
+                <a href="https://github.com/leonard-thieu/toofz-necrodancer" class="fa fa-github"></a>
+            </p>
+            <p>v@(MvcApplication.Version)</p>
+        </footer>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="lib/bootstrap/bootstrap.min.js?v=2"></script>
@@ -41,7 +52,6 @@
         const options = {
             apiBaseUrl: '@MvcApplication.ApiBaseUrl',
             isDevelopment: @Request.IsLocal.ToString().ToLower(),
-            version: '@MvcApplication.Version',
         };
     </script>
     @if (Request.IsLocal)

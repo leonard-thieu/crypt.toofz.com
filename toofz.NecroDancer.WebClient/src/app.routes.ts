@@ -31,10 +31,6 @@ angular
                     'ngInject';
                     return toofzSiteApi.getAreas();
                 },
-                version: (version: string) => {
-                    'ngInject';
-                    return version;
-                },
             },
         };
         $stateProvider.state(rootState);
