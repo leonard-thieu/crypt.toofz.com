@@ -20,7 +20,7 @@ angular
         'necrodancer.pagination'
     ])
     .component('ndEnemies', {
-        templateUrl: __dirname + '/enemies.html',
+        templateUrl: fingerprint.get(__dirname + '/enemies.html'),
         controller: EnemiesController,
         bindings: {
             data: '<'

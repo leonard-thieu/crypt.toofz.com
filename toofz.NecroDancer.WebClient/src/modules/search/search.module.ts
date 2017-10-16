@@ -26,11 +26,11 @@ angular
         'toofz.rest-api'
     ])
     .component('ndSearch', {
-        templateUrl: __dirname + '/search.html',
+        templateUrl: fingerprint.get(__dirname + '/search.html'),
         controller: SearchController
     })
     .component('ndSearchResult', {
-        templateUrl: __dirname + '/search-result.html',
+        templateUrl: fingerprint.get(__dirname + '/search-result.html'),
         bindings: {
             text: '<',
             item: '<'

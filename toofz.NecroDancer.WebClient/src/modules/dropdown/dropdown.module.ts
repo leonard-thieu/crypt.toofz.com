@@ -18,13 +18,13 @@ import * as angular from 'angular';
 angular
     .module('necrodancer.dropdown', [])
     .component('ndDropdown', {
-        templateUrl: __dirname + '/dropdown.html',
+        templateUrl: fingerprint.get(__dirname + '/dropdown.html'),
         bindings: {
             category: '<'
         }
     })
     .component('ndSubmenu', {
-        templateUrl: __dirname + '/submenu.html',
+        templateUrl: fingerprint.get(__dirname + '/submenu.html'),
         bindings: {
             category: '<'
         }

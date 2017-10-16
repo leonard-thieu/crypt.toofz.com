@@ -21,7 +21,7 @@ angular
         'toofz.rest-api'
     ])
     .component('ndLeaderboards', {
-        templateUrl: __dirname + '/leaderboards.html',
+        templateUrl: fingerprint.get(__dirname + '/leaderboards.html'),
         controller: LeaderboardsController,
         bindings: {
             categories: '<',

@@ -49,13 +49,23 @@
 
     <script>
         const options = {
-            apiBaseUrl: '@MvcApplication.ApiBaseUrl',
+            apiBaseUrl: '@MvcApplication.ApiBaseUrl.TrimEnd('/')',
             isDevelopment: @(Request.IsLocal ? "true" : "false"),
+        };
+        const fingerprint = {
+            data: {
+                @foreach (var fingerprint in MvcApplication.Fingerprints)
+                {
+                    <text>"@fingerprint.Key": "@fingerprint.Value",</text>
+                }
+            },
+            get: function (url) {
+                return this.data[url] || url;
+            },
         };
     </script>
     @if (Request.IsLocal)
     {
-
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="></script>
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js" integrity="sha256-9LeEGfQ5kyFt9Jn2EfwXqdBII40MS8iOC2YRF4T/T14="></script>
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg="></script>

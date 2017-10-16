@@ -27,7 +27,7 @@ angular
         'necrodancer.slug'
     ])
     .component('ndLeaderboard', {
-        templateUrl: __dirname + '/leaderboard.html',
+        templateUrl: fingerprint.get(__dirname + '/leaderboard.html'),
         controller: LeaderboardController,
         bindings: {
             playerEntry: '<',

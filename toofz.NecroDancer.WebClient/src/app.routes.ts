@@ -25,7 +25,7 @@ angular
             abstract: true,
             name: 'root',
             url: '',
-            templateUrl: '../root.html?v=2',
+            templateUrl: fingerprint.get(__dirname + '/root.html'),
             resolve: {
                 areas: (toofzSiteApi: ToofzSiteApi) => {
                     'ngInject';
@@ -38,7 +38,7 @@ angular
         const landingState: IState = {
             name: 'root.landing',
             url: '',
-            templateUrl: '../landing.html',
+            templateUrl: fingerprint.get(__dirname + '/landing.html'),
         };
         $stateProvider.state(landingState);
 
@@ -408,7 +408,7 @@ angular
         const otherwiseState: IState = {
             name: 'root.otherwise',
             url: '*path',
-            templateUrl: '../404.html',
+            templateUrl: fingerprint.get(__dirname + '/404.html'),
         };
         $stateProvider.state(otherwiseState);
 

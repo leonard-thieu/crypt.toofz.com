@@ -18,7 +18,7 @@ angular
         'toofz.site-api'
     ])
     .component('ndNavbar', {
-        templateUrl: __dirname + '/navbar.html',
+        templateUrl: fingerprint.get(__dirname + '/navbar.html'),
         controller: NavbarController,
         bindings: {
             areas: '<'

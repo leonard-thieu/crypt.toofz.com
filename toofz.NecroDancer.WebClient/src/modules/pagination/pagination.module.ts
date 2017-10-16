@@ -16,7 +16,7 @@ angular
         'ui.router'
     ])
     .component('ndPagination', {
-        templateUrl: __dirname + '/pagination.html',
+        templateUrl: fingerprint.get(__dirname + '/pagination.html'),
         controller: PaginationController,
         bindings: {
             data: '<'

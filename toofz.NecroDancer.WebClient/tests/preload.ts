@@ -14,3 +14,13 @@ g.should = chai.should();
 chai.use(chaiAsPromised);
 chai.use(chaiInterface);
 chai.use(sinonChai);
+
+g.options = {
+    apiBaseUrl: 'http://localhost',
+    isDevelopment: true,
+};
+g.fingerprint = {
+    get(url: string) {
+        return url;
+    },
+};

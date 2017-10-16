@@ -43,30 +43,30 @@ angular
         'necrodancer.page-title'
     ])
     .component('ndPlayerProfile', {
-        templateUrl: __dirname + '/player-profile.html',
+        templateUrl: fingerprint.get(__dirname + '/player-profile.html'),
     })
     .component('ndPlayerProfileHeader', {
-        templateUrl: __dirname + '/player-profile-header.html',
+        templateUrl: fingerprint.get(__dirname + '/player-profile-header.html'),
         bindings: {
             player: '<',
         }
     })
     .component('ndPlayerProfileFooter', {
-        templateUrl: __dirname + '/player-profile-footer.html',
+        templateUrl: fingerprint.get(__dirname + '/player-profile-footer.html'),
         bindings: {
             leaderboardsUpdatedAt: '<',
             playerUpdatedAt: '<',
         }
     })
     .component('ndPlayerEntries', {
-        templateUrl: __dirname + '/player-entries.html?v=2',
+        templateUrl: fingerprint.get(__dirname + '/player-entries.html'),
         controller: PlayerEntriesController,
         bindings: {
             data: '<',
         }
     })
     .component('ndPlayerDailyEntries', {
-        templateUrl: __dirname + '/player-daily-entries.html?v=2',
+        templateUrl: fingerprint.get(__dirname + '/player-daily-entries.html'),
         controller: PlayerDailyEntriesController,
         bindings: {
             data: '<',

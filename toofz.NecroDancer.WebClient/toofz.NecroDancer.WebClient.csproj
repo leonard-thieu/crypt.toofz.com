@@ -263,10 +263,10 @@
     <Content Include="lib\bootstrap\bootstrap.min.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
-    <Content Include="404.html" />
-    <Content Include="landing.html" />
+    <Content Include="src\404.html" />
+    <Content Include="src\landing.html" />
+    <Content Include="src\root.html" />
     <Content Include="robots.txt" />
-    <Content Include="root.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\characters\all-characters-amplified.png" />

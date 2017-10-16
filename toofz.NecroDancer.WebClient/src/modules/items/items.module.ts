@@ -22,7 +22,7 @@ angular
         'necrodancer.titlecase'
     ])
     .component('ndItems', {
-        templateUrl: __dirname + '/items.html',
+        templateUrl: fingerprint.get(__dirname + '/items.html'),
         controller: ItemsController,
         bindings: {
             data: '<'
