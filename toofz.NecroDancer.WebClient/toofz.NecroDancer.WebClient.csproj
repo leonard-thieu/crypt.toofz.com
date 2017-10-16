@@ -133,16 +133,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Compile Include="FingerPrint.cs" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="site.js" />
-    <Content Include="site.min.js">
-      <DependentUpon>site.js</DependentUpon>
     </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -252,7 +249,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lib\bootstrap\bootstrap.js" />
+    <Content Include="js\site.js" />
+    <Content Include="js\site.js.map">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="js\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="js\site.min.js.map">
+      <DependentUpon>site.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
@@ -288,8 +295,15 @@
     <None Include="css\navmenu.scss" />
     <None Include="css\player.scss" />
     <None Include="css\site.scss" />
+    <Content Include="css\site.css" />
+    <Content Include="css\site.css.map">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
     <Content Include="css\site.min.css">
-      <DependentUpon>site.scss</DependentUpon>
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="css\site.min.css.map">
+      <DependentUpon>site.min.css</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
