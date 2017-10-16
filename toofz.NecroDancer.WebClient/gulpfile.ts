@@ -19,7 +19,7 @@ gulp.task('default', ['build']);
 
 gulp.task('build', ['build:js', 'build:css']);
 
-gulp.task('build:js', ['build:js:test'], () => {
+gulp.task('build:js', () => {
     const opts: browserify.Options = {
         entries: 'src/app.module.ts',
         debug: true,
@@ -42,14 +42,14 @@ gulp.task('build:js', ['build:js:test'], () => {
     const site = bundle
         .pipe(concat('site.js'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('js'));
 
     const minify = composer(require('uglify-es'), console);
     const siteMin = bundle
         .pipe(concat('site.min.js'))
         .pipe(minify())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('js'));
 
     return merge(site, siteMin);
 });
@@ -94,6 +94,8 @@ gulp.task('clean', ['clean:js', 'clean:css']);
 
 gulp.task('clean:js', ['clean:js:test'], () => {
     return del([
+        'js/**/*.js',
+        'js/**/*.js.map',
         'src/**/*.js',
         'src/**/*.js.map',
         '*.js',
