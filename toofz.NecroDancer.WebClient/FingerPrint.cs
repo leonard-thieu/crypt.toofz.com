@@ -1,5 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Caching;
 using System.Web.Hosting;
@@ -13,12 +13,18 @@ namespace toofz.NecroDancer.WebClient
         {
             if (HttpRuntime.Cache[rootRelativePath] == null)
             {
-                string absolute = HostingEnvironment.MapPath("~" + rootRelativePath);
+                var absolute = HostingEnvironment.MapPath("~" + rootRelativePath);
 
-                DateTime date = File.GetLastWriteTime(absolute);
-                int index = rootRelativePath.LastIndexOf('/');
+                string tag = null;
+                using (var sha256 = SHA256.Create())
+                using (var fs = File.OpenRead(absolute))
+                {
+                    var hashValue = sha256.ComputeHash(fs);
+                    tag = HttpServerUtility.UrlTokenEncode(hashValue);
+                }
+                var index = rootRelativePath.LastIndexOf('/');
 
-                string result = rootRelativePath.Insert(index, "/v-" + date.Ticks);
+                var result = rootRelativePath.Insert(index, "/sha256-" + tag);
                 HttpRuntime.Cache.Insert(rootRelativePath, result, new CacheDependency(absolute));
             }
 
