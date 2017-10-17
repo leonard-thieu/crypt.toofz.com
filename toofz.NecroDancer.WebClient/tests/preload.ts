@@ -15,10 +15,7 @@ chai.use(chaiAsPromised);
 chai.use(chaiInterface);
 chai.use(sinonChai);
 
-g.options = {
-    apiBaseUrl: 'http://localhost',
-    isDevelopment: true,
-};
+g.apiBaseUrl = 'http://localhost';
 g.fingerprint = {
     get(url: string) {
         return url;

@@ -48,10 +48,7 @@
     </div>
 
     <script>
-        const options = {
-            apiBaseUrl: '@MvcApplication.ApiBaseUrl.TrimEnd('/')',
-            isDevelopment: @(Request.IsLocal ? "true" : "false"),
-        };
+        const apiBaseUrl = '@MvcApplication.ApiBaseUrl.TrimEnd('/')';
         const fingerprint = {
             data: {
                 @foreach (var fingerprint in MvcApplication.Fingerprints)
@@ -78,6 +75,15 @@
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.10/URI.js" integrity="sha256-iu1ZjNf82uEnRWh4o2Dq7YUg/RoIa/NrxcH7kb/Zwdg="></script>
         <script src="@Fingerprint.Tag("/lib/bootstrap/bootstrap.js")"></script>
         <script src="@Fingerprint.Tag("/js/site.js")"></script>
+        <script>
+            angular
+                .module('necrodancer.app')
+                .config(['$compileProvider', ($compileProvider) => {
+                    $compileProvider.debugInfoEnabled(false);
+                    $compileProvider.commentDirectivesEnabled(false);
+                    $compileProvider.cssClassDirectivesEnabled(false);
+                }]);
+        </script>
     }
     else
     {

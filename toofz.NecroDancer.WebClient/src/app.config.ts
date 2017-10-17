@@ -1,20 +1,15 @@
 import * as angular from 'angular';
 
 declare global {
-    const options: Options;
+    const apiBaseUrl: string;
     const fingerprint: {
         get(url: string): string;
     };
 }
 
-interface Options {
-    apiBaseUrl: string;
-    isDevelopment: boolean;
-}
-
 angular
     .module('necrodancer.app')
-    .constant('apiBaseUrl', options.apiBaseUrl)
+    .constant('apiBaseUrl', apiBaseUrl)
     .config((cfpLoadingBarProvider: angular.loadingBar.ILoadingBarProvider) => {
         'ngInject';
         cfpLoadingBarProvider.latencyThreshold = 0;
@@ -33,14 +28,3 @@ angular
             });
         });
     });
-
-if (!options.isDevelopment) {
-    angular
-        .module('necrodancer.app')
-        .config(($compileProvider: angular.ICompileProvider) => {
-            'ngInject';
-            $compileProvider.debugInfoEnabled(false);
-            $compileProvider.commentDirectivesEnabled(false);
-            $compileProvider.cssClassDirectivesEnabled(false);
-        });
-}
