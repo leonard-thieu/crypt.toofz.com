@@ -304,7 +304,63 @@ describe('necrodancer (Routes)', function() {
         const state = 'root.leaderboard';
 
         describe('url', function() {
+            const characters = ['all', 'all-characters', 'all-characters-amplified', 'aria', 'bard', 'bolt', 'cadence', 'coda',
+                'diamond', 'dorian', 'dove', 'eli', 'mary', 'melody', 'monk', 'nocturna', 'story', 'story-mode', 'tempo'];
+            const runs = ['score', 'speed', 'seededscore', 'seeded-score', 'seededspeed', 'seeded-speed', 'deathless'];
+            const modes = ['standard', 'no-return', 'hard-mode', 'hard', 'phasing', 'randomizer', 'mystery'];
 
+            // Classic
+            for (let i = 0; i < characters.length; i++) {
+                const character = characters[i];
+                for (let j = 0; j < runs.length; j++) {
+                    const run = runs[j];
+                    it(`should return '/leaderboards/${character}/${run}'`, function() {
+                        const url = $state.href(state, {
+                            character: character,
+                            run: run,
+                        });
+
+                        url.should.equal(`/leaderboards/${character}/${run}`);
+                    });
+                }
+            }
+
+            // Amplified
+            for (let i = 0; i < characters.length; i++) {
+                const character = characters[i];
+                for (let j = 0; j < runs.length; j++) {
+                    const run = runs[j];
+                    for (let k = 0; k < modes.length; k++) {
+                        const mode = modes[k];
+                        switch (mode) {
+                            case 'standard':
+                                it(`should return '/leaderboards/amplified/${character}/${run}'`, function() {
+                                    const url = $state.href(state, {
+                                        product: 'amplified',
+                                        character: character,
+                                        run: run,
+                                        mode: mode,
+                                    });
+
+                                    url.should.equal(`/leaderboards/amplified/${character}/${run}`);
+                                });
+                                break;
+                            default:
+                                it(`should return '/leaderboards/amplified/${character}/${run}/${mode}'`, function() {
+                                    const url = $state.href(state, {
+                                        product: 'amplified',
+                                        character: character,
+                                        run: run,
+                                        mode: mode,
+                                    });
+
+                                    url.should.equal(`/leaderboards/amplified/${character}/${run}/${mode}`);
+                                });
+                                break;
+                        }
+                    }
+                }
+            }
         });
 
         describe('resolve', function() {

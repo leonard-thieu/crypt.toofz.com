@@ -246,7 +246,7 @@ angular
                         offset = util.pageToOffset(page, 20)!;
                     }
                     const params = {
-                        offset: offset !== 0 ? offset : undefined,
+                        offset,
                     };
 
                     return toofzRestApi.getLeaderboardEntries(leaderboard.id, params);
@@ -309,7 +309,7 @@ angular
                         offset = util.pageToOffset(page, 20)!;
                     }
                     const params = {
-                        offset: offset !== 0 ? offset : undefined,
+                        offset,
                     };
 
                     return toofzRestApi.getDailyLeaderboardEntries(leaderboard.id, params);
