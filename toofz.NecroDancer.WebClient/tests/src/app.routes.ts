@@ -107,10 +107,10 @@ describe('necrodancer (Routes)', function() {
         const state = 'root.landing';
 
         describe('url', function() {
-            it(`should return ''`, function() {
+            it(`should return '/'`, function() {
                 const url = $state.href(state);
 
-                url.should.equal('');
+                url.should.equal('/');
             });
         });
     });

@@ -37,7 +37,7 @@ angular
 
         const landingState: IState = {
             name: 'root.landing',
-            url: '',
+            url: '/',
             templateUrl: fingerprint.get(__dirname + '/landing.html'),
         };
         $stateProvider.state(landingState);
