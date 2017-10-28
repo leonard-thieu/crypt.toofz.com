@@ -129,7 +129,11 @@ angular
                 leaderboards: (categories: toofzSite.Leaderboard.Categories,
                                toofzRestApi: ToofzRestApi) => {
                     'ngInject';
-                    const params: any = {};
+                    const params: any = {
+                        production: true,
+                        coOp: false,
+                        customMusic: false,
+                    };
 
                     _.each(categories, (category, name) => {
                         params[name!] = _.reduce(category, (result, value, key) => {
@@ -208,6 +212,9 @@ angular
                         modes: [mode],
                         runs: [run],
                         characters: [character],
+                        production: true,
+                        coOp: false,
+                        customMusic: false,
                     }).then(leaderboardsEnvelope => {
                         const leaderboard = leaderboardsEnvelope.leaderboards[0];
                         if (!leaderboard) {
@@ -342,6 +349,8 @@ angular
                     return toofzRestApi.getPlayerEntries(id, {
                         products: ['classic'],
                         production: true,
+                        coOp: false,
+                        customMusic: false,
                     });
                 },
             },
@@ -361,6 +370,8 @@ angular
                     return toofzRestApi.getPlayerEntries(id, {
                         products: ['amplified'],
                         production: true,
+                        coOp: false,
+                        customMusic: false,
                     });
                 },
             },

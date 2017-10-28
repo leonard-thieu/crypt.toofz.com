@@ -31,6 +31,27 @@ declare namespace toofz {
         enemies: Enemy[];
     }
 
+    interface EntryBase<TLeaderboard extends LeaderboardBase> {
+        leaderboard?: TLeaderboard;
+        player?: Player;
+        rank: number;
+        score: number;
+        end: End;
+        killed_by: string | null;
+        version: number | null;
+    }
+
+    interface LeaderboardBase {
+        id: number;
+        updated_at: string;
+        name: string;
+        display_name: string;
+        production: boolean;
+        product: Products;
+        _product: Product;
+        total: number;
+    }
+
     interface Entry extends EntryBase<Leaderboard> {}
 
     interface Leaderboard extends LeaderboardBase {
@@ -40,6 +61,8 @@ declare namespace toofz {
         _run: Run;
         character: Characters;
         _character: Character;
+        coOp: boolean;
+        customMusic: boolean;
     }
 
     interface Leaderboards {
@@ -68,26 +91,6 @@ declare namespace toofz {
         leaderboard: DailyLeaderboard;
         total: number;
         entries: DailyEntry[];
-    }
-
-    interface EntryBase<TLeaderboard extends LeaderboardBase> {
-        leaderboard?: TLeaderboard;
-        player?: Player;
-        rank: number;
-        score: number;
-        end: End;
-        killed_by: string | null;
-        version: number | null;
-    }
-
-    interface LeaderboardBase {
-        id: number;
-        updated_at: string;
-        display_name: string;
-        production: boolean;
-        product: Products;
-        _product: Product;
-        total: number;
     }
 
     interface Product {
@@ -131,15 +134,15 @@ declare namespace toofz {
         players: Player[];
     }
 
-    interface PlayerEntries extends PlayerEntriesBase<Entry> {}
-
-    interface PlayerDailyEntries extends PlayerEntriesBase<DailyEntry> {}
-
     interface PlayerEntriesBase<TEntry extends EntryBase<LeaderboardBase>> {
         player: Player;
         total: number;
         entries: TEntry[];
     }
+
+    interface PlayerEntries extends PlayerEntriesBase<Entry> {}
+
+    interface PlayerDailyEntries extends PlayerEntriesBase<DailyEntry> {}
 
     interface PaginationParams {
         offset?: number;
@@ -151,6 +154,9 @@ declare namespace toofz {
         modes?: Modes[];
         runs?: Runs[];
         characters?: Characters[];
+        production?: boolean;
+        coOp?: boolean;
+        customMusic?: boolean;
     }
 
     interface GetDailyLeaderboardsParams extends PaginationParams {
@@ -162,6 +168,8 @@ declare namespace toofz {
     interface GetPlayerEntriesParams {
         products?: Products[];
         production?: boolean;
+        coOp?: boolean;
+        customMusic?: boolean;
     }
 
     interface GetPlayerDailyEntriesParams {

@@ -456,6 +456,7 @@ describe('necrodancer (Routes)', function() {
             const leaderboard: toofz.DailyLeaderboard = {
                 id: 1,
                 updated_at: '',
+                name: '',
                 display_name: '',
                 production: true,
                 product: 'amplified',

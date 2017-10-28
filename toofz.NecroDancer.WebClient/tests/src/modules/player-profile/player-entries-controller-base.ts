@@ -83,6 +83,7 @@ describe('PlayerEntriesControllerBase', function() {
                     leaderboard: {
                         id: 1,
                         updated_at: '2017-10-04T11:43:46.043Z',
+                        name: '',
                         display_name: '',
                         production: true,
                         product: 'amplified',
@@ -105,6 +106,7 @@ describe('PlayerEntriesControllerBase', function() {
                     leaderboard: {
                         id: 1,
                         updated_at: '2017-10-04T11:43:34.463Z',
+                        name: '',
                         display_name: '',
                         production: true,
                         product: 'amplified',
@@ -127,6 +129,7 @@ describe('PlayerEntriesControllerBase', function() {
                     leaderboard: {
                         id: 1,
                         updated_at: '2017-10-04T11:43:38.723Z',
+                        name: '',
                         display_name: '',
                         production: true,
                         product: 'amplified',
