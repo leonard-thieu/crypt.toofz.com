@@ -12,11 +12,6 @@ namespace toofz.NecroDancer.WebClient
 {
     public class MvcApplication : HttpApplication
     {
-        public static string ApiBaseUrl
-        {
-            get => Environment.GetEnvironmentVariable("toofzApiBaseAddress", EnvironmentVariableTarget.Machine);
-        }
-
         public static string InstrumentationKey
         {
             get => TelemetryConfiguration.Active.InstrumentationKey;

@@ -48,7 +48,7 @@
     </div>
 
     <script>
-        const apiBaseUrl = '@MvcApplication.ApiBaseUrl.TrimEnd('/')';
+        const apiBaseUrl = '@ConfigurationManager.AppSettings["toofzApiUrl"]';
         const fingerprint = {
             data: {
                 @foreach (var fingerprint in MvcApplication.Fingerprints)
