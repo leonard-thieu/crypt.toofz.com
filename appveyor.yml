@@ -7,11 +7,7 @@ branches:
 configuration:
   - Release
 environment:
-  APPVEYOR_CACHE_ENTRY_ZIP_ARGS: -t7z -m0=lzma -mx=9
   PROJECT: toofz.NecroDancer.WebClient
-cache:
-  - packages -> **\packages.config
-  - $(PROJECT)\node_modules -> $(PROJECT)\package.json
 notifications:
   - provider: Slack
     incoming_webhook:
@@ -22,6 +18,7 @@ assembly_info:
   assembly_version: $(appveyor_build_version)
 
 install:
+  - nuget update -Self
   - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 8)
   - npm install --global npm@5.3.0 codecov
   - node --version
