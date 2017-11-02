@@ -41,7 +41,7 @@ namespace toofz.NecroDancer.WebClient
         {
             get => fingerprints;
         }
-        static readonly Dictionary<string, string> fingerprints = new Dictionary<string, string>();
+        private static readonly Dictionary<string, string> fingerprints = new Dictionary<string, string>();
 
         protected void Application_Start()
         {
