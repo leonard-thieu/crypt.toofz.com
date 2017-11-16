@@ -1,4 +1,5 @@
 import * as angular from 'angular';
+import { TransitionService } from '@uirouter/angularjs';
 
 declare global {
     const apiBaseUrl: string;
@@ -26,5 +27,14 @@ angular
                 toParams,
                 error,
             });
+        });
+    })
+    .run(($transitions: TransitionService) => {
+        $transitions.onStart({}, () => {
+            appInsights.startTrackPage();
+        });
+
+        $transitions.onFinish({}, () => {
+            appInsights.stopTrackPage();
         });
     });
