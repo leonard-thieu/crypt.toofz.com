@@ -2,12 +2,13 @@ import * as angular from 'angular';
 
 import { ToofzRestApi } from '../toofz-rest-api/toofz-rest-api';
 import { SlugFilter } from '../slug/slug.module';
+import { StateService } from '@uirouter/angularjs';
 
 export class SearchController {
     constructor(private readonly $element: JQuery,
                 private readonly $rootScope: angular.IRootScopeService,
                 private readonly $compile: angular.ICompileService,
-                private readonly $state: angular.ui.IStateService,
+                private readonly $state: StateService,
                 private readonly toofzRestApi: ToofzRestApi,
                 private readonly slugFilter: SlugFilter) {
         'ngInject';

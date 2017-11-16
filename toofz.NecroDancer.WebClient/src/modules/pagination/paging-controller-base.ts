@@ -1,9 +1,9 @@
 import * as util from '../../util';
 
-import * as angular from 'angular';
+import { StateParams } from '@uirouter/angularjs';
 
 export abstract class PagingControllerBase<T extends toofz.PagedResults> {
-    constructor(protected $stateParams: angular.ui.IStateParamsService) {
+    constructor(protected $stateParams: StateParams) {
         'ngInject';
     }
 

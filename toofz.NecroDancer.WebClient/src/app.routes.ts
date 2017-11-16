@@ -3,25 +3,27 @@ import * as util from './util';
 
 import * as angular from 'angular';
 
-import {
-    IState,
-    IStateParamsService,
-} from 'angular-ui-router';
 import { ToofzRestApi } from './modules/toofz-rest-api/toofz-rest-api';
 import { ToofzSiteApi } from './modules/toofz-site-api/toofz-site-api';
+import {
+    StateProvider,
+    Ng1StateDeclaration,
+    StateParams,
+} from '@uirouter/angularjs';
+import { UrlMatcherFactory } from '@uirouter/core';
 
 angular
     .module('necrodancer.app')
     .config((apiBaseUrl: string,
              $locationProvider: angular.ILocationProvider,
-             $stateProvider: angular.ui.IStateProvider,
-             $urlMatcherFactoryProvider: angular.ui.IUrlMatcherFactory) => {
+             $stateProvider: StateProvider,
+             $urlMatcherFactoryProvider: UrlMatcherFactory) => {
         'ngInject';
         $urlMatcherFactoryProvider.strictMode(false);
         $urlMatcherFactoryProvider.defaultSquashPolicy(true);
         $urlMatcherFactoryProvider.caseInsensitive(true);
 
-        const rootState: IState = {
+        const rootState: Ng1StateDeclaration = {
             abstract: true,
             name: 'root',
             url: '',
@@ -35,14 +37,14 @@ angular
         };
         $stateProvider.state(rootState);
 
-        const landingState: IState = {
+        const landingState: Ng1StateDeclaration = {
             name: 'root.landing',
             url: '/',
             templateUrl: fingerprint.get(__dirname + '/landing.html'),
         };
         $stateProvider.state(landingState);
 
-        const itemsState: IState = {
+        const itemsState: Ng1StateDeclaration = {
             name: 'root.items',
             url: '/items/{category}/{subcategory}?{page:int}',
             params: {
@@ -52,7 +54,7 @@ angular
             },
             template: '<nd-items data="::$resolve.items"></nd-items>',
             resolve: {
-                items: ($stateParams: IStateParamsService,
+                items: ($stateParams: StateParams,
                         toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { category, subcategory, page } = $stateParams;
@@ -72,7 +74,7 @@ angular
         };
         $stateProvider.state(itemsState);
 
-        const enemiesState: IState = {
+        const enemiesState: Ng1StateDeclaration = {
             name: 'root.enemies',
             url: '/enemies/{attribute}?{page:int}',
             params: {
@@ -81,7 +83,7 @@ angular
             },
             template: '<nd-enemies data="::$resolve.enemies"></nd-enemies>',
             resolve: {
-                enemies: ($stateParams: IStateParamsService,
+                enemies: ($stateParams: StateParams,
                           toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     let { attribute, page } = $stateParams;
@@ -107,7 +109,7 @@ angular
         };
         $stateProvider.state(enemiesState);
 
-        const leaderboardsState: IState = {
+        const leaderboardsState: Ng1StateDeclaration = {
             name: 'root.leaderboards',
             url: '/leaderboards',
             template: '<nd-leaderboards categories="::$resolve.categories" leaderboards="::$resolve.leaderboards"></nd-leaderboards>',
@@ -116,7 +118,7 @@ angular
             },
             resolve: {
                 categories: (toofzSiteApi: ToofzSiteApi,
-                             $stateParams: angular.ui.IStateParamsService) => {
+                             $stateParams: StateParams) => {
                     'ngInject';
                     const { categories } = $stateParams;
 
@@ -164,7 +166,7 @@ angular
         const runs = ['score', 'speed', 'seededscore', 'seeded-score', 'seededspeed', 'seeded-speed', 'deathless'].join('|');
         const modes = ['standard', 'no-return', 'hard-mode', 'hard', 'phasing', 'randomizer', 'mystery'].join('|');
 
-        const leaderboardState: IState = {
+        const leaderboardState: Ng1StateDeclaration = {
             name: 'root.leaderboard',
             url: `/leaderboards/{product:${products}}/{character:${characters}}/{run:${runs}}/{mode:${modes}}?{page:int}&{id}`,
             template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
@@ -173,7 +175,7 @@ angular
                 mode: 'standard',
             },
             resolve: {
-                leaderboard: ($stateParams: IStateParamsService,
+                leaderboard: ($stateParams: StateParams,
                               toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     let { product, mode, run, character } = $stateParams;
@@ -226,7 +228,7 @@ angular
                     });
                 },
                 // This resolve is optional. If an entry can't be found, just display leaderboard entries without highlighting a player.
-                player: ($stateParams: IStateParamsService,
+                player: ($stateParams: StateParams,
                          leaderboard: toofz.Leaderboard,
                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
@@ -239,7 +241,7 @@ angular
                     return toofzRestApi.getPlayerEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
-                entries: ($stateParams: IStateParamsService,
+                entries: ($stateParams: StateParams,
                           leaderboard: toofz.Leaderboard,
                           player: toofz.Entry,
                           toofzRestApi: ToofzRestApi) => {
@@ -262,7 +264,7 @@ angular
         };
         $stateProvider.state(leaderboardState);
 
-        const dailyLeaderboardState: IState = {
+        const dailyLeaderboardState: Ng1StateDeclaration = {
             name: 'root.daily-leaderboard',
             url: `/leaderboards/{product:${products}}/daily?{date}&{production:bool}&{page:int}&{id}`,
             template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
@@ -271,7 +273,7 @@ angular
                 production: true,
             },
             resolve: {
-                leaderboard: ($stateParams: IStateParamsService,
+                leaderboard: ($stateParams: StateParams,
                               toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { product, date, production } = $stateParams;
@@ -289,7 +291,7 @@ angular
                     });
                 },
                 // This resolve is optional. If an entry can't be found, just display leaderboard entries without highlighting a player.
-                player: ($stateParams: IStateParamsService,
+                player: ($stateParams: StateParams,
                          leaderboard: toofz.DailyLeaderboard,
                          toofzRestApi: ToofzRestApi) => {
                     'ngInject';
@@ -302,7 +304,7 @@ angular
                     return toofzRestApi.getPlayerDailyEntry(id, leaderboard.id)
                         .catch(() => { });
                 },
-                entries: ($stateParams: IStateParamsService,
+                entries: ($stateParams: StateParams,
                           leaderboard: toofz.DailyLeaderboard,
                           player: toofz.Entry,
                           toofzRestApi: ToofzRestApi) => {
@@ -325,7 +327,7 @@ angular
         };
         $stateProvider.state(dailyLeaderboardState);
 
-        const playerState: IState = {
+        const playerState: Ng1StateDeclaration = {
             name: 'root.player',
             url: '/p/{id}/{slug}',
             params: {
@@ -336,12 +338,12 @@ angular
         };
         $stateProvider.state(playerState);
 
-        const playerClassicState: IState = {
+        const playerClassicState: Ng1StateDeclaration = {
             name: 'root.player.classic',
             url: '/classic',
             template: '<nd-player-entries data="::$resolve.classic"></nd-player-entries>',
             resolve: {
-                classic: ($stateParams: IStateParamsService,
+                classic: ($stateParams: StateParams,
                           toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -357,12 +359,12 @@ angular
         };
         $stateProvider.state(playerClassicState);
 
-        const playerAmplifiedState: IState = {
+        const playerAmplifiedState: Ng1StateDeclaration = {
             name: 'root.player.amplified',
             url: '/amplified',
             template: '<nd-player-entries data="::$resolve.amplified"></nd-player-entries>',
             resolve: {
-                amplified: ($stateParams: IStateParamsService,
+                amplified: ($stateParams: StateParams,
                             toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -378,12 +380,12 @@ angular
         };
         $stateProvider.state(playerAmplifiedState);
 
-        const playerClassicDailiesState: IState = {
+        const playerClassicDailiesState: Ng1StateDeclaration = {
             name: 'root.player.classic-dailies',
             url: '/classic-dailies',
             template: '<nd-player-daily-entries data="::$resolve.classic"></nd-player-daily-entries>',
             resolve: {
-                classic: ($stateParams: IStateParamsService,
+                classic: ($stateParams: StateParams,
                           toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -397,12 +399,12 @@ angular
         };
         $stateProvider.state(playerClassicDailiesState);
 
-        const playerAmplifiedDailiesState: IState = {
+        const playerAmplifiedDailiesState: Ng1StateDeclaration = {
             name: 'root.player.amplified-dailies',
             url: '/amplified-dailies',
             template: '<nd-player-daily-entries data="::$resolve.amplified"></nd-player-daily-entries>',
             resolve: {
-                amplified: ($stateParams: IStateParamsService,
+                amplified: ($stateParams: StateParams,
                             toofzRestApi: ToofzRestApi) => {
                     'ngInject';
                     const { id } = $stateParams;
@@ -416,7 +418,7 @@ angular
         };
         $stateProvider.state(playerAmplifiedDailiesState);
 
-        const otherwiseState: IState = {
+        const otherwiseState: Ng1StateDeclaration = {
             name: 'root.otherwise',
             url: '*path',
             templateUrl: fingerprint.get(__dirname + '/404.html'),

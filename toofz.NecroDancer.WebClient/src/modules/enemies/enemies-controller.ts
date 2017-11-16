@@ -1,10 +1,9 @@
-import * as angular from 'angular';
-
 import { PagingControllerBase } from '../pagination/paging-controller-base';
 import { PageTitle } from '../page-title/page-title';
+import { StateParams } from '@uirouter/angularjs';
 
 export class EnemiesController extends PagingControllerBase<toofz.Enemies> {
-    constructor($stateParams: angular.ui.IStateParamsService,
+    constructor($stateParams: StateParams,
                 private readonly pageTitle: PageTitle) {
         'ngInject';
         super($stateParams);

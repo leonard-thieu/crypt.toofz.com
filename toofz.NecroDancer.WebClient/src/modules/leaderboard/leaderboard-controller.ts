@@ -1,13 +1,12 @@
 import * as util from '../../util';
 
-import * as angular from 'angular';
-
 import { PageTitle } from '../page-title/page-title';
 import { PagingControllerBase } from '../pagination/paging-controller-base';
 import { SlugFilter } from '../slug/slug.module';
+import { StateParams } from '@uirouter/angularjs';
 
 export class LeaderboardController extends PagingControllerBase<toofz.LeaderboardEntries> {
-    constructor($stateParams: angular.ui.IStateParamsService,
+    constructor($stateParams: StateParams,
                 private readonly pageTitle: PageTitle,
                 private readonly slugFilter: SlugFilter) {
         'ngInject';

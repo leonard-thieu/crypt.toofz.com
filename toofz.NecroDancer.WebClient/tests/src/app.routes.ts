@@ -7,6 +7,12 @@ import '../../src/app.module';
 import { ToofzRestApi } from '../../src/modules/toofz-rest-api/toofz-rest-api';
 import { ToofzSiteApi } from '../../src/modules/toofz-site-api/toofz-site-api';
 import { BackendDefinition } from '../shared';
+import {
+    Ng1ViewDeclaration,
+    StateParams,
+    StateService
+} from '@uirouter/angularjs';
+import { StateObject } from '@uirouter/core';
 
 const toofzSite_definitions = require('./modules/toofz-site-api/toofz-site-api-definitions.json').definitions;
 
@@ -34,7 +40,7 @@ describe('necrodancer (Routes)', function() {
     function resolve(value: string) {
         return {
             forStateAndView: function(state: string, view?: string, locals?: any) {
-                const viewDefinition = view ?
+                const viewDefinition: any = view ?
                     $state.get(state).views![view] :
                     $state.get(state);
 
@@ -48,10 +54,10 @@ describe('necrodancer (Routes)', function() {
 
     let $templateCache: angular.ITemplateCacheService;
     let $location: angular.ILocationService;
-    let $state: angular.ui.IStateService;
+    let $state: StateService;
     let $rootScope: angular.IRootScopeService;
     let $injector: angular.auto.IInjectorService;
-    let $stateParams: angular.ui.IStateParamsService;
+    let $stateParams: StateParams;
     let toofzSiteApi: ToofzSiteApi;
     let toofzRestApi: ToofzRestApi;
 
@@ -82,7 +88,7 @@ describe('necrodancer (Routes)', function() {
 
         describe('url', function() {
             it(`should return ''`, function() {
-                const url = $state.href(state);
+                const url = $state.href(state, {});
 
                 url.should.equal('');
             });
@@ -108,7 +114,7 @@ describe('necrodancer (Routes)', function() {
 
         describe('url', function() {
             it(`should return '/'`, function() {
-                const url = $state.href(state);
+                const url = $state.href(state, {});
 
                 url.should.equal('/');
             });
@@ -120,7 +126,7 @@ describe('necrodancer (Routes)', function() {
 
         describe('url', function() {
             it(`should return '/items' if no params supplied`, function() {
-                const url = $state.href(state);
+                const url = $state.href(state, {});
 
                 url.should.equal('/items');
             });
@@ -196,7 +202,7 @@ describe('necrodancer (Routes)', function() {
 
         describe('url', function() {
             it(`should return '/enemies' if no params supplied`, function() {
-                const url = $state.href(state);
+                const url = $state.href(state, {});
 
                 url.should.equal('/enemies');
             });
@@ -251,7 +257,7 @@ describe('necrodancer (Routes)', function() {
 
         describe('url', function() {
             it(`should return '/leaderboards'`, function() {
-                const url = $state.href(state);
+                const url = $state.href(state, {});
 
                 url.should.equal('/leaderboards');
             });

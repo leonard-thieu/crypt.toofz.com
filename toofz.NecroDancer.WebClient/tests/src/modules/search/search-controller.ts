@@ -5,13 +5,15 @@ import 'angular-mocks';
 
 import '../../../../src/modules/search/search.module';
 import { SearchController } from '../../../../src/modules/search/search-controller';
+import { StateService } from '@uirouter/angularjs';
+
 const toofz_definitions = require('../toofz-rest-api/toofz-rest-api.definitions.json').definitions;
 
-describe('SearchController', function () {
+describe('SearchController', function() {
     let $componentController: angular.IComponentControllerService;
     let $httpBackend: angular.IHttpBackendService;
 
-    beforeEach(function () {
+    beforeEach(function() {
         angular.mock.module('necrodancer.search', {
             apiBaseUrl: ''
         });
@@ -31,8 +33,8 @@ describe('SearchController', function () {
         });
     });
 
-    describe('$postLink', function () {
-        it(`should initialize typeahead`, function () {
+    describe('$postLink', function() {
+        it(`should initialize typeahead`, function() {
             const $element = $('<nd-search><input></nd-search>');
             const ctrl = $componentController('ndSearch', {
                 $element: $element
@@ -42,11 +44,11 @@ describe('SearchController', function () {
         });
     });
 
-    describe('getSearchDatasetOptions', function () {
+    describe('getSearchDatasetOptions', function() {
         let ctrl: SearchController;
         let _ctrl: any;
 
-        beforeEach(function () {
+        beforeEach(function() {
             const $element = $('<nd-search><input></nd-search>');
             ctrl = $componentController('ndSearch', {
                 $element: $element
@@ -54,14 +56,14 @@ describe('SearchController', function () {
             _ctrl = ctrl;
         });
 
-        it(`should return an options object`, function () {
+        it(`should return an options object`, function() {
             const options = _ctrl.getSearchDatasetOptions();
 
             options.should.be.an('object');
         });
 
-        describe('source', function () {
-            it(`should update typeahead with player data`, function () {
+        describe('source', function() {
+            it(`should update typeahead with player data`, function() {
                 const process = sinon.stub();
                 const { source } = _ctrl.getSearchDatasetOptions();
 
@@ -72,8 +74,8 @@ describe('SearchController', function () {
             });
         });
 
-        describe('displayText', function () {
-            it(`should return 'item.display_name'`, function () {
+        describe('displayText', function() {
+            it(`should return 'item.display_name'`, function() {
                 const { displayText } = _ctrl.getSearchDatasetOptions();
                 const item = { display_name: 'Mendayen' };
 
@@ -83,8 +85,8 @@ describe('SearchController', function () {
             });
         });
 
-        describe('highlighter', function () {
-            it(`should return a template`, function () {
+        describe('highlighter', function() {
+            it(`should return a template`, function() {
                 const { highlighter } = _ctrl.getSearchDatasetOptions();
                 const text = 'Mendayen';
                 const item = { avatar: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/be/be8232c6572aa99106a5646149f422b0df6b3112.jpg' };
@@ -97,18 +99,18 @@ describe('SearchController', function () {
             });
         });
 
-        describe('afterSelect', function () {
-            let $state: angular.ui.IStateService;
+        describe('afterSelect', function() {
+            let $state: StateService;
             let $state_go: sinon.SinonSpy;
 
-            beforeEach(function () {
+            beforeEach(function() {
                 inject((_$state_: any) => {
                     $state = _$state_;
                     $state_go = sinon.stub($state, 'go');
                 });
             });
 
-            it(`should do nothing if 'item' does not exist`, function () {
+            it(`should do nothing if 'item' does not exist`, function() {
                 const { afterSelect } = _ctrl.getSearchDatasetOptions();
 
                 afterSelect(null);
@@ -116,7 +118,7 @@ describe('SearchController', function () {
                 $state_go.should.not.have.been.called;
             });
 
-            it(`should go to the 'root.player' state and clear the input if 'item' exists`, function () {
+            it(`should go to the 'root.player' state and clear the input if 'item' exists`, function() {
                 ctrl.$postLink();
 
                 const { afterSelect } = _ctrl.getSearchDatasetOptions();

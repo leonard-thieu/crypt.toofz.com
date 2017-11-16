@@ -5,12 +5,13 @@ import 'angular-mocks';
 
 import '../../../../src/modules/enemies/enemies.module';
 import { EnemiesController } from '../../../../src/modules/enemies/enemies-controller';
+import { StateParams } from '@uirouter/angularjs';
 
-describe('EnemiesController', function () {
+describe('EnemiesController', function() {
     let $componentController: angular.IComponentControllerService;
-    let $stateParams: angular.ui.IStateParamsService;
+    let $stateParams: StateParams;
 
-    beforeEach(function () {
+    beforeEach(function() {
         angular.mock.module('necrodancer.enemies');
 
         inject((_$componentController_: any,
@@ -20,14 +21,14 @@ describe('EnemiesController', function () {
         });
     });
 
-    describe('constructor', function () {
-        it(`should set 'title' to 'Enemies' if '$stateParams.attribute' is not defined`, function () {
+    describe('constructor', function() {
+        it(`should set 'title' to 'Enemies' if '$stateParams.attribute' is not defined`, function() {
             const ctrl = $componentController('ndEnemies', {}) as EnemiesController;
 
             ctrl.title.should.equal('Enemies');
         });
 
-        it(`should set 'title' to '{attribute} Enemies' if '$stateParams.attribute' is defined`, function () {
+        it(`should set 'title' to '{attribute} Enemies' if '$stateParams.attribute' is defined`, function() {
             $stateParams.attribute = 'floating';
             const ctrl = $componentController('ndEnemies', {}) as EnemiesController;
 
@@ -35,16 +36,16 @@ describe('EnemiesController', function () {
         });
     });
 
-    describe('$onDestroy', function () {
+    describe('$onDestroy', function() {
         let pageTitle_unset: sinon.SinonSpy;
 
-        beforeEach(function () {
+        beforeEach(function() {
             inject((pageTitle: any) => {
                 pageTitle_unset = sinon.spy(pageTitle, 'unset');
             });
         });
 
-        it(`should call 'pageTitle.unset()'`, function () {
+        it(`should call 'pageTitle.unset()'`, function() {
             const ctrl = $componentController('ndEnemies', {}) as EnemiesController;
 
             ctrl.$onDestroy();

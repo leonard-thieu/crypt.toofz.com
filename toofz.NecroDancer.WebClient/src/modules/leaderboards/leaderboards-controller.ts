@@ -1,15 +1,14 @@
 import * as _ from 'lodash';
 
-import * as angular from 'angular';
-
 import { PageTitle } from '../page-title/page-title';
+import { StateService } from '@uirouter/angularjs';
 
 import Categories = toofzSite.Leaderboard.Categories;
 import Leaderboard = toofz.Leaderboard;
 
 export class LeaderboardsController {
     constructor(private readonly pageTitle: PageTitle,
-                private readonly $state: angular.ui.IStateService) {
+                private readonly $state: StateService) {
         'ngInject';
         this.title = this.pageTitle.set(this.title);
     }
