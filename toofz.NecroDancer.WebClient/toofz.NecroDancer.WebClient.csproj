@@ -295,8 +295,9 @@
     <TypeScriptCompile Include="src\**\*.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="tsconfig.json" />
     <None Include="package.json" />
+    <None Include="package-lock.json" />
+    <None Include="tsconfig.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
