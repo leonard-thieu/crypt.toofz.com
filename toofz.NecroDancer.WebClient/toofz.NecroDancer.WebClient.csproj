@@ -86,30 +86,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <None Include="Properties\PublishProfiles\crypt.toofz.com - Web Deploy.pubxml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Config\AppSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_FaviconPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Compile Include="FingerPrint.cs" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -126,6 +116,18 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_FaviconPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Compile Include="FingerPrint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\areas.json" />
@@ -239,9 +241,6 @@
     <Content Include="lib\bootstrap\bootstrap.min.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
-    <Content Include="src\404.html" />
-    <Content Include="src\landing.html" />
-    <Content Include="src\root.html" />
     <Content Include="robots.txt" />
   </ItemGroup>
   <ItemGroup>
