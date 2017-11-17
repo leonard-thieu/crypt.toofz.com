@@ -5,8 +5,8 @@
 
 ## Overview
 
-[**toofz**](https://crypt.toofz.com/) is a **Crypt of the NecroDancer** information website, featuring information on items and enemies, fast and easy to navigate leaderboards, 
-and player profiles which showcase their personal bests.
+[**toofz**](https://crypt.toofz.com/) is a [**Crypt of the NecroDancer**](http://necrodancer.com/) information website, featuring information on items and enemies, 
+fast and easy to navigate leaderboards, and player profiles which showcase their personal bests.
 
 The frontend is an AngularJS-based Single-Page Application (SPA) written in TypeScript. It uses ASP.NET MVC as a thin supporting layer and relies on 
 [toofz API](https://github.com/leonard-thieu/api.toofz.com) for data.
