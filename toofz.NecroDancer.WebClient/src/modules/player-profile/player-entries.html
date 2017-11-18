@@ -13,7 +13,7 @@
           <div class="entries">
             <a class="list-group-item row"
                ng-repeat="entry in ::group.entries"
-               ng-switch="::group.leaderboard.run"
+               ng-switch="::entry.leaderboard.run"
                ui-sref="root.leaderboard({ product: entry.leaderboard.product, character: entry.leaderboard.character, run: entry.leaderboard.run, mode: entry.leaderboard.mode, id: $ctrl.data.player.id })">
               <div class="rank col-xs-4">{{::entry.rank | ordinal}}</div>
               <div class="character col-xs-5">
