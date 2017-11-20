@@ -5,19 +5,24 @@
 
 ## Overview
 
-[**toofz**](https://crypt.toofz.com/) is a [**Crypt of the NecroDancer**](http://necrodancer.com/) information website, featuring information on items and enemies, 
-fast and easy to navigate leaderboards, and player profiles which showcase their personal bests.
+[**toofz**](https://crypt.toofz.com/) is a [Crypt of the NecroDancer](http://necrodancer.com/) information website, featuring information on items and enemies, 
+fast and easy to navigate leaderboards, and player profiles which showcase a player's personal bests.
 
-The frontend is an AngularJS-based Single-Page Application (SPA) written in TypeScript. It uses ASP.NET MVC as a thin supporting layer and relies on 
-[toofz API](https://github.com/leonard-thieu/api.toofz.com) for data.
+This repo contains the frontend which is an AngularJS-based Single-Page Application (SPA) written in TypeScript. It uses ASP.NET MVC as a thin supporting layer and relies on 
+[toofz API](https://api.toofz.com/) for data.
+
+---
 
 Information about other projects that support **toofz** can be found in the [meta-repository](https://github.com/leonard-thieu/toofz-necrodancer).
+
+### Dependencies
+
+* [toofz API](https://github.com/leonard-thieu/api.toofz.com)
 
 ## Requirements
 
 * .NET Framework 4.6.1
 * IIS
-* [toofz API](https://github.com/leonard-thieu/api.toofz.com)
 
 ## License
 
