@@ -104,12 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_FaviconPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
+    <Compile Include="AiHandleErrorAttribute.cs" />
     <Compile Include="Fingerprint.cs" />
     <Compile Include="Helper.cs" />
   </ItemGroup>

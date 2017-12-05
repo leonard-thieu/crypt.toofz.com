@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using toofz.NecroDancer.WebClient.ErrorHandler;
 
 namespace toofz.NecroDancer.WebClient
 {
