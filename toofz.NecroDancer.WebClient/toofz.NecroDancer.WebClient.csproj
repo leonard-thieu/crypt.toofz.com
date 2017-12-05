@@ -40,7 +40,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -50,7 +50,7 @@
     <DocumentationFile>bin\toofz.NecroDancer.WebClient.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -62,6 +62,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
@@ -85,12 +86,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
-    <None Include="Properties\PublishProfiles\crypt.toofz.com - Web Deploy.pubxml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Config\AppSettings.config">
@@ -104,6 +100,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <None Include="gulpfile.ts" />
+    <None Include="package.json" />
+    <Content Include="package-lock.json">
+      <DependentUpon>package.json</DependentUpon>
+    </Content>
+    <Content Include="robots.txt" />
+    <None Include="tsconfig.json" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -127,7 +130,8 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Compile Include="FingerPrint.cs" />
+    <Compile Include="Fingerprint.cs" />
+    <Compile Include="Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\areas.json" />
@@ -138,6 +142,26 @@
     <Content Include="data\leaderboard-categories.min.json">
       <DependentUpon>leaderboard-categories.json</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\characters\all-characters-amplified.png" />
+    <Content Include="images\characters\all-characters.png" />
+    <Content Include="images\characters\aria.png" />
+    <Content Include="images\characters\bard.png" />
+    <Content Include="images\characters\bolt.png" />
+    <Content Include="images\characters\cadence.png" />
+    <Content Include="images\characters\coda.png" />
+    <Content Include="images\characters\diamond.png" />
+    <Content Include="images\characters\dorian.png" />
+    <Content Include="images\characters\dove.png" />
+    <Content Include="images\characters\eli.png" />
+    <Content Include="images\characters\mary.png" />
+    <Content Include="images\characters\melody.png" />
+    <Content Include="images\characters\monk.png" />
+    <Content Include="images\characters\nocturna.png" />
+    <Content Include="images\characters\story-mode.png" />
+    <Content Include="images\characters\tempo.png" />
+    <Content Include="images\cadence.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\favicons\favicon.ico" />
@@ -227,43 +251,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="js\site.js" />
-    <Content Include="js\site.js.map">
-      <DependentUpon>site.js</DependentUpon>
-    </Content>
-    <Content Include="js\site.min.js">
-      <DependentUpon>site.js</DependentUpon>
-    </Content>
-    <Content Include="js\site.min.js.map">
-      <DependentUpon>site.min.js</DependentUpon>
-    </Content>
-    <Content Include="lib\bootstrap\bootstrap.js" />
-    <Content Include="lib\bootstrap\bootstrap.min.js">
-      <DependentUpon>bootstrap.js</DependentUpon>
-    </Content>
-    <Content Include="robots.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\characters\all-characters-amplified.png" />
-    <Content Include="images\characters\all-characters.png" />
-    <Content Include="images\characters\aria.png" />
-    <Content Include="images\characters\bard.png" />
-    <Content Include="images\characters\bolt.png" />
-    <Content Include="images\characters\cadence.png" />
-    <Content Include="images\characters\coda.png" />
-    <Content Include="images\characters\diamond.png" />
-    <Content Include="images\characters\dorian.png" />
-    <Content Include="images\characters\dove.png" />
-    <Content Include="images\characters\eli.png" />
-    <Content Include="images\characters\mary.png" />
-    <Content Include="images\characters\melody.png" />
-    <Content Include="images\characters\monk.png" />
-    <Content Include="images\characters\nocturna.png" />
-    <Content Include="images\characters\story-mode.png" />
-    <Content Include="images\characters\tempo.png" />
-    <Content Include="images\cadence.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="css\_bootstrap-custom.scss" />
     <None Include="css\_variables.scss" />
     <None Include="css\currency.scss" />
@@ -282,21 +269,29 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="tests\**\*.ts" />
-    <None Include="tests\**\*.json" />
-    <TypeScriptCompile Include="typings\**\*.d.ts" />
-    <None Include="tests\mocha-appveyor.opts" />
-    <None Include="tests\mocha.opts" />
-    <None Include="gulpfile.ts" />
+    <Content Include="js\site.js" />
+    <Content Include="js\site.js.map">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="js\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="js\site.min.js.map">
+      <DependentUpon>site.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\bootstrap.js" />
+    <Content Include="lib\bootstrap\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\**\*.html" />
     <TypeScriptCompile Include="src\**\*.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="package.json" />
-    <None Include="package-lock.json" />
-    <None Include="tsconfig.json" />
+    <TypeScriptCompile Include="tests\**\*.ts" />
+    <None Include="tests\**\*.json" />
+    <None Include="tests\mocha-appveyor.opts" />
+    <None Include="tests\mocha.opts" />
+    <TypeScriptCompile Include="typings\**\*.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,46 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 
 namespace toofz.NecroDancer.WebClient
 {
+    /// <summary>
+    /// The ASP.NET MVC application.
+    /// </summary>
     public class MvcApplication : HttpApplication
     {
-        public static string InstrumentationKey
-        {
-            get => TelemetryConfiguration.Active.InstrumentationKey;
-            private set
-            {
-                if (value == null)
-                {
-                    TelemetryConfiguration.Active.InstrumentationKey = "";
-                    TelemetryConfiguration.Active.DisableTelemetry = true;
-                }
-                else
-                {
-                    TelemetryConfiguration.Active.InstrumentationKey = value;
-                    TelemetryConfiguration.Active.DisableTelemetry = false;
-                }
-            }
-        }
+        internal static readonly TelemetryClient TelemetryClient = new TelemetryClient();
 
-        public static string Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        public static readonly string Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        public static IReadOnlyDictionary<string, string> Fingerprints
-        {
-            get => fingerprints;
-        }
-        private static readonly Dictionary<string, string> fingerprints = new Dictionary<string, string>();
+        public static HashSet<string> AssetPaths { get; } = new HashSet<string>();
 
+        /// <summary>
+        /// Performs application configuration.
+        /// </summary>
         protected void Application_Start()
         {
-            InstrumentationKey = Environment.GetEnvironmentVariable("toofzInstrumentationKey", EnvironmentVariableTarget.Machine);
+            TelemetryConfiguration.Active.InstrumentationKey = Helper.GetInstrumentationKey();
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -48,14 +33,19 @@ namespace toofz.NecroDancer.WebClient
 
             MvcHandler.DisableMvcResponseHeader = true;
 
+            RegisterAssetPaths("~/src", "*.html");
+            RegisterAssetPaths("~/data", "*.json");
+        }
+
+        private void RegisterAssetPaths(string virtualPathRoot, string searchPattern)
+        {
             var root = Server.MapPath("~");
-            var templates = Directory.EnumerateFiles(Server.MapPath("~/src"), "*.html", SearchOption.AllDirectories);
-            var data = Directory.EnumerateFiles(Server.MapPath("~/data"), "*.json", SearchOption.AllDirectories);
-            var assets = templates.Concat(data).ToList();
-            foreach (var asset in assets)
+
+            var virtualPaths = Directory.EnumerateFiles(Server.MapPath(virtualPathRoot), searchPattern, SearchOption.AllDirectories);
+            foreach (var virtualPath in virtualPaths)
             {
-                var rootRelativePath = "/" + asset.Replace(root, "").Replace(@"\", "/");
-                fingerprints.Add(rootRelativePath, Fingerprint.Tag(rootRelativePath));
+                var rootRelativePath = "/" + virtualPath.Replace(root, "").Replace(@"\", "/");
+                AssetPaths.Add(rootRelativePath);
             }
         }
     }
