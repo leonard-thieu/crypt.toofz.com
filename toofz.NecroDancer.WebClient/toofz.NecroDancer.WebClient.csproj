@@ -91,7 +91,7 @@
     </None>
     <Content Include="robots.txt" />
     <None Include="tsconfig.json" />
-    <None Include="Web.config" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
