@@ -9,10 +9,10 @@ import { ToofzSiteApi } from '../../src/modules/toofz-site-api/toofz-site-api';
 import { BackendDefinition } from '../shared';
 import {
     Ng1ViewDeclaration,
+    StateObject,
     StateParams,
     StateService
 } from '@uirouter/angularjs';
-import { StateObject } from '@uirouter/core';
 
 const toofzSite_definitions = require('./modules/toofz-site-api/toofz-site-api-definitions.json').definitions;
 

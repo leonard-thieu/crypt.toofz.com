@@ -1,13 +1,17 @@
-version: 2.3.4.{build}
+version: $(VersionPrefix).{build}
 image: Visual Studio 2017
 
-branches:
-  only:
-    - master
+skip_branch_with_pr: true
+skip_commits:
+  files:
+    - LICENSE
+    - README.md
 configuration:
   - Production
 environment:
-  PROJECT: toofz.NecroDancer.WebClient
+  VersionPrefix: 0.0.0
+  VersionSuffix: dev
+  FileVersion: '%APPVEYOR_BUILD_VERSION%'
 notifications:
   - provider: Slack
     incoming_webhook:
@@ -15,30 +19,34 @@ notifications:
 assembly_info:
   patch: true
   file: AssemblyInfo.cs
-  assembly_version: $(appveyor_build_version)
+  assembly_version: $(VersionPrefix)
+  assembly_file_version: $(APPVEYOR_BUILD_VERSION)
+  assembly_informational_version: $(VersionPrefix)-$(VersionSuffix)
 
 install:
-  - nuget update -Self
-  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 8)
-  - npm install --global npm@5.3.0 codecov
+  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 9)
   - node --version
   - npm --version
 
 before_build:
-  - appveyor-retry nuget restore -Verbosity quiet
-  - cd %PROJECT%
+  - nuget restore -Verbosity quiet
+  - cd src\toofz.NecroDancer.WebClient
   - npm install
   - npm run build
-  - cd ..
+  - cd ..\..
 build:
-  project: $(PROJECT).sln
+  project: toofz.NecroDancer.WebClient.sln
   publish_wap: true
-  verbosity: minimal
+  verbosity: quiet
 
 test_script:
-  - ps: .\Test-Project.ps1
-after_test:
-  - codecov --file="%PROJECT%\coverage\lcov.info" --disable=gcov
+  - cd src\toofz.NecroDancer.WebClient
+  - node_modules\.bin\gulp build:js:test
+  - node_modules\.bin\electron-mocha --opts .\tests\mocha-appveyor.opts
+  - node_modules\.bin\remap-istanbul --input .\coverage\coverage-final.json --output .\coverage\coverage-final.json
+  - node_modules\.bin\istanbul report --report lcovonly
+  - node_modules\.bin\codecov --file=.\coverage\coverage\lcov.info --disable=gcov
+  - cd ..\..
 
 deploy:
   - provider: Environment
