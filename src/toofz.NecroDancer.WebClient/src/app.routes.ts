@@ -9,8 +9,8 @@ import {
     StateProvider,
     Ng1StateDeclaration,
     StateParams,
+    UrlMatcherFactory
 } from '@uirouter/angularjs';
-import { UrlMatcherFactory } from '@uirouter/core';
 
 angular
     .module('necrodancer.app')
