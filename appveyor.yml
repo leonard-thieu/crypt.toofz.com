@@ -7,7 +7,7 @@ skip_commits:
     - LICENSE
     - README.md
 configuration:
-  - Production
+  - Release
 environment:
   VersionPrefix: 0.0.0
   VersionSuffix: dev
@@ -16,31 +16,25 @@ notifications:
   - provider: Slack
     incoming_webhook:
       secure: c7l1UmXHWpIDLL1awU4r0QYVPToYM/XjV8trFyD1oHArKxs/vBTYiKYScr1EhCUgmEX6sAFBTvkUHF/k5B+cGjzqRBR2XkAO+lzk8cHQ1FI=
-assembly_info:
-  patch: true
-  file: AssemblyInfo.cs
-  assembly_version: $(VersionPrefix)
-  assembly_file_version: $(APPVEYOR_BUILD_VERSION)
-  assembly_informational_version: $(VersionPrefix)-$(VersionSuffix)
 
 install:
-  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 9)
+  - ps: Update-NodeJsInstallation 9.4.0
   - node --version
   - npm --version
 
 before_build:
   - nuget restore -Verbosity quiet
-  - cd src\toofz.NecroDancer.WebClient
+  - cd src\toofz.NecroDancer.Web
   - npm install
   - npm run build
   - cd ..\..
 build:
-  project: toofz.NecroDancer.WebClient.sln
+  project: toofz.NecroDancer.Web.sln
   publish_wap: true
   verbosity: quiet
 
 test_script:
-  - cd src\toofz.NecroDancer.WebClient
+  - cd src\toofz.NecroDancer.Web
   - node_modules\.bin\gulp build:js:test
   - node_modules\.bin\electron-mocha --opts .\tests\mocha-appveyor.opts
   - node_modules\.bin\remap-istanbul --input .\coverage\coverage-final.json --output .\coverage\coverage-final.json
