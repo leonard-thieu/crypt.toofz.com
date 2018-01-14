@@ -9,8 +9,8 @@ skip_commits:
 configuration:
   - Release
 environment:
-  VersionPrefix: 0.0.0
-  VersionSuffix: dev
+  VersionPrefix: 2.3.5
+  VersionSuffix: alpha.1
   FileVersion: '%APPVEYOR_BUILD_VERSION%'
 notifications:
   - provider: Slack
