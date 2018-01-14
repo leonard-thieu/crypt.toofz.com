@@ -3,12 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-src/toofz.NecroDancer.WebClient/css/**/*.css
-src/toofz.NecroDancer.WebClient/css/**/*.css.map
-src/toofz.NecroDancer.WebClient/**/*.js
-src/toofz.NecroDancer.WebClient/**/*.js.map
-!src/toofz.NecroDancer.WebClient/lib/**/*.js
-src/toofz.NecroDancer.WebClient/coverage/
+**/*.css
+**/*.css.map
+**/*.js
+**/*.js.map
+!**/lib/**/*.*
 
 # User-specific files
 *.suo

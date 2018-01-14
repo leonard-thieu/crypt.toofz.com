@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Title>toofz</Title>
+    <Authors>Leonard Thieu</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="toofz.Build" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="tests\**\*.json" />
+    <None Include="tests\**\*.json" />
+
+    <Content Remove="package-lock.json" />
+    <None Include="package-lock.json" />
+
+    <Content Remove="package.json" />
+    <None Include="package.json" />
+
+    <Content Remove="tsconfig.json" />
+    <None Include="tsconfig.json" />
+  </ItemGroup>
+</Project>

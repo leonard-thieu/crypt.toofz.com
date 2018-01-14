@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{012EDF12-7873-4118-8D6C-E6C5BFF07DAB}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		NuGet.Config = NuGet.Config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B90B724B-7EC5-4850-BC2B-96C71EBE074C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "toofz.NecroDancer.Web", "src\toofz.NecroDancer.Web\toofz.NecroDancer.Web.csproj", "{476D79CE-42D0-4EFD-8314-2901334B3911}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{476D79CE-42D0-4EFD-8314-2901334B3911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476D79CE-42D0-4EFD-8314-2901334B3911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476D79CE-42D0-4EFD-8314-2901334B3911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476D79CE-42D0-4EFD-8314-2901334B3911}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{476D79CE-42D0-4EFD-8314-2901334B3911} = {B90B724B-7EC5-4850-BC2B-96C71EBE074C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DDBF60B-6C58-4A5A-BC53-432032B44D99}
+	EndGlobalSection
+EndGlobal
