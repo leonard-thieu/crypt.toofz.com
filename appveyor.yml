@@ -10,7 +10,7 @@ configuration:
   - Release
 environment:
   VersionPrefix: 2.3.5
-  VersionSuffix: alpha.2
+  VersionSuffix: alpha.3
   FileVersion: '%APPVEYOR_BUILD_VERSION%'
 notifications:
   - provider: Slack
