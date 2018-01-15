@@ -30,8 +30,9 @@ before_build:
   - cd ..\..
 build:
   project: toofz.NecroDancer.Web.sln
-  publish_wap: true
   verbosity: quiet
+after_build:
+  - dotnet publish src\toofz.NecroDancer.Web --output %APPVEYOR_BUILD_FOLDER%\dist
 
 test_script:
   - cd src\toofz.NecroDancer.Web
@@ -42,6 +43,9 @@ test_script:
   - node_modules\.bin\codecov --file=.\coverage\coverage\lcov.info --disable=gcov
   - cd ..\..
 
+artifacts:
+  - path: dist
+    name: toofz.NecroDancer.Web
 deploy:
   - provider: Environment
     name: production
