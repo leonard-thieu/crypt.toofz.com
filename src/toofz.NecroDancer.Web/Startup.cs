@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,46 +6,22 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace toofz.NecroDancer.Web
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Startup
+    internal sealed class Startup
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public static HashSet<string> AssetPaths { get; } = new HashSet<string>();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="app"></param>
-        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -84,7 +59,7 @@ namespace toofz.NecroDancer.Web
             foreach (var virtualPath in virtualPaths)
             {
                 var rootRelativePath = virtualPath.Replace(root, "").Replace(@"\", "/");
-                AssetPaths.Add(rootRelativePath);
+                Global.AssetPaths.Add(rootRelativePath);
             }
         }
     }
