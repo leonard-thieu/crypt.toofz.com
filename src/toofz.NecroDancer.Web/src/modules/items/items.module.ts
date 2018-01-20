@@ -1,30 +1,35 @@
+import * as itemsTemplate from './items.html';
+import '../../currency/currency.scss';
+
 import * as angular from 'angular';
-import '@uirouter/angularjs';
-import '../page-title/page-title.module';
-import '../pagination/pagination.module';
-import '../titlecase/titlecase.module';
+import uirouter from '@uirouter/angularjs';
+import pageTitle from '../page-title/page-title.module';
+import pagination from '../pagination/pagination.module';
+import titlecase from '../titlecase/titlecase.module';
 
 import { ItemsController } from './items-controller';
 
-/**
- * @ngdoc directive
- * @name ndItems
- * @restrict E
- *
- * @param {expression} data
- */
+const moduleName = 'necrodancer.items';
+export default moduleName;
 
 angular
-    .module('necrodancer.items', [
-        'ui.router',
-        'necrodancer.page-title',
-        'necrodancer.pagination',
-        'necrodancer.titlecase'
+    .module(moduleName, [
+        uirouter,
+        pageTitle,
+        pagination,
+        titlecase,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndItems
+     * @restrict E
+     *
+     * @param {expression} data
+     */
     .component('ndItems', {
-        templateUrl: fingerprint.get(__dirname + '/items.html'),
+        template: itemsTemplate,
         controller: ItemsController,
         bindings: {
-            data: '<'
-        }
+            data: '<',
+        },
     });

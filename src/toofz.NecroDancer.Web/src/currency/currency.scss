@@ -1,0 +1,19 @@
+﻿.currency {
+  padding-right: 18px;
+  background: {
+    repeat: no-repeat;
+    position: right;
+  }
+
+  &.coin {
+    background-image: url('coin.png');
+  }
+
+  &.diamond {
+    background-image: url('diamond.png');
+  }
+
+  &.heart {
+    background-image: url('heart-small.png');
+  }
+}

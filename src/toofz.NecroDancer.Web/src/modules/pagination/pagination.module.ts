@@ -1,24 +1,28 @@
+import * as paginationTemplate from './pagination.html';
+
 import * as angular from 'angular';
-import '@uirouter/angularjs';
+import uirouter from '@uirouter/angularjs';
 
 import { PaginationController } from './pagination-controller';
 
-/**
- * @ngdoc directive
- * @name ndPagination
- * @restrict E
- *
- * @param {expression} data
- */
+const moduleName = 'necrodancer.pagination';
+export default moduleName;
 
 angular
-    .module('necrodancer.pagination', [
-        'ui.router'
+    .module(moduleName, [
+        uirouter,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndPagination
+     * @restrict E
+     *
+     * @param {expression} data
+     */
     .component('ndPagination', {
-        templateUrl: fingerprint.get(__dirname + '/pagination.html'),
+        template: paginationTemplate,
         controller: PaginationController,
         bindings: {
-            data: '<'
-        }
+            data: '<',
+        },
     });

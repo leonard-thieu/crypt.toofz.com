@@ -4,7 +4,7 @@ import 'angular-mocks';
 import '../../../../src/modules/toofz-rest-api/toofz-rest-api.module';
 import { ToofzRestApi } from '../../../../src/modules/toofz-rest-api/toofz-rest-api';
 
-const toofz_definitions = require('./toofz-rest-api.definitions.json').definitions;
+const toofz_definitions = require('./toofz-rest-api.definitions.json');
 
 describe('ToofzRestApi', function() {
     let $httpBackend: angular.IHttpBackendService;

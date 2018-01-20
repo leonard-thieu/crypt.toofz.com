@@ -1,0 +1,30 @@
+<nd-profile-header player="::$ctrl.data.player"></nd-profile-header>
+
+<div class="clearfix">
+  <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+    <div class="panel panel-default leaderboard-card">
+      <div class="panel-body">
+        <div class="list-group">
+          <div class="entries">
+            <a class="list-group-item row"
+               ng-repeat="entry in ::$ctrl.data.entries"
+               ui-sref="root.daily-leaderboard({ product: entry.leaderboard.product, date: entry.leaderboard.date.substring(0, 10), production: entry.leaderboard.production, id: $ctrl.data.player.id })">
+              <div class="rank col-xs-4">{{::entry.rank | ordinal}}</div>
+
+              <div class="character col-xs-5">
+                <span class="character cadence"></span>
+                <span>{{::entry.leaderboard.display_name}}</span>
+              </div>
+
+              <div class="score col-xs-3 currency coin">
+                {{::entry.score}}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nd-profile-footer leaderboards-updated-at="::$ctrl.leaderboardsUpdatedAt" player-updated-at="::$ctrl.data.player.updated_at"></nd-profile-footer>

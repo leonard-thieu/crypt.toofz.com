@@ -1,0 +1,11 @@
+@import '../../characters/variables';
+
+label.character,
+.list-group-item.character {
+  $characterIconPaddingTop: 5px;
+  $characterIconPaddingRight: 5px;
+  $characterIconPaddingLeft: 15px;
+
+  background-position: $characterIconPaddingLeft $characterIconPaddingTop;
+  padding-left: $characterIconPaddingLeft + $characterIconWidth + $characterIconPaddingRight;
+}

@@ -1,16 +1,4 @@
-﻿@import 'variables';
-
-@font-face {
-    font-family: 'Varela Round';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Varela Round'), local('VarelaRound-Regular'), url(https://fonts.gstatic.com/s/varelaround/v6/APH4jr0uSos5wiut5cpjrnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-body {
-    /* Leave space for Glimpse */
-    padding-bottom: 50px;
-
+﻿body {
     .container footer p {
         color: #999999;
         font-size: 0.8em;
@@ -42,26 +30,8 @@ ui-view {
     border: none;
 }
 
-nd-search {
-    min-width: 35%;
-
-    margin: {
-        top: 4px;
-    }
-
-    .form-group,
-    .input-group {
-        width: 100%;
-    }
-}
-
 td {
     vertical-align: middle !important;
-}
-
-.character-icon {
-    margin-left: -15px;
-    margin-top: -4px;
 }
 
 .fa-twitter,
@@ -115,27 +85,3 @@ $loading-bar-color: #fff;
     border-top-color: $loading-bar-color;
     border-left-color: $loading-bar-color;
 }
-
-.typeahead {
-    height: 240px;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    .result {
-        display: flex;
-        align-items: center;
-
-        height: 30px;
-
-        .avatar {
-            flex: 0 0 30px;
-
-            margin-right: 10px;
-        }
-    }
-}
-
-@import 'navmenu';
-@import 'currency';
-@import "player";

@@ -1,7 +1,10 @@
 import * as angular from 'angular';
 
+const moduleName = 'necrodancer.slug';
+export default moduleName;
+
 angular
-    .module('necrodancer.slug', [])
+    .module(moduleName, [])
     .filter('slug', (): SlugFilter => {
         return text => {
             if (typeof text === 'string') {
