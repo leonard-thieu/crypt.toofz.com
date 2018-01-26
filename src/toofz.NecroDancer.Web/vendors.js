@@ -2,7 +2,7 @@
 
 // TODO: Find a way to automatically generate vendor imports.
 require('bootswatch/slate/bootstrap.css');
-require('font-awesome/css/font-awesome.css');
+require('./lib/font-awesome/css/font-awesome.css');
 require('angular-loading-bar/src/loading-bar.css');
 
 require('jquery');
