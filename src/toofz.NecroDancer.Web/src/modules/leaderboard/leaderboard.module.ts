@@ -1,36 +1,41 @@
+import * as leaderboardTemplate from './leaderboard.html';
+import '../../currency/currency.scss';
+
 import * as angular from 'angular';
-import '@uirouter/angularjs';
-import '../entry-filters/entry-filters.module';
-import '../slug/slug.module';
-import '../titlecase/titlecase.module';
-import '../page-title/page-title.module';
-import '../pagination/pagination.module';
+import uirouter from '@uirouter/angularjs';
+import pageTitle from '../page-title/page-title.module';
+import entryFilters from '../entry-filters/entry-filters.module';
+import pagination from '../pagination/pagination.module';
+import titlecase from '../titlecase/titlecase.module';
+import slug from '../slug/slug.module';
 
 import { LeaderboardController } from './leaderboard-controller';
 
-/**
- * @ngdoc directive
- * @name ndLeaderboard
- * @restrict E
- *
- * @param {expression} playerEntry
- * @param {expression} data
- */
+const moduleName = 'necrodancer.leaderboard';
+export default moduleName;
 
 angular
-    .module('necrodancer.leaderboard', [
-        'ui.router',
-        'necrodancer.page-title',
-        'necrodancer.entry-filters',
-        'necrodancer.pagination',
-        'necrodancer.titlecase',
-        'necrodancer.slug'
+    .module(moduleName, [
+        uirouter,
+        pageTitle,
+        entryFilters,
+        pagination,
+        titlecase,
+        slug,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndLeaderboard
+     * @restrict E
+     *
+     * @param {expression} playerEntry
+     * @param {expression} data
+     */
     .component('ndLeaderboard', {
-        templateUrl: fingerprint.get(__dirname + '/leaderboard.html'),
+        template: leaderboardTemplate,
         controller: LeaderboardController,
         bindings: {
             playerEntry: '<',
-            data: '<'
-        }
+            data: '<',
+        },
     });

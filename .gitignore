@@ -3,11 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-**/*.css
-**/*.css.map
-**/*.js
-**/*.js.map
-!**/lib/**/*.*
+**/wwwroot/app/
+**/tests/app/
+**/coverage/
 
 # User-specific files
 *.suo

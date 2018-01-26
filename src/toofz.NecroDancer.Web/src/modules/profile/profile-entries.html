@@ -1,0 +1,44 @@
+<nd-profile-header player="::$ctrl.data.player"></nd-profile-header>
+
+<div class="clearfix">
+  <div class="col-md-4 col-sm-6"
+       ng-repeat="group in ::$ctrl.groups">
+    <div class="panel panel-default leaderboard-card">
+      <div class="panel-heading">
+        <h4 class="panel-title">{{::group.display_name}}</h4>
+      </div>
+
+      <div class="panel-body">
+        <div class="list-group">
+          <div class="entries">
+            <a class="list-group-item row"
+               ng-repeat="entry in ::group.entries"
+               ng-switch="::entry.leaderboard.run"
+               ui-sref="root.leaderboard({ product: entry.leaderboard.product, mode: entry.leaderboard.mode, run: entry.leaderboard.run, character: entry.leaderboard.character, id: $ctrl.data.player.id })">
+              <div class="rank col-xs-4">{{::entry.rank | ordinal}}</div>
+              <div class="character col-xs-5">
+                <span class="character {{::entry.leaderboard._character.name}}"></span>
+                <span>{{::entry.leaderboard._character.display_name}}</span>
+              </div>
+
+              <div class="score col-xs-3 currency coin"
+                   ng-switch-when="score|seeded-score" ng-switch-when-separator="|">
+                {{::entry.score}}
+              </div>
+              <div class="score col-xs-3"
+                   ng-switch-when="speed|seeded-speed" ng-switch-when-separator="|">
+                {{::entry.score | time | duration}}
+              </div>
+              <div class="score col-xs-3"
+                   ng-switch-when="deathless">
+                {{::entry.score | wins}}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nd-profile-footer leaderboards-updated-at="::$ctrl.leaderboardsUpdatedAt" player-updated-at="::$ctrl.data.player.updated_at"></nd-profile-footer>

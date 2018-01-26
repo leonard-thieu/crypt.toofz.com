@@ -1,38 +1,44 @@
+import * as searchTemplate from './search.html';
+import * as searchResultTemplate from './search-result.html';
+import './search.scss';
+
 import * as angular from 'angular';
-import '@uirouter/angularjs';
-import '../slug/slug.module';
-import '../toofz-rest-api/toofz-rest-api.module';
+import uirouter from '@uirouter/angularjs';
+import slug from '../slug/slug.module';
+import toofzRestApi from '../toofz-rest-api/toofz-rest-api.module';
 
 import { SearchController } from './search-controller';
 
-/**
- * @ngdoc directive
- * @name ndSearch
- * @restrict E
- */
-/**
- * @ngdoc directive
- * @name ndSearchResult
- * @restrict E
- *
- * @param {expression} text
- * @param {expression} item
- */
+const moduleName = 'necrodancer.search';
+export default moduleName;
 
 angular
-    .module('necrodancer.search', [
-        'ui.router',
-        'necrodancer.slug',
-        'toofz.rest-api'
+    .module(moduleName, [
+        uirouter,
+        slug,
+        toofzRestApi,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndSearch
+     * @restrict E
+     */
     .component('ndSearch', {
-        templateUrl: fingerprint.get(__dirname + '/search.html'),
-        controller: SearchController
+        template: searchTemplate,
+        controller: SearchController,
     })
+    /**
+     * @ngdoc directive
+     * @name ndSearchResult
+     * @restrict E
+     *
+     * @param {expression} text
+     * @param {expression} item
+     */
     .component('ndSearchResult', {
-        templateUrl: fingerprint.get(__dirname + '/search-result.html'),
+        template: searchResultTemplate,
         bindings: {
             text: '<',
-            item: '<'
-        }
+            item: '<',
+        },
     });

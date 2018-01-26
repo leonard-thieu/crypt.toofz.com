@@ -1,26 +1,25 @@
+import * as navbarTemplate from './navbar.html';
+import '../../characters/characters.scss';
+import './navmenu.scss';
+
 import * as angular from 'angular';
-import '../dropdown/dropdown.module';
-import '../toofz-site-api/toofz-site-api.module';
+import dropdown from '../dropdown/dropdown.module';
 
 import { NavbarController } from './navbar-controller';
 
-/**
- * @ngdoc directive
- * @name ndNavbar
- * @restrict E
- *
- * @param {expression} areas
- */
+const moduleName = 'necrodancer.navbar';
+export default moduleName;
 
 angular
-    .module('necrodancer.navbar', [
-        'necrodancer.dropdown',
-        'toofz.site-api'
+    .module(moduleName, [
+        dropdown,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndNavbar
+     * @restrict E
+     */
     .component('ndNavbar', {
-        templateUrl: fingerprint.get(__dirname + '/navbar.html'),
+        template: navbarTemplate,
         controller: NavbarController,
-        bindings: {
-            areas: '<'
-        }
     });

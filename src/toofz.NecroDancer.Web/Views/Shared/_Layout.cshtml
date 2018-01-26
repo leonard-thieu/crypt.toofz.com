@@ -11,23 +11,8 @@
     <title ng-if="title" ng-bind="title + ' | Crypt of the NecroDancer | toofz'">Crypt of the NecroDancer | toofz</title>
     <title ng-if="!title">Crypt of the NecroDancer | toofz</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.css" integrity="sha256-1hC8MLj5fxmdbYM305E0ixy0dxSRfiHK1ZbKJPX+3rE=">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.css" integrity="sha256-h6HFj8mCZeqzyYg9PLbmVVhmZeBtdffdgtGsqz1f24A=">
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" integrity="sha256-cp9lCRHDsELuWqPLwCHG6LXz+nk32BzccNd0N2v5yjM=">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=">
-        <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" integrity="sha256-3c9LKIgnbVhWZ3sjhR5aRBWFb+4sVZu6IaRnyj8geTo=">
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true">
-    </environment>
-
-    @foreach (var assetPath in Global.AssetPaths)
-    {
-        <link rel="prefetch" href="@assetPath" data-original-path="@assetPath" asp-append-version="true">
-    }
+    <link rel="stylesheet" href="~/app/vendor.css" use-manifest="true">
+    <link rel="stylesheet" href="~/app/app.css" use-manifest="true">
 
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
@@ -48,57 +33,22 @@
     </div>
 
     <script>
+        'use strict';
         var apiBaseUrl = 'https://api.toofz.com';
-        var fingerprint = {
-            data: {},
-            get: function (url) {
-                return this.data[url] || url;
-            }
-        };
-        var links = document.getElementsByTagName('link');
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            if (link.getAttribute('rel') === 'preload') {
-                fingerprint.data[link.getAttribute('data-original-path')] = link.getAttribute('href');
-            }
-        }
     </script>
-    <environment include="Development">
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js" integrity="sha256-9LeEGfQ5kyFt9Jn2EfwXqdBII40MS8iOC2YRF4T/T14="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.js" integrity="sha256-JsSlXNYFJdHoD1v3BYSoLq7eL883K+hGxUk4muE8LgU="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.2/livestamp.js" integrity="sha256-B9zjR/sCYKtJGnV85PSMDlPnj0o1lWkoM4RlqEE6RiI="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" integrity="sha256-IMA0EIgLE53aSU7jFyLtX6u4hqMZ6AeSxlSgiBQ+620="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" integrity="sha256-w3THDDhkzdjMczax74BBlkhjBxWIGisjArsP5wIQSHc="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.js" integrity="sha256-Dwjv6BH8ImeLQWDUMS24FQCurZLRpTWf5wdb3xjdK+I="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js" integrity="sha256-jCRPoAgIIooCTnLmaSyKMPrFgFh6/T0e8c3i+KkZZ6U="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.10/URI.js" integrity="sha256-iu1ZjNf82uEnRWh4o2Dq7YUg/RoIa/NrxcH7kb/Zwdg="></script>
-        <script src="~/lib/bootstrap/bootstrap.js" asp-append-version="true"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/app/vendor.js" use-manifest="true"></script>
+    <script src="~/app/app.js" use-manifest="true"></script>
+    <environment exclude="Development">
         <script>
+            'use strict';
             angular
                 .module('necrodancer.app')
-                .config(['$compileProvider', ($compileProvider) => {
+                .config(['$compileProvider', function ($compileProvider) {
                     $compileProvider.debugInfoEnabled(false);
                     $compileProvider.commentDirectivesEnabled(false);
                     $compileProvider.cssClassDirectivesEnabled(false);
                 }]);
         </script>
-    </environment>
-    <environment exclude="Development">
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" integrity="sha256-LOnFraxKlOhESwdU/dX+K0GArwymUDups0czPWLEg4E="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js" integrity="sha256-SjPDuWPRLxUNqTwhiAcTNcIwQLbf5khquJsz5fekYms="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.2/livestamp.min.js" integrity="sha256-8r65KJgULBDiZhwDydfWrEkx3yyV/grGsGzaekobngI="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" integrity="sha256-zBy1l2WBAh2vPF8rnjFMUXujsfkKjya0Jy5j6yKj0+Q="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js" integrity="sha256-FMocp8pp1WruAK6GtjNDtuGAALCt/dCsVtw7oSjvPX0="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js" integrity="sha256-equUbqqmQ/UsoL6zkgolTGUnZ9VJs/o7plSCor12hyI="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" integrity="sha256-8E6QUcFg1KTnpEU8TFGhpTGHw5fJqB9vCms3OhAYLqw="></script>
-        <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.10/URI.min.js" integrity="sha256-OSWfaJ3kpLQv6ZzoiITKLVJczKgsDH2Z56uPkAvSQZY="></script>
-        <script src="~/lib/bootstrap/bootstrap.min.js" asp-append-version="true"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 </body>
 </html>

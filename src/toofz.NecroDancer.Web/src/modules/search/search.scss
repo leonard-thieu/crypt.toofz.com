@@ -1,0 +1,29 @@
+﻿nd-search {
+    min-width: 35%;
+
+    margin: {
+        top: 4px;
+    }
+
+    .form-group,
+    .input-group {
+        width: 100%;
+    }
+}
+
+.typeahead {
+    height: 240px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .result {
+        display: flex;
+        align-items: center;
+        height: 30px;
+
+        .avatar {
+            flex: 0 0 30px;
+            margin-right: 10px;
+        }
+    }
+}

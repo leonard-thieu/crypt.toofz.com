@@ -5,16 +5,10 @@ import 'angular-mocks';
 
 import '../../src/app.module';
 import { ToofzRestApi } from '../../src/modules/toofz-rest-api/toofz-rest-api';
-import { ToofzSiteApi } from '../../src/modules/toofz-site-api/toofz-site-api';
-import { BackendDefinition } from '../shared';
 import {
-    Ng1ViewDeclaration,
-    StateObject,
     StateParams,
-    StateService
+    StateService,
 } from '@uirouter/angularjs';
-
-const toofzSite_definitions = require('./modules/toofz-site-api/toofz-site-api-definitions.json').definitions;
 
 describe('necrodancer (Routes)', function() {
     // http://nikas.praninskas.com/angular/2014/09/27/unit-testing-ui-router-configuration/
@@ -58,7 +52,6 @@ describe('necrodancer (Routes)', function() {
     let $rootScope: angular.IRootScopeService;
     let $injector: angular.auto.IInjectorService;
     let $stateParams: StateParams;
-    let toofzSiteApi: ToofzSiteApi;
     let toofzRestApi: ToofzRestApi;
 
     beforeEach(function() {
@@ -70,7 +63,6 @@ describe('necrodancer (Routes)', function() {
                 _$rootScope_: any,
                 _$injector_: any,
                 _$stateParams_: any,
-                _toofzSiteApi_: any,
                 _toofzRestApi_: any) => {
             $templateCache = _$templateCache_;
             $location = _$location_;
@@ -78,7 +70,6 @@ describe('necrodancer (Routes)', function() {
             $rootScope = _$rootScope_;
             $injector = _$injector_;
             $stateParams = _$stateParams_;
-            toofzSiteApi = _toofzSiteApi_;
             toofzRestApi = _toofzRestApi_;
         });
     });
@@ -91,20 +82,6 @@ describe('necrodancer (Routes)', function() {
                 const url = $state.href(state, {});
 
                 url.should.equal('');
-            });
-        });
-
-        describe('resolve', function() {
-            let toofzSiteApi_getAreas: sinon.SinonStub;
-
-            beforeEach(function() {
-                toofzSiteApi_getAreas = sinon.stub(toofzSiteApi, 'getAreas');
-            });
-
-            it(`should call 'toofzSiteApi.getAreas()'`, function() {
-                toofzSiteApi_getAreas.returns(Promise.resolve({ data: {} }));
-
-                return resolve('areas').forState(state).should.be.fulfilled;
             });
         });
     });
@@ -265,12 +242,6 @@ describe('necrodancer (Routes)', function() {
 
         describe('resolve', function() {
             describe('categories', function() {
-                let toofzSiteApi_getLeaderboardCategories: sinon.SinonStub;
-
-                beforeEach(function() {
-                    toofzSiteApi_getLeaderboardCategories = sinon.stub(toofzSiteApi, 'getLeaderboardCategories');
-                });
-
                 it(`should return '$stateParams.categories' if it exists`, function() {
                     $stateParams.categories = {};
 
@@ -278,10 +249,7 @@ describe('necrodancer (Routes)', function() {
                 });
 
                 it(`should return a default categories object if '$stateParams.categories' doesn't exist`, function() {
-                    const categories = toofzSite_definitions.find((value: BackendDefinition) => value.description === 'getLeaderboardCategories');
-                    toofzSiteApi_getLeaderboardCategories.returns(Promise.resolve(categories.response));
-
-                    return resolve('categories').forState(state).should.eventually.be.an('object');
+                    return resolve('categories').forState(state).should.be.an('object');
                 });
             });
 
@@ -292,14 +260,15 @@ describe('necrodancer (Routes)', function() {
                     toofzRestApi_getLeaderboards = sinon.stub(toofzRestApi, 'getLeaderboards');
                 });
 
-                it(`should resolve data`, function() {
-                    const categories = toofzSite_definitions.find((value: BackendDefinition) => value.description === 'getLeaderboardCategories');
+                it(`should resolve data`, async function() {
+                    const categories = await resolve('categories').forState(state);
+
                     toofzRestApi_getLeaderboards.returns(Promise.resolve({
                         leaderboards: [],
                     }));
 
                     return resolve('leaderboards').forState(state, {
-                        categories: categories.response.data.categories,
+                        categories: categories,
                     }).should.eventually.be.an('array');
                 });
             });
@@ -546,8 +515,8 @@ describe('necrodancer (Routes)', function() {
         });
     });
 
-    describe('root.player', function() {
-        const state = 'root.player';
+    describe('root.profile', function() {
+        const state = 'root.profile';
 
         describe('url', function() {
             it(`should return '/p/{id}' if 'slug' is not defined`, function() {
@@ -564,8 +533,8 @@ describe('necrodancer (Routes)', function() {
         });
     });
 
-    describe('root.player.classic', function() {
-        const state = 'root.player.classic';
+    describe('root.profile.classic', function() {
+        const state = 'root.profile.classic';
 
         describe('url', function() {
 
@@ -589,8 +558,8 @@ describe('necrodancer (Routes)', function() {
         });
     });
 
-    describe('root.player.amplified', function() {
-        const state = 'root.player.amplified';
+    describe('root.profile.amplified', function() {
+        const state = 'root.profile.amplified';
 
         describe('url', function() {
 
@@ -614,8 +583,8 @@ describe('necrodancer (Routes)', function() {
         });
     });
 
-    describe('root.player.classic-dailies', function() {
-        const state = 'root.player.classic-dailies';
+    describe('root.profile.classic-dailies', function() {
+        const state = 'root.profile.classic-dailies';
 
         describe('url', function() {
 
@@ -639,8 +608,8 @@ describe('necrodancer (Routes)', function() {
         });
     });
 
-    describe('root.player.amplified-dailies', function() {
-        const state = 'root.player.amplified-dailies';
+    describe('root.profile.amplified-dailies', function() {
+        const state = 'root.profile.amplified-dailies';
 
         describe('url', function() {
 

@@ -3,9 +3,6 @@ import { TransitionService } from '@uirouter/angularjs';
 
 declare global {
     const apiBaseUrl: string;
-    const fingerprint: {
-        get(url: string): string;
-    };
 }
 
 angular
@@ -30,6 +27,7 @@ angular
         });
     })
     .run(($transitions: TransitionService) => {
+        'ngInject';
         $transitions.onStart({}, () => {
             if (appInsights) {
                 appInsights.startTrackPage();

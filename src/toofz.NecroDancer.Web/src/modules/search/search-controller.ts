@@ -3,6 +3,7 @@ import * as angular from 'angular';
 import { ToofzRestApi } from '../toofz-rest-api/toofz-rest-api';
 import { SlugFilter } from '../slug/slug.module';
 import { StateService } from '@uirouter/angularjs';
+import 'bootstrap-3-typeahead';
 
 export class SearchController {
     constructor(private readonly $element: JQuery,
@@ -46,7 +47,7 @@ export class SearchController {
             delay: 200,
             afterSelect: (item) => {
                 if (item) {
-                    this.$state.go('root.player', {
+                    this.$state.go('root.profile', {
                         id: item.id,
                         slug: this.slugFilter(item.display_name)
                     }, {

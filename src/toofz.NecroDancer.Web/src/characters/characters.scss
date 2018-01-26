@@ -1,0 +1,12 @@
+@import 'variables';
+
+.character {
+  min-height: $characterIconHeight;
+  background-repeat: no-repeat;
+
+  @each $character in $characters {
+    &.#{$character} {
+      background-image: url("#{$character}.png");
+    }
+  }
+}

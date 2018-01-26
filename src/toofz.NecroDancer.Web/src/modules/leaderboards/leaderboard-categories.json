@@ -1,0 +1,199 @@
+{
+  "products": {
+    "classic": {
+      "id": 0,
+      "display_name": "Classic",
+      "order": 0
+    },
+    "amplified": {
+      "id": 1,
+      "display_name": "Amplified",
+      "order": 1,
+      "value": true
+    }
+  },
+  "modes": {
+    "standard": {
+      "id": 0,
+      "display_name": "Standard",
+      "order": 0,
+      "value": true
+    },
+    "no-return": {
+      "id": 1,
+      "display_name": "No Return",
+      "order": 1
+    },
+    "hard": {
+      "id": 2,
+      "display_name": "Hard",
+      "order": 2
+    },
+    "phasing": {
+      "id": 3,
+      "display_name": "Phasing",
+      "order": 3
+    },
+    "randomizer": {
+      "id": 4,
+      "display_name": "Randomizer",
+      "order": 4
+    },
+    "mystery": {
+      "id": 5,
+      "display_name": "Mystery",
+      "order": 5
+    }
+  },
+  "runs": {
+    "score": {
+      "id": 0,
+      "display_name": "Score",
+      "order": 0,
+      "value": true
+    },
+    "speed": {
+      "id": 1,
+      "display_name": "Speed",
+      "order": 1,
+      "value": true
+    },
+    "seeded-score": {
+      "id": 2,
+      "display_name": "Seeded Score",
+      "order": 2
+    },
+    "seeded-speed": {
+      "id": 3,
+      "display_name": "Seeded Speed",
+      "order": 3
+    },
+    "deathless": {
+      "id": 4,
+      "display_name": "Deathless",
+      "order": 4,
+      "value": true
+    }
+  },
+  "characters": {
+    "all-characters": {
+      "id": -3,
+      "display_name": "All Characters",
+      "classes": "character all-characters",
+      "order": 0,
+      "value": true
+    },
+    "all-characters-amplified": {
+      "id": -4,
+      "display_name": "All Characters (Amplified)",
+      "classes": "character all-characters-amplified",
+      "order": 1,
+      "value": true
+    },
+    "aria": {
+      "id": 2,
+      "display_name": "Aria",
+      "classes": "character aria",
+      "order": 2,
+      "value": true
+    },
+    "bard": {
+      "id": 9,
+      "display_name": "Bard",
+      "classes": "character bard",
+      "order": 3,
+      "value": true
+    },
+    "bolt": {
+      "id": 8,
+      "display_name": "Bolt",
+      "classes": "character bolt",
+      "order": 4,
+      "value": true
+    },
+    "cadence": {
+      "id": 0,
+      "display_name": "Cadence",
+      "classes": "character cadence",
+      "order": 5,
+      "value": true
+    },
+    "coda": {
+      "id": 7,
+      "display_name": "Coda",
+      "classes": "character coda",
+      "order": 6,
+      "value": true
+    },
+    "diamond": {
+      "id": 11,
+      "display_name": "Diamond",
+      "classes": "character diamond",
+      "order": 7,
+      "value": true
+    },
+    "dorian": {
+      "id": 3,
+      "display_name": "Dorian",
+      "classes": "character dorian",
+      "order": 8,
+      "value": true
+    },
+    "dove": {
+      "id": 6,
+      "display_name": "Dove",
+      "classes": "character dove",
+      "order": 9,
+      "value": true
+    },
+    "eli": {
+      "id": 4,
+      "display_name": "Eli",
+      "classes": "character eli",
+      "order": 10,
+      "value": true
+    },
+    "mary": {
+      "id": 12,
+      "display_name": "Mary",
+      "classes": "character mary",
+      "order": 11,
+      "value": true
+    },
+    "melody": {
+      "id": 1,
+      "display_name": "Melody",
+      "classes": "character melody",
+      "order": 12,
+      "value": true
+    },
+    "monk": {
+      "id": 5,
+      "display_name": "Monk",
+      "classes": "character monk",
+      "order": 13,
+      "value": true
+    },
+    "nocturna": {
+      "id": 10,
+      "display_name": "Nocturna",
+      "classes": "character nocturna",
+      "order": 14,
+      "value": true
+    },
+    "story-mode": {
+      "id": -2,
+      "display_name": "Story Mode",
+      "classes": "character story-mode",
+      "order": 15,
+      "value": true
+    },
+    "tempo": {
+      "id": 13,
+      "display_name": "Tempo",
+      "classes": "character tempo",
+      "order": 16,
+      "value": true
+    }
+  }
+}

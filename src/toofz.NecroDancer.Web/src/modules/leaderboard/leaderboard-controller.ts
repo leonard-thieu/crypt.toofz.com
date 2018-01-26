@@ -1,5 +1,5 @@
+import 'livestamp';
 import * as util from '../../util';
-
 import { PageTitle } from '../page-title/page-title';
 import { PagingControllerBase } from '../pagination/paging-controller-base';
 import { SlugFilter } from '../slug/slug.module';

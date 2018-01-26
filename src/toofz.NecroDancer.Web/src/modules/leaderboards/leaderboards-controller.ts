@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import debounce = require('lodash/debounce');
 
 import { PageTitle } from '../page-title/page-title';
 import { StateService } from '@uirouter/angularjs';
@@ -28,11 +28,11 @@ export class LeaderboardsController {
 
     private _search() {
         this.$state.go('.', {
-            categories: this.categories
+            categories: this.categories,
         }, {
-            reload: true
+            reload: true,
         });
     }
 
-    readonly _search_debounced = _.debounce(this._search.bind(this), 350);
+    readonly _search_debounced = debounce(this._search.bind(this), 350);
 }

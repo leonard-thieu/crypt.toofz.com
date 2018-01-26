@@ -18,7 +18,7 @@ notifications:
       secure: c7l1UmXHWpIDLL1awU4r0QYVPToYM/XjV8trFyD1oHArKxs/vBTYiKYScr1EhCUgmEX6sAFBTvkUHF/k5B+cGjzqRBR2XkAO+lzk8cHQ1FI=
 
 install:
-  - ps: Update-NodeJsInstallation 9.4.0
+  - ps: Install-Product node 9.4.0
   - node --version
   - npm --version
 
@@ -26,7 +26,7 @@ before_build:
   - nuget restore -Verbosity quiet
   - cd src\toofz.NecroDancer.Web
   - npm install
-  - npm run build
+  - npm run build-prod
   - cd ..\..
 build:
   project: toofz.NecroDancer.Web.sln
@@ -36,11 +36,11 @@ after_build:
 
 test_script:
   - cd src\toofz.NecroDancer.Web
-  - node_modules\.bin\gulp build:js:test
-  - node_modules\.bin\electron-mocha --opts .\tests\mocha-appveyor.opts
-  - node_modules\.bin\remap-istanbul --input .\coverage\coverage-final.json --output .\coverage\coverage-final.json
-  - node_modules\.bin\istanbul report --report lcovonly
-  - node_modules\.bin\codecov --file=.\coverage\coverage\lcov.info --disable=gcov
+  - npm run build-test-prod
+  - node_modules\.bin\electron-mocha --opts tests\mocha-appveyor.opts
+  - node_modules\.bin\remap-istanbul --input coverage\coverage-final.json --output coverage\coverage-finaler.json
+  - node_modules\.bin\istanbul report --include coverage\coverage-finaler.json --report lcovonly
+  - node_modules\.bin\codecov --file=coverage\lcov.info --disable=gcov
   - cd ..\..
 
 artifacts:

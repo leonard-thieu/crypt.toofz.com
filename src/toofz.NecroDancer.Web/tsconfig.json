@@ -3,15 +3,21 @@
   "compilerOptions": {
     "alwaysStrict": true,
     "importHelpers": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.iterable",
+      "es2015.promise"
+    ],
     "module": "commonjs",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es2017"
+    "target": "es5"
   },
   "exclude": [
-    "node_modules",
-    "gulpfile.ts"
+    "node_modules"
   ]
 }

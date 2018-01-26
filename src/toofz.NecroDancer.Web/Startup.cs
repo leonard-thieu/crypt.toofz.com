@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,21 +45,6 @@ namespace toofz.NecroDancer.Web
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
-
-            RegisterAssetPaths(env, "src", "*.html");
-            RegisterAssetPaths(env, "data", "*.json");
-        }
-
-        private void RegisterAssetPaths(IHostingEnvironment env, string virtualPathRoot, string searchPattern)
-        {
-            var root = env.WebRootPath;
-
-            var virtualPaths = Directory.EnumerateFiles(Path.Combine(root, virtualPathRoot), searchPattern, SearchOption.AllDirectories);
-            foreach (var virtualPath in virtualPaths)
-            {
-                var rootRelativePath = virtualPath.Replace(root, "").Replace(@"\", "/");
-                Global.AssetPaths.Add(rootRelativePath);
-            }
         }
     }
 }
