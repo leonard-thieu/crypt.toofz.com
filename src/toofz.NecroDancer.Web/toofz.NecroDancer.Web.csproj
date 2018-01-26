@@ -21,16 +21,16 @@
   <!-- Exclude from deployment -->
   <ItemGroup>
     <Content Remove="**\*.json" />
-    <Content Remove="wwwroot\app\report.html" />
+    <Content Remove="wwwroot\app\*.report.html" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <AppSettingsToDeploy>appsettings.json;appsettings.Production.json</AppSettingsToDeploy>
+  </PropertyGroup>
+
   <ItemGroup>
-    <None Include="Properties\**\*.json" />
-    <None Include="wwwroot\**\*.json" />
-    <None Include="src\**\*.json" />
-    <None Include="tests\**\*.json" />
-    <Content Include="appsettings.*.json" Exclude="appsettings.Development.json" />
-    <None Include="*.json" Exclude="@(Content)" />
+    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);$(AppSettingsToDeploy)" />
+    <Content Include="$(AppSettingsToDeploy)" />
 
     <None Update="package-lock.json">
       <DependentUpon>package.json</DependentUpon>
