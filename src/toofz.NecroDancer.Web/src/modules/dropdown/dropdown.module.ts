@@ -1,31 +1,36 @@
+import * as dropdownTemplate from './dropdown.html';
+import * as submenuTemplate from './submenu.html';
+
 import * as angular from 'angular';
 
-/**
- * @ngdoc directive
- * @name ndDropdown
- * @restrict E
- *
- * @param {expression} category
- */
-/**
- * @ngdoc directive
- * @name ndSubmenu
- * @restrict E
- *
- * @param {expression} category
- */
+const moduleName = 'necrodancer.dropdown';
+export default moduleName;
 
 angular
-    .module('necrodancer.dropdown', [])
+    .module(moduleName, [])
+    /**
+     * @ngdoc directive
+     * @name ndDropdown
+     * @restrict E
+     *
+     * @param {expression} category
+     */
     .component('ndDropdown', {
-        templateUrl: fingerprint.get(__dirname + '/dropdown.html'),
+        template: dropdownTemplate,
         bindings: {
-            category: '<'
-        }
+            category: '<',
+        },
     })
+    /**
+     * @ngdoc directive
+     * @name ndSubmenu
+     * @restrict E
+     *
+     * @param {expression} category
+     */
     .component('ndSubmenu', {
-        templateUrl: fingerprint.get(__dirname + '/submenu.html'),
+        template: submenuTemplate,
         bindings: {
-            category: '<'
-        }
+            category: '<',
+        },
     });

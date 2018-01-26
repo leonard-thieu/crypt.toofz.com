@@ -62,36 +62,26 @@ export class PaginationController {
         return current <= midEnd && midEnd !== end;
     }
 
+    // region Inputs
+
     readonly data: Pagination;
 
+    // endregion
+
+    // Data for pagination summary.
+    //   Showing 81 to 100 of 104 entries
     records: Records;
+    // Data for paging controls.
     pages: Pages;
 
     $onInit() {
-        const { offset, limit, total } = this.data;
+        let { offset, limit, total } = this.data;
+
+        if (typeof offset !== 'number') {
+            offset = 0;
+        }
 
         this.records = PaginationController.getRecords(offset, limit, total);
         this.pages = PaginationController.getPages(offset, limit, total);
     }
-}
-
-interface Pagination {
-    offset: number;
-    limit: number;
-    total: number;
-}
-
-interface Records {
-    start: number;
-    end: number;
-    total: number;
-}
-
-interface Pages {
-    isStartVisible: boolean;
-    isEndVisible: boolean;
-    start: number;
-    middle: number[];
-    end: number;
-    current: number;
 }

@@ -1,28 +1,33 @@
+import * as enemiesTemplate from './enemies.html';
+import '../../currency/currency.scss';
+
 import * as angular from 'angular';
-import '@uirouter/angularjs';
-import '../page-title/page-title.module';
-import '../pagination/pagination.module';
+import uirouter from '@uirouter/angularjs';
+import pageTitle from '../page-title/page-title.module';
+import pagination from '../pagination/pagination.module';
 
 import { EnemiesController } from './enemies-controller';
 
-/**
- * @ngdoc directive
- * @name ndEnemies
- * @restrict E
- *
- * @param {expression} data
- */
+const moduleName = 'necrodancer.enemies';
+export default moduleName;
 
 angular
-    .module('necrodancer.enemies', [
-        'ui.router',
-        'necrodancer.page-title',
-        'necrodancer.pagination'
+    .module(moduleName, [
+        uirouter,
+        pageTitle,
+        pagination,
     ])
+    /**
+     * @ngdoc directive
+     * @name ndEnemies
+     * @restrict E
+     *
+     * @param {expression} data
+     */
     .component('ndEnemies', {
-        templateUrl: fingerprint.get(__dirname + '/enemies.html'),
+        template: enemiesTemplate,
         controller: EnemiesController,
         bindings: {
-            data: '<'
-        }
+            data: '<',
+        },
     });

@@ -1,15 +1,21 @@
-import * as _ from 'lodash';
+import * as leaderboardCategories from './modules/leaderboards/leaderboard-categories.json';
+
+import each = require('lodash/each');
+import reduce = require('lodash/reduce');
 import * as util from './util';
 
 import * as angular from 'angular';
 
+import * as rootTemplate from './root.html';
+import * as landingTemplate from './landing.html';
+import * as _404Template from './404.html';
+
 import { ToofzRestApi } from './modules/toofz-rest-api/toofz-rest-api';
-import { ToofzSiteApi } from './modules/toofz-site-api/toofz-site-api';
 import {
     StateProvider,
     Ng1StateDeclaration,
     StateParams,
-    UrlMatcherFactory
+    UrlMatcherFactory,
 } from '@uirouter/angularjs';
 
 angular
@@ -27,20 +33,14 @@ angular
             abstract: true,
             name: 'root',
             url: '',
-            templateUrl: fingerprint.get(__dirname + '/root.html'),
-            resolve: {
-                areas: (toofzSiteApi: ToofzSiteApi) => {
-                    'ngInject';
-                    return toofzSiteApi.getAreas();
-                },
-            },
+            template: rootTemplate,
         };
         $stateProvider.state(rootState);
 
         const landingState: Ng1StateDeclaration = {
             name: 'root.landing',
             url: '/',
-            templateUrl: fingerprint.get(__dirname + '/landing.html'),
+            template: landingTemplate,
         };
         $stateProvider.state(landingState);
 
@@ -117,8 +117,7 @@ angular
                 categories: null,
             },
             resolve: {
-                categories: (toofzSiteApi: ToofzSiteApi,
-                             $stateParams: StateParams) => {
+                categories: ($stateParams: StateParams) => {
                     'ngInject';
                     const { categories } = $stateParams;
 
@@ -126,7 +125,7 @@ angular
                         return categories;
                     }
 
-                    return toofzSiteApi.getLeaderboardCategories();
+                    return leaderboardCategories;
                 },
                 leaderboards: (categories: toofzSite.Leaderboard.Categories,
                                toofzRestApi: ToofzRestApi) => {
@@ -137,8 +136,8 @@ angular
                         customMusic: false,
                     };
 
-                    _.each(categories, (category, name) => {
-                        params[name!] = _.reduce(category, (result, value, key) => {
+                    each(categories, (category, name) => {
+                        params[name!] = reduce(category, (result, value, key) => {
                             if (value.value) {
                                 result.push(key);
                             }
@@ -327,21 +326,21 @@ angular
         };
         $stateProvider.state(dailyLeaderboardState);
 
-        const playerState: Ng1StateDeclaration = {
-            name: 'root.player',
+        const profileState: Ng1StateDeclaration = {
+            name: 'root.profile',
             url: '/p/{id}/{slug}',
             params: {
                 slug: '-',
             },
-            template: '<nd-player-profile></nd-player-profile>',
-            redirectTo: 'root.player.amplified',
+            template: '<nd-profile></nd-profile>',
+            redirectTo: 'root.profile.amplified',
         };
-        $stateProvider.state(playerState);
+        $stateProvider.state(profileState);
 
-        const playerClassicState: Ng1StateDeclaration = {
-            name: 'root.player.classic',
+        const profileClassicState: Ng1StateDeclaration = {
+            name: 'root.profile.classic',
             url: '/classic',
-            template: '<nd-player-entries data="::$resolve.classic"></nd-player-entries>',
+            template: '<nd-profile-entries data="::$resolve.classic"></nd-profile-entries>',
             resolve: {
                 classic: ($stateParams: StateParams,
                           toofzRestApi: ToofzRestApi) => {
@@ -357,12 +356,12 @@ angular
                 },
             },
         };
-        $stateProvider.state(playerClassicState);
+        $stateProvider.state(profileClassicState);
 
-        const playerAmplifiedState: Ng1StateDeclaration = {
-            name: 'root.player.amplified',
+        const profileAmplifiedState: Ng1StateDeclaration = {
+            name: 'root.profile.amplified',
             url: '/amplified',
-            template: '<nd-player-entries data="::$resolve.amplified"></nd-player-entries>',
+            template: '<nd-profile-entries data="::$resolve.amplified"></nd-profile-entries>',
             resolve: {
                 amplified: ($stateParams: StateParams,
                             toofzRestApi: ToofzRestApi) => {
@@ -378,12 +377,12 @@ angular
                 },
             },
         };
-        $stateProvider.state(playerAmplifiedState);
+        $stateProvider.state(profileAmplifiedState);
 
-        const playerClassicDailiesState: Ng1StateDeclaration = {
-            name: 'root.player.classic-dailies',
+        const profileClassicDailiesState: Ng1StateDeclaration = {
+            name: 'root.profile.classic-dailies',
             url: '/classic-dailies',
-            template: '<nd-player-daily-entries data="::$resolve.classic"></nd-player-daily-entries>',
+            template: '<nd-profile-daily-entries data="::$resolve.classic"></nd-profile-daily-entries>',
             resolve: {
                 classic: ($stateParams: StateParams,
                           toofzRestApi: ToofzRestApi) => {
@@ -397,12 +396,12 @@ angular
                 },
             },
         };
-        $stateProvider.state(playerClassicDailiesState);
+        $stateProvider.state(profileClassicDailiesState);
 
-        const playerAmplifiedDailiesState: Ng1StateDeclaration = {
-            name: 'root.player.amplified-dailies',
+        const profileAmplifiedDailiesState: Ng1StateDeclaration = {
+            name: 'root.profile.amplified-dailies',
             url: '/amplified-dailies',
-            template: '<nd-player-daily-entries data="::$resolve.amplified"></nd-player-daily-entries>',
+            template: '<nd-profile-daily-entries data="::$resolve.amplified"></nd-profile-daily-entries>',
             resolve: {
                 amplified: ($stateParams: StateParams,
                             toofzRestApi: ToofzRestApi) => {
@@ -416,12 +415,12 @@ angular
                 },
             },
         };
-        $stateProvider.state(playerAmplifiedDailiesState);
+        $stateProvider.state(profileAmplifiedDailiesState);
 
         const otherwiseState: Ng1StateDeclaration = {
             name: 'root.otherwise',
             url: '*path',
-            templateUrl: fingerprint.get(__dirname + '/404.html'),
+            template: _404Template,
         };
         $stateProvider.state(otherwiseState);
 

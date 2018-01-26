@@ -11,11 +11,7 @@ export abstract class PagingControllerBase<T extends toofz.PagedResults> {
 
     readonly data: T;
 
-    records: {
-        offset: number | undefined;
-        limit: number;
-        total: number;
-    };
+    records: Pagination;
 
     $onInit() {
         const { page } = this.$stateParams;
@@ -23,13 +19,7 @@ export abstract class PagingControllerBase<T extends toofz.PagedResults> {
         this.records = {
             offset: util.pageToOffset(page, this.limit),
             limit: this.limit,
-            total: this.data.total
+            total: this.data.total,
         };
-    }
-
-    $postLink() {
-        if (typeof this.records.offset !== 'number') {
-            this.records.offset = 0;
-        }
     }
 }

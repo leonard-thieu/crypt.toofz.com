@@ -1,3 +1,6 @@
+/// <reference types="mocha" />
+/// <reference types="node" />
+
 import * as sinon from 'sinon';
 
 import * as angular from 'angular';
@@ -7,7 +10,7 @@ import '../../../../src/modules/search/search.module';
 import { SearchController } from '../../../../src/modules/search/search-controller';
 import { StateService } from '@uirouter/angularjs';
 
-const toofz_definitions = require('../toofz-rest-api/toofz-rest-api.definitions.json').definitions;
+const toofz_definitions = require('../toofz-rest-api/toofz-rest-api.definitions.json');
 
 describe('SearchController', function() {
     let $componentController: angular.IComponentControllerService;
@@ -15,7 +18,7 @@ describe('SearchController', function() {
 
     beforeEach(function() {
         angular.mock.module('necrodancer.search', {
-            apiBaseUrl: ''
+            apiBaseUrl: '',
         });
 
         inject((_$componentController_: any) => {
@@ -35,9 +38,9 @@ describe('SearchController', function() {
 
     describe('$postLink', function() {
         it(`should initialize typeahead`, function() {
-            const $element = $('<nd-search><input></nd-search>');
+            const $element = angular.element('<nd-search><input></nd-search>');
             const ctrl = $componentController('ndSearch', {
-                $element: $element
+                $element: $element,
             }) as SearchController;
 
             ctrl.$postLink();
@@ -49,9 +52,9 @@ describe('SearchController', function() {
         let _ctrl: any;
 
         beforeEach(function() {
-            const $element = $('<nd-search><input></nd-search>');
+            const $element = angular.element('<nd-search><input></nd-search>');
             ctrl = $componentController('ndSearch', {
-                $element: $element
+                $element: $element,
             }) as SearchController;
             _ctrl = ctrl;
         });
@@ -124,7 +127,7 @@ describe('SearchController', function() {
                 const { afterSelect } = _ctrl.getSearchDatasetOptions();
                 const item = {
                     id: '76561197960481221',
-                    slug: 'Mendayen'
+                    slug: 'Mendayen',
                 };
 
                 afterSelect(item);

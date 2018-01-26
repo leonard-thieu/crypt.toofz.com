@@ -1,7 +1,10 @@
 import * as angular from 'angular';
 
+const moduleName = 'necrodancer.ordinal';
+export default moduleName;
+
 angular
-    .module('necrodancer.ordinal', [])
+    .module(moduleName, [])
     .filter('ordinal', (): OrdinalFilter => {
         // http://stackoverflow.com/a/13627586/414137
         return i => {

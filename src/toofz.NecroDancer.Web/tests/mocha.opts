@@ -1,6 +1,6 @@
 --renderer
---require-main tests/crash
---require tests/coverage
---require tests/preload
+--require tests/util/preload
+--require tests/util/install-dll
 --require source-map-support/register
-tests/src/**/*.js
+tests/app/tests.js
+tests/util/coverage.js

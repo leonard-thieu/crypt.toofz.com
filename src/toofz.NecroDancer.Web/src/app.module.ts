@@ -1,15 +1,17 @@
+import '../css/site.scss';
+
+import 'imports-loader?jQuery=jquery!bootstrap';
 import * as angular from 'angular';
-import '@uirouter/angularjs';
-import 'angular-loading-bar';
-import './modules/enemies/enemies.module';
-import './modules/items/items.module';
-import './modules/leaderboard/leaderboard.module';
-import './modules/leaderboards/leaderboards.module';
-import './modules/navbar/navbar.module';
-import './modules/player-profile/player-profile.module';
-import './modules/search/search.module';
-import './modules/toofz-rest-api/toofz-rest-api.module';
-import './modules/toofz-site-api/toofz-site-api.module';
+import uirouter from '@uirouter/angularjs';
+import * as angularLoadingBar from 'angular-loading-bar';
+import enemies from './modules/enemies/enemies.module';
+import items from './modules/items/items.module';
+import leaderboard from './modules/leaderboard/leaderboard.module';
+import leaderboards from './modules/leaderboards/leaderboards.module';
+import navbar from './modules/navbar/navbar.module';
+import profile from './modules/profile/profile.module';
+import search from './modules/search/search.module';
+import toofzRestApi from './modules/toofz-rest-api/toofz-rest-api.module';
 
 // ngdoc support
 /**
@@ -36,17 +38,16 @@ import './modules/toofz-site-api/toofz-site-api.module';
 
 angular
     .module('necrodancer.app', [
-        'ui.router',
-        'angular-loading-bar',
-        'necrodancer.enemies',
-        'necrodancer.items',
-        'necrodancer.leaderboard',
-        'necrodancer.leaderboards',
-        'necrodancer.navbar',
-        'necrodancer.player-profile',
-        'necrodancer.search',
-        'toofz.rest-api',
-        'toofz.site-api'
+        uirouter,
+        angularLoadingBar,
+        enemies,
+        items,
+        leaderboard,
+        leaderboards,
+        navbar,
+        profile,
+        search,
+        toofzRestApi,
     ])
     .config(($httpProvider: angular.IHttpProvider) => {
         'ngInject';
@@ -57,7 +58,7 @@ angular
                 // TODO: Consider retry logic
                 requestError: (rejection: any) => {
                     $log.error(rejection);
-                }
+                },
             };
         };
         $httpProvider.interceptors.push(loggingInterceptor as any);

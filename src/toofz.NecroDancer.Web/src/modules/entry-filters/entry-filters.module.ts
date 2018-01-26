@@ -3,8 +3,11 @@ import 'moment-duration-format';
 
 import * as angular from 'angular';
 
+const moduleName = 'necrodancer.entry-filters';
+export default moduleName;
+
 angular
-    .module('necrodancer.entry-filters', [])
+    .module(moduleName, [])
     .filter('time', (): TimeFilter => {
         return score => {
             return 100000000 - score;
