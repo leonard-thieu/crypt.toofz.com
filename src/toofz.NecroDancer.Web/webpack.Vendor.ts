@@ -62,6 +62,7 @@ function getConfig(env: any): webpack.Configuration {
                             {
                                 loader: 'css-loader',
                                 options: {
+                                    minimize: $configuration === 'production',
                                     sourceMap: true,
                                 },
                             },
