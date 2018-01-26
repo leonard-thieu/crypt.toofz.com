@@ -22,17 +22,17 @@
     <JSONContent Include="wwwroot\app\**\*.json" />
     <JSONContent Include="appsettings.json" />
     <JSONContent Include="appsettings.Production.json" />
+    <ExcludedJSONContent Include="**\*.json" Exclude="$(DefaultItemExcludes);@(JSONContent)" />
   </ItemGroup>
 
   <!-- Exclude from deployment -->
   <ItemGroup>
-    <Content Remove="**\*.json" />
+    <Content Remove="@(ExcludedJSONContent)" />
     <Content Remove="wwwroot\app\*.report.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);@(JSONContent);coverage\**" />
-    <Content Include="@(JSONContent)" />
+    <None Include="@(ExcludedJSONContent)" Exclude="coverage\**" />
 
     <None Update="package-lock.json">
       <DependentUpon>package.json</DependentUpon>
