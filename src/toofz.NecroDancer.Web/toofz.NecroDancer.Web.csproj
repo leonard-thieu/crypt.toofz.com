@@ -18,19 +18,21 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <JSONContent Include="wwwroot\app\**\*.json" />
+    <JSONContent Include="appsettings.json" />
+    <JSONContent Include="appsettings.Production.json" />
+  </ItemGroup>
+
   <!-- Exclude from deployment -->
   <ItemGroup>
     <Content Remove="**\*.json" />
     <Content Remove="wwwroot\app\*.report.html" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <AppSettingsToDeploy>appsettings.json;appsettings.Production.json</AppSettingsToDeploy>
-  </PropertyGroup>
-
   <ItemGroup>
-    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);$(AppSettingsToDeploy);coverage\**" />
-    <Content Include="$(AppSettingsToDeploy)" />
+    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);@(JSONContent);coverage\**" />
+    <Content Include="@(JSONContent)" />
 
     <None Update="package-lock.json">
       <DependentUpon>package.json</DependentUpon>
