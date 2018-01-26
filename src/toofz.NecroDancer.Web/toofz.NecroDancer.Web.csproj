@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);$(AppSettingsToDeploy)" />
+    <None Include="**\*.json" Exclude="$(DefaultItemExcludes);$(AppSettingsToDeploy);coverage\**" />
     <Content Include="$(AppSettingsToDeploy)" />
 
     <None Update="package-lock.json">
