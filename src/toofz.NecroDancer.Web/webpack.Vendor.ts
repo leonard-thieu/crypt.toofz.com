@@ -36,6 +36,9 @@ function getConfig(env: any): webpack.Configuration {
         const lastManifest = require(path.join(appPath, manifestFileName));
         Object.keys(lastManifest).forEach(key => {
             cleanPaths.push(lastManifest[key]);
+            if (path.extname(key) === '.js') {
+                cleanPaths.push(`${lastManifest[key]}.LICENSE`);
+            }
         });
     } catch { }
 
