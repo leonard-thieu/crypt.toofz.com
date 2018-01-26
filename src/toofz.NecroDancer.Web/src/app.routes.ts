@@ -128,7 +128,8 @@ angular
                     return leaderboardCategories;
                 },
                 leaderboards: (categories: toofzSite.Leaderboard.Categories,
-                               toofzRestApi: ToofzRestApi) => {
+                               toofzRestApi: ToofzRestApi,
+                               $q: angular.IQService) => {
                     'ngInject';
                     const params: any = {
                         production: true,
@@ -152,7 +153,7 @@ angular
                         params.characters.length) {
                         return toofzRestApi.getLeaderboards(params).then(data => data.leaderboards);
                     } else {
-                        return Promise.resolve([]);
+                        return $q.resolve([]);
                     }
                 },
             },
