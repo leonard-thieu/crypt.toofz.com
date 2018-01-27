@@ -17,6 +17,10 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
+  
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);coverage\**</DefaultItemExcludes>
+  </PropertyGroup>
 
   <ItemGroup>
     <JSONContent Include="wwwroot\app\**\*.json" />
@@ -32,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="@(ExcludedJSONContent)" Exclude="coverage\**" />
+    <None Include="@(ExcludedJSONContent)" />
 
     <None Update="package-lock.json">
       <DependentUpon>package.json</DependentUpon>
