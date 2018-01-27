@@ -14,7 +14,7 @@ export interface BackendDefinition {
     };
 }
 
-const toofzRestApiBackendDefinitions: BackendDefinition[] = require('./src/modules/toofz-rest-api/toofz-rest-api.definitions.json');
+const toofzRestApiBackendDefinitions: BackendDefinition[] = require('./src/toofz-rest-api/toofz-rest-api.definitions.json');
 
 export function getBackendDefinition(description: string) {
     for (let i = 0; i < toofzRestApiBackendDefinitions.length; i++) {
