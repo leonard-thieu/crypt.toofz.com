@@ -22,5 +22,4 @@ require('lodash/sortBy');
 require('lodash/debounce');
 require('lodash/each');
 require('lodash/reduce');
-require('urijs');
 require('tslib');

@@ -1,5 +1,6 @@
 import { IHttpService } from 'angular';
 import * as moment from 'moment';
+import { toCommaSeparatedValues } from '../util';
 
 export class ToofzRestApi {
     static getTimeDifference(date: string) {
@@ -23,37 +24,44 @@ export class ToofzRestApi {
 
     getItems(params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items`, {
-            params: params
+            params: params,
         }).then(response => response.data);
     }
 
     getItemsByCategory(category: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items/${category}`, {
-            params: params
+            params: params,
         }).then(response => response.data);
     }
 
     getItemsBySubcategory(category: string, subcategory: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Items>(`${this.apiBaseUrl}/items/${category}/${subcategory}`, {
-            params: params
+            params: params,
         }).then(response => response.data);
     }
 
     getEnemies(params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Enemies>(`${this.apiBaseUrl}/enemies`, {
-            params: params
+            params: params,
         }).then(response => response.data);
     }
 
     getEnemiesByAttribute(attribute: string, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.Enemies>(`${this.apiBaseUrl}/enemies/${attribute}`, {
-            params: params
+            params: params,
         }).then(response => response.data);
     }
 
     getLeaderboards(params?: toofz.GetLeaderboardsParams) {
+        if (params) {
+            params.products = toCommaSeparatedValues(params.products);
+            params.modes = toCommaSeparatedValues(params.modes);
+            params.runs = toCommaSeparatedValues(params.runs);
+            params.characters = toCommaSeparatedValues(params.characters);
+        }
+
         return this.$http.get<toofz.Leaderboards>(`${this.apiBaseUrl}/leaderboards`, {
-            params: params
+            params: params,
         }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
@@ -70,7 +78,7 @@ export class ToofzRestApi {
 
     getLeaderboardEntries(id: number, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.LeaderboardEntries>(`${this.apiBaseUrl}/leaderboards/${id}/entries`, {
-            params: params
+            params: params,
         }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
@@ -115,8 +123,12 @@ export class ToofzRestApi {
     }
 
     getDailyLeaderboards(params?: toofz.GetDailyLeaderboardsParams) {
+        if (params) {
+            params.products = toCommaSeparatedValues(params.products);
+        }
+
         return this.$http.get<toofz.DailyLeaderboards>(`${this.apiBaseUrl}/leaderboards/dailies`, {
-            params: params
+            params: params,
         }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
@@ -133,7 +145,7 @@ export class ToofzRestApi {
 
     getDailyLeaderboardEntries(id: number, params?: toofz.PaginationParams) {
         return this.$http.get<toofz.DailyLeaderboardEntries>(`${this.apiBaseUrl}/leaderboards/dailies/${id}/entries`, {
-            params: params
+            params: params,
         }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
@@ -151,12 +163,16 @@ export class ToofzRestApi {
         return this.$http.get<toofz.Players>(`${this.apiBaseUrl}/players`, {
             params: {
                 q: query,
-                ...params
-            }
+                ...params,
+            },
         }).then(response => response.data);
     }
 
     getPlayerEntries(id: string, params?: toofz.GetPlayerEntriesParams) {
+        if (params) {
+            params.products = toCommaSeparatedValues(params.products);
+        }
+
         return this.$http.get<toofz.PlayerEntries>(`${this.apiBaseUrl}/players/${id}/entries`, {
             params: params,
         }).then(response => {
@@ -214,8 +230,12 @@ export class ToofzRestApi {
     }
 
     getPlayerDailyEntries(id: string, params?: toofz.GetPlayerDailyEntriesParams) {
+        if (params) {
+            params.products = toCommaSeparatedValues(params.products);
+        }
+
         return this.$http.get<toofz.PlayerDailyEntries>(`${this.apiBaseUrl}/players/${id}/entries/dailies`, {
-            params: params
+            params: params,
         }).then(response => {
             const { headers, data } = response;
             const diff = ToofzRestApi.getTimeDifference(headers('Date'));
