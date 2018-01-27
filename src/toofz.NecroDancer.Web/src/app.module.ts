@@ -4,14 +4,14 @@ import 'imports-loader?jQuery=jquery!bootstrap';
 import * as angular from 'angular';
 import uirouter from '@uirouter/angularjs';
 import * as angularLoadingBar from 'angular-loading-bar';
-import enemies from './modules/enemies/enemies.module';
-import items from './modules/items/items.module';
-import leaderboard from './modules/leaderboard/leaderboard.module';
-import leaderboards from './modules/leaderboards/leaderboards.module';
-import navbar from './modules/navbar/navbar.module';
-import profile from './modules/profile/profile.module';
-import search from './modules/search/search.module';
-import toofzRestApi from './modules/toofz-rest-api/toofz-rest-api.module';
+import enemies from './enemies/enemies.module';
+import items from './items/items.module';
+import leaderboard from './leaderboard/leaderboard.module';
+import leaderboards from './leaderboards/leaderboards.module';
+import navbar from './navbar/navbar.module';
+import profile from './profile/profile.module';
+import search from './search/search.module';
+import toofzRestApi from './toofz-rest-api/toofz-rest-api.module';
 
 // ngdoc support
 /**

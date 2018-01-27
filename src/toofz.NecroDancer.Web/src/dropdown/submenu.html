@@ -1,0 +1,17 @@
+<ul ng-if="::$ctrl.category.categories.length"
+    class="dropdown-menu">
+  <li ng-repeat="category in ::$ctrl.category.categories"
+      ng-class="::{ 'dropdown-submenu': category.categories }">
+    <a ng-if="::category.state"
+       ui-sref="{{::category.state.name}}(::category.state.params)"
+       class="{{::category.classes}}">
+      {{::category.name}}
+    </a>
+    <a ng-if="::!category.state"
+       class="{{::category.classes}}">
+      {{::category.name}}
+    </a>
+
+    <nd-submenu category="::category"></nd-submenu>
+  </li>
+</ul>

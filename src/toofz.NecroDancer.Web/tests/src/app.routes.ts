@@ -4,7 +4,7 @@ import * as angular from 'angular';
 import 'angular-mocks';
 
 import '../../src/app.module';
-import { ToofzRestApi } from '../../src/modules/toofz-rest-api/toofz-rest-api';
+import { ToofzRestApi } from '../../src/toofz-rest-api/toofz-rest-api';
 import {
     StateParams,
     StateService,
