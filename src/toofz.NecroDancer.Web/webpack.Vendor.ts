@@ -109,6 +109,9 @@ function getConfig(env: any): webpack.Configuration {
             }),
         ],
         resolve: {
+            alias: {
+                jquery: 'jquery/dist/jquery.slim',
+            },
             symlinks: false,
         },
     };
