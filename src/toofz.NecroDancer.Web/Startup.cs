@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 
 namespace toofz.NecroDancer.Web
 {
@@ -33,7 +35,22 @@ namespace toofz.NecroDancer.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    switch (ctx.File.Name)
+                    {
+                        case "favicon.ico":
+                            break;
+
+                        default:
+                            var maxAge = (int)TimeSpan.FromDays(365).TotalSeconds;
+                            ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={maxAge}";
+                            break;
+                    }
+                },
+            });
 
             app.UseMvc(routes =>
             {
