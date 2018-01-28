@@ -7,6 +7,10 @@
 **/tests/app/
 **/coverage/
 
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/dictionaries/
+
 # User-specific files
 *.suo
 *.user
@@ -263,10 +267,6 @@ paket-files/
 
 # FAKE - F# Make
 .fake/
-
-# JetBrains Rider
-.idea/
-*.sln.iml
 
 # CodeRush
 .cr/
