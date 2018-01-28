@@ -1,4 +1,5 @@
 import * as paginationTemplate from './pagination.html';
+import './pagination.scss';
 
 import * as angular from 'angular';
 import uirouter from '@uirouter/angularjs';

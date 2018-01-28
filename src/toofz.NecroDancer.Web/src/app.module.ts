@@ -1,4 +1,4 @@
-import '../css/site.scss';
+import './app.scss';
 
 import 'imports-loader?jQuery=jquery!bootstrap';
 import * as angular from 'angular';

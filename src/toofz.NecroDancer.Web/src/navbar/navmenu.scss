@@ -1,5 +1,6 @@
-﻿@import "../../node_modules/bootswatch/slate/variables";
-@import "../../css/bootstrap-custom";
+﻿@import '../../node_modules/bootswatch/slate/variables';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
 .nav {
   > li,
@@ -32,17 +33,6 @@
       }
     }
   }
-
-  // Prevent IE8 from misplacing imgs
-  //
-  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
-  > li,
-  > nd-dropdown,
-  > .nav-item {
-    > a > img {
-      max-width: none;
-    }
-  }
 }
 
 // Navbar nav links
@@ -55,8 +45,10 @@
   > nd-dropdown,
   > .nav-item {
     > a {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
       line-height: $line-height-computed;
     }
   }
@@ -91,8 +83,10 @@
     > .nav-item {
       float: left;
       > a {
-        padding-top: $navbar-padding-vertical;
-        padding-bottom: $navbar-padding-vertical;
+        padding: {
+          top: $navbar-padding-vertical;
+          bottom: $navbar-padding-vertical;
+        }
       }
     }
   }
@@ -166,8 +160,10 @@
     > nd-dropdown,
     > .nav-item {
       > a {
-        border-right: 1px solid rgba(0, 0, 0, 0.2);
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border: {
+          right: 1px solid rgba(0, 0, 0, 0.2);
+          left: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
         &:hover {
           @include btn-shadow-inverse($navbar-default-bg);
@@ -208,10 +204,10 @@
   > nd-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
+    margin: {
+      top: -6px;
+      left: -1px;
+    }
     border-radius: 0 6px 6px 6px;
   }
 
@@ -225,12 +221,16 @@
     float: right;
     width: 0;
     height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+    border: {
+      color: transparent;
+      style: solid;
+      width: 5px 0 5px 5px;
+      left-color: #ccc;
+    }
+    margin: {
+      top: 5px;
+      right: -10px;
+    }
   }
 
   &:hover {
@@ -249,12 +249,14 @@
     > nd-submenu > .dropdown-menu {
       left: -100%;
       margin-left: 10px;
-      -webkit-border-radius: 6px 0 6px 6px;
-      -moz-border-radius: 6px 0 6px 6px;
       border-radius: 6px 0 6px 6px;
     }
   }
 }
+
+/**************
+ * Characters *
+ **************/
 
 @import "../characters/variables";
 
