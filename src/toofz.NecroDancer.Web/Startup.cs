@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
@@ -35,8 +36,12 @@ namespace toofz.NecroDancer.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            var staticFileContentTypeProvider = new FileExtensionContentTypeProvider();
+            staticFileContentTypeProvider.Mappings[".LICENSE"] = "text/plain";
+
             app.UseStaticFiles(new StaticFileOptions
             {
+                ContentTypeProvider = staticFileContentTypeProvider,
                 OnPrepareResponse = ctx =>
                 {
                     switch (ctx.File.Name)
