@@ -55,6 +55,7 @@ namespace toofz.NecroDancer.Web
                             break;
                     }
                 },
+                ServeUnknownFileTypes = true,
             });
 
             app.UseMvc(routes =>
