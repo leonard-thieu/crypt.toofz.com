@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
 import { appDllManifestPath } from './webpack.App';
+import stats from './webpack.stats';
 
 function getConfig(): webpack.Configuration {
     const sourcePath = path.join(__dirname, 'tests');
@@ -65,6 +66,7 @@ function getConfig(): webpack.Configuration {
             extensions: ['.ts', '.js'],
             symlinks: false,
         },
+        stats: stats,
         target: 'node',
     };
 
