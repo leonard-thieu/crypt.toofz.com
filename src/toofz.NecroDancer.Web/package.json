@@ -8,10 +8,10 @@
     "url": "https://github.com/leonard-thieu/crypt.toofz.com.git"
   },
   "scripts": {
-    "build-prod": "webpack --config webpack.Vendor.ts --env.configuration=production && webpack --config webpack.App.ts --env.configuration=production",
-    "build-dev": "webpack --config webpack.Vendor.ts && webpack --config webpack.App.ts",
-    "build-test-prod": "webpack --config webpack.Vendor.ts --env.configuration=production && webpack --config webpack.App.ts --env.configuration=production --env.test && webpack --config webpack.Test.ts",
-    "build-test-dev": "webpack --config webpack.Vendor.ts && webpack --config webpack.App.ts --env.test && webpack --config webpack.Test.ts",
+    "build-prod": "webpack --config webpack.vendor.config.ts --env.configuration=production && webpack --config webpack.app.config.ts --env.configuration=production",
+    "build-dev": "webpack --config webpack.vendor.config.ts && webpack --config webpack.app.config.ts",
+    "build-test-prod": "webpack --config webpack.vendor.config.ts --env.configuration=production && webpack --config webpack.app.config.ts --env.configuration=production --env.test && webpack --config webpack.test.config.ts",
+    "build-test-dev": "webpack --config webpack.vendor.config.ts && webpack --config webpack.app.config.ts --env.test && webpack --config webpack.test.config.ts",
     "test": "electron-mocha --opts tests/mocha.opts && remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-finaler.json",
     "report": "istanbul report --include coverage/coverage-finaler.json && node scripts/open-coverage.js"
   },

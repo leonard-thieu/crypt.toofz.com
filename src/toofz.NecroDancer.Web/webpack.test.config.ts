@@ -2,7 +2,7 @@ import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
-import { appDllManifestPath } from './webpack.App';
+import { appDllManifestPath } from './webpack.app.config';
 import stats from './webpack.stats';
 
 function getConfig(): webpack.Configuration {
