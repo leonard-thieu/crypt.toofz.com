@@ -7,7 +7,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
 import { Environment } from './build';
 import stats from './webpack.stats';
-import { vendorDllManifestPath } from './webpack.Vendor';
+import { vendorDllManifestPath } from './webpack.vendor.config';
 
 let rootPath = path.join(__dirname, 'wwwroot');
 let appPath = path.join(rootPath, 'app');
