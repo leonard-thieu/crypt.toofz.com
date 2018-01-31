@@ -5,6 +5,7 @@ import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { Environment } from './build';
 
 const appPath = path.join(__dirname, 'wwwroot', 'app');
 export const vendorDllManifestPath = path.join(appPath, 'vendor.dll.manifest.json');
@@ -12,10 +13,10 @@ export const vendorDllManifestPath = path.join(appPath, 'vendor.dll.manifest.jso
 function getConfig(env: any): webpack.Configuration {
     env = env || {};
 
-    const $configuration = env.configuration || 'development';
+    const $configuration = env.configuration || Environment.Development;
 
     let outputFilename = '[name].js';
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         outputFilename = '[name].[hash].js';
     }
 
@@ -23,7 +24,7 @@ function getConfig(env: any): webpack.Configuration {
     const vendorReportFileName = 'vendor.report.html';
 
     let devtool: webpack.Options.Devtool = 'eval-source-map';
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         devtool = 'source-map';
     }
 
@@ -65,7 +66,7 @@ function getConfig(env: any): webpack.Configuration {
                             {
                                 loader: 'css-loader',
                                 options: {
-                                    minimize: $configuration === 'production',
+                                    minimize: $configuration === Environment.Production,
                                     sourceMap: true,
                                 },
                             },
@@ -116,7 +117,7 @@ function getConfig(env: any): webpack.Configuration {
         },
     };
 
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         config.plugins!.push(
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify($configuration),
