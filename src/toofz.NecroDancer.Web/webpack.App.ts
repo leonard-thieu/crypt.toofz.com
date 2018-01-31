@@ -5,6 +5,7 @@ import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import * as webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
+import { Environment } from './build';
 import { vendorDllManifestPath } from './webpack.Vendor';
 
 let rootPath = path.join(__dirname, 'wwwroot');
@@ -14,7 +15,7 @@ export const appDllManifestPath = path.join(appPath, 'app.dll.manifest.json');
 function getConfig(env: any): webpack.Configuration {
     env = env || {};
 
-    const $configuration = env.configuration || 'development';
+    const $configuration = env.configuration || Environment.Development;
     const $test = env.test || false;
 
     let sourcePath = path.join(__dirname, 'src');
@@ -22,7 +23,7 @@ function getConfig(env: any): webpack.Configuration {
     let entryApp = path.join(sourcePath, 'app.module.ts');
 
     let outputFilename = '[name].js';
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         outputFilename = '[name].[hash].js';
     }
 
@@ -30,7 +31,7 @@ function getConfig(env: any): webpack.Configuration {
     const appReportFileName = 'app.report.html';
 
     let devtool: webpack.Options.Devtool = 'eval-source-map';
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         devtool = 'source-map';
     }
 
@@ -97,7 +98,7 @@ function getConfig(env: any): webpack.Configuration {
                             {
                                 loader: 'css-loader',
                                 options: {
-                                    minimize: $configuration === 'production',
+                                    minimize: $configuration === Environment.Production,
                                     sourceMap: true,
                                 },
                             },
@@ -120,7 +121,7 @@ function getConfig(env: any): webpack.Configuration {
                         {
                             loader: 'html-loader',
                             options: {
-                                minimize: $configuration === 'production',
+                                minimize: $configuration === Environment.Production,
                             },
                         },
                     ],
@@ -173,7 +174,7 @@ function getConfig(env: any): webpack.Configuration {
         );
     }
 
-    if ($configuration === 'production') {
+    if ($configuration === Environment.Production) {
         config.plugins!.push(
             new UglifyJsPlugin({
                 extractComments: true,
