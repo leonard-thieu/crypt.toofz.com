@@ -6,6 +6,7 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { Environment } from './build';
+import stats from './webpack.stats';
 
 const appPath = path.join(__dirname, 'wwwroot', 'app');
 export const vendorDllManifestPath = path.join(appPath, 'vendor.dll.manifest.json');
@@ -115,6 +116,7 @@ function getConfig(env: any): webpack.Configuration {
             },
             symlinks: false,
         },
+        stats: stats,
     };
 
     if ($configuration === Environment.Production) {

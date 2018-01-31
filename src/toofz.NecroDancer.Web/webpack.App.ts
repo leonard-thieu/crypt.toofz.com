@@ -6,6 +6,7 @@ import * as webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import * as ManifestPlugin from 'webpack-manifest-plugin';
 import { Environment } from './build';
+import stats from './webpack.stats';
 import { vendorDllManifestPath } from './webpack.Vendor';
 
 let rootPath = path.join(__dirname, 'wwwroot');
@@ -161,6 +162,7 @@ function getConfig(env: any): webpack.Configuration {
             extensions: ['.ts', '.js'],
             symlinks: false,
         },
+        stats: stats
     };
 
     if ($test) {
