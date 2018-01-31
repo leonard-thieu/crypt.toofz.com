@@ -36,7 +36,7 @@ after_build:
 
 test_script:
   - cd src\toofz.NecroDancer.Web
-  - npm run build-test-prod
+  - npm run build-prod-test
   - node_modules\.bin\electron-mocha --opts tests\mocha-appveyor.opts
   - node_modules\.bin\remap-istanbul --input coverage\coverage-final.json --output coverage\coverage-finaler.json
   - node_modules\.bin\istanbul report --include coverage\coverage-finaler.json --report lcovonly
