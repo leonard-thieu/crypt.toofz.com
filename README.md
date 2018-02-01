@@ -45,7 +45,7 @@ JavaScript or CSS can be sufficient for many tasks.
 
 #### Getting started
 
-From the `src\toofz.NecroDancer.Web` directory, run:
+From the [`src/toofz.NecroDancer.Web`](src/toofz.NecroDancer.Web) directory, run:
 
 ```
 npm install
@@ -77,37 +77,37 @@ This will open a code coverage report in your browser.
 
 #### Repository layout
 
-* `wwwroot`
+* [`wwwroot`](src/toofz.NecroDancer.Web/wwwroot)
   * `app` - build output directory
-* `lib` - customized 3rd party libraries
-* `src`
-  * `characters` - character icons (used in the leaderboards dropdown and on the leaderboards page)
-  * `currency` - currency icons (used on items, enemies, and leaderboard pages)
-  * `dropdown` - dropdown menu (used in the navbar)
-  * `enemies` - enemy section
-  * `entry-filters` - AngularJS filters that formats leaderboard entry data for display
-  * `items` - item section
-  * `landing` - landing page
-  * `leaderboard` - displays leaderboard entries
-  * `leaderboards` - leaderboards search page
-  * `navbar` - main navigation element featured at the top of every page
-  * `ordinal` - AngularJS filter that formats leaderboard entry rank as an ordinal (used on the profile page)
-  * `otherwise` - page served when a URL cannot be routed to
-  * `page-title` - service that manages changes to the page title
-  * `pagination` - pagination controls
-  * `profile` - player profile section
-  * `root` - root template and route
-  * `search` - search feature
-  * `slug` - AngularJS filter that formats player names into URL slugs
-  * `titlecase` - AngularJS filter that formats a string in titlecase
-  * `toofz-rest-api` - toofz API client
-  * `app.module.ts` - main entry point
-  * `app.scss` - site-wide styles
-* `test`
-  * `src` - structure mirrors that of `src`
-* `Views`
-  * `Shared`
-    * `Layout.cshtml` - the main template for the site
+* [`lib`](src/toofz.NecroDancer.Web/lib) - customized 3rd party libraries
+* [`src`](src/toofz.NecroDancer.Web/src)
+  * [`characters`](src/toofz.NecroDancer.Web/src/characters) - character icons (used in the leaderboards dropdown and on the leaderboards page)
+  * [`currency`](src/toofz.NecroDancer.Web/src/currency) - currency icons (used on items, enemies, and leaderboard pages)
+  * [`dropdown`](src/toofz.NecroDancer.Web/src/dropdown) - dropdown menu (used in the navbar)
+  * [`enemies`](src/toofz.NecroDancer.Web/src/enemies) - enemy section
+  * [`entry-filters`](src/toofz.NecroDancer.Web/src/entry-filters) - AngularJS filters that formats leaderboard entry data for display
+  * [`items`](src/toofz.NecroDancer.Web/src/items) - item section
+  * [`landing`](src/toofz.NecroDancer.Web/src/landing) - landing page
+  * [`leaderboard`](src/toofz.NecroDancer.Web/src/leaderboard) - displays leaderboard entries
+  * [`leaderboards`](src/toofz.NecroDancer.Web/src/leaderboards) - leaderboards search page
+  * [`navbar`](src/toofz.NecroDancer.Web/src/navbar) - main navigation element featured at the top of every page
+  * [`ordinal`](src/toofz.NecroDancer.Web/src/ordinal) - AngularJS filter that formats leaderboard entry rank as an ordinal (used on the profile page)
+  * [`otherwise`](src/toofz.NecroDancer.Web/src/otherwise) - page served when a URL cannot be routed to
+  * [`page-title`](src/toofz.NecroDancer.Web/src/page-title) - service that manages changes to the page title
+  * [`pagination`](src/toofz.NecroDancer.Web/src/pagination) - pagination controls
+  * [`profile`](src/toofz.NecroDancer.Web/src/profile) - player profile section
+  * [`root`](src/toofz.NecroDancer.Web/src/root) - root template and route
+  * [`search`](src/toofz.NecroDancer.Web/src/search) - search feature
+  * [`slug`](src/toofz.NecroDancer.Web/src/slug) - AngularJS filter that formats player names into URL slugs
+  * [`titlecase`](src/toofz.NecroDancer.Web/src/titlecase) - AngularJS filter that formats a string in titlecase
+  * [`toofz-rest-api`](src/toofz.NecroDancer.Web/src/toofz-rest-api) - toofz API client
+  * [`app.module.ts`](src/toofz.NecroDancer.Web/src/app.module.ts) - main entry point
+  * [`app.scss`](src/toofz.NecroDancer.Web/src/app.scss) - site-wide styles
+* [`test`](src/toofz.NecroDancer.Web/test)
+  * [`src`](src/toofz.NecroDancer.Web/test/src) - structure mirrors that of [`src`](src/toofz.NecroDancer.Web/src)
+* [`Views`](src/toofz.NecroDancer.Web/Views)
+  * [`Shared`](src/toofz.NecroDancer.Web/Views/Shared)
+    * [`_Layout.cshtml`](src/toofz.NecroDancer.Web/Views/Shared/_Layout.cshtml) - the main template for the site
 
 ## License
 
