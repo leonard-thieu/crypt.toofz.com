@@ -18,6 +18,7 @@ Information about other projects that support **toofz** can be found in the [met
 ### Dependencies
 
 * [toofz API](https://github.com/leonard-thieu/api.toofz.com)
+* [toofz Build](https://github.com/leonard-thieu/toofz-build)
 
 ## Requirements
 
