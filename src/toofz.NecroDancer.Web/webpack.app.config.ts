@@ -36,7 +36,7 @@ function getConfig(env: any): webpack.Configuration {
         devtool = 'source-map';
     }
 
-    const tsRule = {
+    const tsRule: webpack.Rule = {
         test: /\.ts$/,
         use: [
             {
@@ -55,12 +55,15 @@ function getConfig(env: any): webpack.Configuration {
     };
 
     if ($test) {
-        tsRule.use.unshift({
-            loader: 'istanbul-instrumenter-loader',
-            options: {
-                esModules: true,
-            },
-        });
+        // Array check to satisfy TypeScript
+        if (Array.isArray(tsRule.use)) {
+            tsRule.use.unshift({
+                loader: 'istanbul-instrumenter-loader',
+                options: {
+                    esModules: true,
+                },
+            });
+        }
     }
 
     const extractSass = new ExtractTextPlugin({
@@ -162,7 +165,7 @@ function getConfig(env: any): webpack.Configuration {
             extensions: ['.ts', '.js'],
             symlinks: false,
         },
-        stats: stats
+        stats: stats,
     };
 
     if ($test) {
