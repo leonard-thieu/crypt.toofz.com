@@ -21,7 +21,7 @@ Information about other projects that support **toofz** can be found in the [met
 
 ## Requirements
 
-.NET Core 2.0
+* .NET Core 2.0
 
 ## Contributing
 
@@ -33,6 +33,47 @@ Contributions are welcome for toofz.
   * Aside from trivial issues, please raise a discussion before submitting a pull request.
 
 ### Development
+
+Depending on what code you're working with, you may need to be familiar with TypeScript, SCSS, AngularJS, or AngularUI Router. Otherwise, knowledge of 
+JavaScript or CSS can be sufficient for many tasks.
+
+#### Requirements
+
+* Visual Studio 2017
+* Node.js
+* WebStorm *(optional)* - Visual Studio can be flaky in how it handles TypeScript. WebStorm is recommended for editing TypeScript files.
+
+#### Getting started
+
+From the `src\toofz.NecroDancer.Web` directory, run:
+
+```
+npm install
+npm run build-dev
+```
+
+You may now start the application through Visual Studio.
+
+In order to run tests, run:
+
+```
+npm run build-dev-test
+npm test
+```
+
+Scripts that produce optimized code ready for production (`build-prod` and `build-prod-test`) are also available.
+
+**Note**: Test build scripts produce slightly different output for `app.js` (code is instrumented and wrapped to make it easier to test). This means that 
+if you've built a non-test build and you want to test, you _must_ run a test build script. Likewise, if you've built a test build and you want to view the 
+site in your browser, you must run a non-test build script.
+
+To view a code coverage report (after running tests), run:
+
+```
+npm run report
+```
+
+This will open a code coverage report in your browser.
 
 #### Repository layout
 
@@ -67,42 +108,6 @@ Contributions are welcome for toofz.
 * `Views`
   * `Shared`
     * `Layout.cshtml` - the main template for the site
-
-#### Requirements
-
-* Visual Studio 2017
-* Node.js
-* WebStorm *(optional)* - Visual Studio can be flaky in how it handles TypeScript. WebStorm is recommended for editing TypeScript files.
-
-From the `src\toofz.NecroDancer.Web` directory, run:
-
-```
-npm install
-npm run build-dev
-```
-
-You may now start the application through Visual Studio.
-
-In order to run tests, run:
-
-```
-npm run build-dev-test
-npm test
-```
-
-Scripts that produce optimized code ready for production (`build-prod` and `build-prod-test`) are also available.
-
-**Note**: Test build scripts produce slightly different output for `app.js` (code is instrumented and wrapped to make it easier to test). This means that 
-if you've built a non-test build and you want to test, you _must_ run a test build script. Likewise, if you've built a test build and you want to view the 
-site in your browser, you must run a non-test build script.
-
-To view a code coverage report (after running tests), run:
-
-```
-npm run report
-```
-
-This will open a code coverage report in your browser.
 
 ## License
 
