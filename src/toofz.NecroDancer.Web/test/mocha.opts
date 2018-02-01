@@ -1,0 +1,6 @@
+--renderer
+--require test/util/preload
+--require test/util/install-dll
+--require source-map-support/register
+test/app/tests.js
+test/util/coverage.js

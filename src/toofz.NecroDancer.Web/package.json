@@ -12,7 +12,7 @@
     "build-dev-test": "webpack --config webpack.vendor.config.ts && webpack --config webpack.app.config.ts --env.test && webpack --config webpack.test.config.ts",
     "build-prod": "webpack --config webpack.vendor.config.ts --env.configuration=production && webpack --config webpack.app.config.ts --env.configuration=production",
     "build-prod-test": "webpack --config webpack.vendor.config.ts --env.configuration=production && webpack --config webpack.app.config.ts --env.configuration=production --env.test && webpack --config webpack.test.config.ts",
-    "test": "electron-mocha --opts tests/mocha.opts && remap-istanbul --input coverage/coverage-final.json --output coverage/coverage-finaler.json",
+    "test": "electron-mocha --opts test/mocha.opts && remap-istanbul --input coverage/coverage-final.json --output coverage/coverage-finaler.json",
     "report": "istanbul report --include coverage/coverage-finaler.json && node scripts/open-coverage.js"
   },
   "dependencies": {

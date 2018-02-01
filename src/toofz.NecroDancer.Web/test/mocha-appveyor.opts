@@ -1,8 +1,8 @@
 --renderer
---require tests/util/preload
---require tests/util/install-dll
+--require test/util/preload
+--require test/util/install-dll
 --require source-map-support/register
 --reporter mocha-multi
 --reporter-options spec=-,mocha-appveyor-reporter=-
-tests/app/tests.js
-tests/util/coverage.js
+test/app/tests.js
+test/util/coverage.js

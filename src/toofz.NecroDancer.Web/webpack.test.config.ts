@@ -6,8 +6,8 @@ import { appDllManifestPath } from './webpack.app.config';
 import stats from './webpack.stats';
 
 function getConfig(): webpack.Configuration {
-    const sourcePath = path.join(__dirname, 'tests');
-    const rootPath = path.join(__dirname, 'tests');
+    const sourcePath = path.join(__dirname, 'test');
+    const rootPath = path.join(__dirname, 'test');
     const appPath = path.join(rootPath, 'app');
     const entryApp = path.join(sourcePath, 'index.js');
 
