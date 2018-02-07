@@ -17,7 +17,7 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
-  
+
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);coverage\**</DefaultItemExcludes>
   </PropertyGroup>
@@ -33,6 +33,13 @@
   <ItemGroup>
     <Content Remove="@(ExcludedJSONContent)" />
     <Content Remove="wwwroot\app\*.report.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="before-deploy.ps1" />
+    <Content Include="before-deploy.ps1" />
+    <None Remove="deploy.ps1" />
+    <Content Include="deploy.ps1" />
   </ItemGroup>
 
   <ItemGroup>
