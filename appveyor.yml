@@ -10,7 +10,7 @@ skip_commits:
 configuration:
   - Release
 environment:
-  VersionPrefix: 2.3.14
+  VersionPrefix: 2.3.15
   VersionSuffix: 
   FileVersion: '%APPVEYOR_BUILD_VERSION%'
 notifications:
