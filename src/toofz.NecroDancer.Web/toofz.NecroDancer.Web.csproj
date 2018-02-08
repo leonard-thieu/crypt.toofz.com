@@ -36,17 +36,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="before-deploy.ps1" />
-    <Content Include="before-deploy.ps1" />
-    <None Remove="deploy.ps1" />
-    <Content Include="deploy.ps1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="@(ExcludedJSONContent)" />
 
     <None Update="package-lock.json">
       <DependentUpon>package.json</DependentUpon>
     </None>
   </ItemGroup>
+
+  <Target Name="ComputeDeploymentScriptsToPublish" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <ResolvedFileToPublish Include="before-deploy.ps1" RelativePath="before-deploy.ps1" />
+      <ResolvedFileToPublish Include="deploy.ps1" RelativePath="deploy.ps1" />
+    </ItemGroup>
+  </Target>
 </Project>
