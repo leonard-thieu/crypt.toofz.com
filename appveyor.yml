@@ -6,6 +6,7 @@ skip_commits:
   files:
     - LICENSE
     - README.md
+    - NOTICE.md
     - '**\.idea\**\*'
 configuration:
   - Release
