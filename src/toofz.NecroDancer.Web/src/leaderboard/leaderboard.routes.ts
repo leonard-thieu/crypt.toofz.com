@@ -4,16 +4,80 @@ import {
 } from '@uirouter/angularjs';
 import * as util from '../util';
 import { ToofzRestApi } from '../toofz-rest-api/toofz-rest-api';
+import {
+    EnumParamTypeDefinition,
+    RouteValues,
+} from './enum-param-type-definition';
 
-const products = ['amplified', 'classic'].join('|');
-const characters = ['all', 'all-characters', 'all-characters-amplified', 'aria', 'bard', 'bolt', 'cadence', 'coda',
-    'diamond', 'dorian', 'dove', 'eli', 'mary', 'melody', 'monk', 'nocturna', 'story', 'story-mode', 'tempo'].join('|');
-const runs = ['score', 'speed', 'seededscore', 'seeded-score', 'seededspeed', 'seeded-speed', 'deathless'].join('|');
-const modes = ['standard', 'no-return', 'hard-mode', 'hard', 'phasing', 'randomizer', 'mystery'].join('|');
+const products: RouteValues = {
+    current: [
+        'amplified',
+        'classic',
+    ],
+    legacy: {},
+};
+export const productParamTypeDefinition = new EnumParamTypeDefinition(products);
+
+const characters: RouteValues = {
+    current: [
+        'all-characters',
+        'all-characters-amplified',
+        'aria',
+        'bard',
+        'bolt',
+        'cadence',
+        'coda',
+        'diamond',
+        'dorian',
+        'dove',
+        'eli',
+        'mary',
+        'melody',
+        'monk',
+        'nocturna',
+        'story-mode',
+        'tempo',
+    ],
+    legacy: {
+        'all': 'all-characters',
+        'story': 'story-mode',
+    },
+};
+export const characterParamTypeDefinition = new EnumParamTypeDefinition(characters);
+
+const runs: RouteValues = {
+    current: [
+        'score',
+        'speed',
+        'seeded-score',
+        'seeded-speed',
+        'deathless',
+    ],
+    legacy: {
+        'seededscore': 'seeded-score',
+        'seededspeed': 'seeded-speed',
+    },
+};
+export const runParamTypeDefinition = new EnumParamTypeDefinition(runs);
+
+const modes: RouteValues = {
+    current: [
+        'standard',
+        'no-return',
+        'hard',
+        'phasing',
+        'randomizer',
+        'mystery',
+    ],
+    legacy: {
+        'hard-mode': 'hard',
+    },
+};
+export const modeParamTypeDefinition = new EnumParamTypeDefinition(modes);
 
 export const leaderboardState: Ng1StateDeclaration = {
     name: 'root.leaderboard',
-    url: `/leaderboards/{product:${products}}/{character:${characters}}/{run:${runs}}/{mode:${modes}}?{page:int}&{id}`,
+    url: `/leaderboards/{product:product}/{character:character}/{run:run}/{mode:mode}?{page:int}&{id}`,
     template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
     params: {
         product: 'classic',
@@ -24,35 +88,6 @@ export const leaderboardState: Ng1StateDeclaration = {
                       toofzRestApi: ToofzRestApi) => {
             'ngInject';
             let { product, mode, run, character } = $stateParams;
-
-            product = product.toLowerCase();
-            mode = mode.toLowerCase();
-            run = run.toLowerCase();
-            character = character.toLowerCase();
-
-            switch (mode) {
-                case 'hard-mode':
-                    mode = 'hard';
-                    break;
-            }
-
-            switch (run) {
-                case 'seededscore':
-                    run = 'seeded-score';
-                    break;
-                case 'seededspeed':
-                    run = 'seeded-speed';
-                    break;
-            }
-
-            switch (character) {
-                case 'all':
-                    character = 'all-characters';
-                    break;
-                case 'story':
-                    character = 'story-mode';
-                    break;
-            }
 
             return toofzRestApi.getLeaderboards({
                 products: [product],
@@ -110,7 +145,7 @@ export const leaderboardState: Ng1StateDeclaration = {
 
 export const dailyLeaderboardState: Ng1StateDeclaration = {
     name: 'root.daily-leaderboard',
-    url: `/leaderboards/{product:${products}}/daily?{date}&{production:bool}&{page:int}&{id}`,
+    url: `/leaderboards/{product:product}/daily?{date}&{production:bool}&{page:int}&{id}`,
     template: '<nd-leaderboard data="::$resolve.entries" player-entry="::$resolve.player"></nd-leaderboard>',
     params: {
         product: 'classic',
