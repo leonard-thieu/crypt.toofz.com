@@ -34,7 +34,13 @@ angular
             }
         });
 
-        $transitions.onFinish({}, () => {
+        $transitions.onSuccess({}, () => {
+            if (appInsights) {
+                appInsights.stopTrackPage();
+            }
+        });
+
+        $transitions.onError({}, () => {
             if (appInsights) {
                 appInsights.stopTrackPage();
             }
